@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
+		F98CCA8029CA11B400811FCF /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7F29CA11B400811FCF /* Tag.swift */; };
 		F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BC829B9118A00740FE5 /* perminderApp.swift */; };
 		F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BCA29B9118A00740FE5 /* ContentView.swift */; };
 		F9B43BCD29B9118F00740FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B43BCC29B9118F00740FE5 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F98CCA7D29CA0FB500811FCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		F98CCA7F29CA11B400811FCF /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		F9B43BC529B9118A00740FE5 /* perminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = perminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B43BC829B9118A00740FE5 /* perminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perminderApp.swift; sourceTree = "<group>"; };
 		F9B43BCA29B9118A00740FE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
 				F9B43BCC29B9118F00740FE5 /* Assets.xcassets */,
 				F9B43BCE29B9118F00740FE5 /* Preview Content */,
+				F98CCA7D29CA0FB500811FCF /* Reminder.swift */,
+				F98CCA7F29CA11B400811FCF /* Tag.swift */,
 			);
 			path = perminder;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98CCA8029CA11B400811FCF /* Tag.swift in Sources */,
+				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
 			);
