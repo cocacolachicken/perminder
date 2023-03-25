@@ -8,8 +8,7 @@
 import Foundation
 
 class Tag {
-    var name:String
-    var urgency:Int
+    private var name:String
     
     init (n:String) {
         name = n
