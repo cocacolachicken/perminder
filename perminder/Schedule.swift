@@ -10,7 +10,7 @@ import Foundation
 protocol Schedule {
     var days:[Day] {get set}
 
-    subscript (index:String) -> Timeblock {get set}
+    subscript (index:Date) -> Timeblock? {get}
     
-    
+    func modify (index:Int, t:Timeblock)
 }

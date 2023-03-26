@@ -9,4 +9,8 @@ import Foundation
 
 class TagDatabase {
     var tags:[String:Tag] = [:]
+    
+    subscript (index:String) -> Tag {
+        tags[index]!
+    }
 }

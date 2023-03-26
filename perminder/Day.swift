@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct Day {
+class Day {
     var blocks: [String:Timeblock] = [:] // Time:Timeblock
     
     subscript (index:String) -> Timeblock? {
-        blocks[index]
+        get {
+            blocks[index]
+        }
+        
+        set {
+            blocks[index] = newValue
+        }
     }
 }
