@@ -8,9 +8,16 @@
 import Foundation
 
 class Tag {
-    private var name:String
+    var name:String
+    var reminders:[Reminder] = []
     
     init (n:String) {
         name = n
     }
+    
+    
+}
+
+class CodableTag: Codable {
+    var name:String
 }

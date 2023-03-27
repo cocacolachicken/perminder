@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var dat:DataManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationView {
+            
+        }.navigationTitle("I hate you! i love you!")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @EnvironmentObject static var data:DataManager
+    
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(data)
     }
 }

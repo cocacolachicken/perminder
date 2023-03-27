@@ -12,7 +12,9 @@
 		F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF229CFB8020000AEDF /* LinkedList.swift */; };
 		F95A4DF529CFB8110000AEDF /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF429CFB8110000AEDF /* Node.swift */; };
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
-		F95A4DF929CFF4C30000AEDF /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF829CFF4C30000AEDF /* Tester.swift */; };
+		F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFB29D134270000AEDF /* InputManager.swift */; };
+		F95A4DFE29D1358F0000AEDF /* IOSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* IOSupport.swift */; };
+		F95A4E0029D137A40000AEDF /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
 		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
 		F98CCA8029CA11B400811FCF /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7F29CA11B400811FCF /* Tag.swift */; };
 		F98CCA8229CA161C00811FCF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA8129CA161C00811FCF /* Schedule.swift */; };
@@ -51,7 +53,9 @@
 		F95A4DF229CFB8020000AEDF /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		F95A4DF429CFB8110000AEDF /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
-		F95A4DF829CFF4C30000AEDF /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
+		F95A4DFB29D134270000AEDF /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
+		F95A4DFD29D1358F0000AEDF /* IOSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSupport.swift; sourceTree = "<group>"; };
+		F95A4DFF29D137A40000AEDF /* testdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testdata.json; sourceTree = "<group>"; };
 		F98CCA7D29CA0FB500811FCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		F98CCA7F29CA11B400811FCF /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		F98CCA8129CA161C00811FCF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -128,6 +132,9 @@
 				F95A4DFA29CFF61C0000AEDF /* UI */,
 				F9B43BC829B9118A00740FE5 /* perminderApp.swift */,
 				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
+				F95A4DFB29D134270000AEDF /* InputManager.swift */,
+				F95A4DFD29D1358F0000AEDF /* IOSupport.swift */,
+				F95A4DFF29D137A40000AEDF /* testdata.json */,
 				F9B43BCC29B9118F00740FE5 /* Assets.xcassets */,
 				F9B43BCE29B9118F00740FE5 /* Preview Content */,
 				F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */,
@@ -137,7 +144,6 @@
 				F98CCA8329CA225200811FCF /* Timeblock.swift */,
 				F98CCA8529CA225B00811FCF /* Day.swift */,
 				F98CCA8729CA283900811FCF /* TagDatabase.swift */,
-				F95A4DF829CFF4C30000AEDF /* Tester.swift */,
 				F98CCA8129CA161C00811FCF /* Schedule.swift */,
 				F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */,
 				F95A4DF229CFB8020000AEDF /* LinkedList.swift */,
@@ -277,6 +283,7 @@
 			files = (
 				F9B43BD029B9118F00740FE5 /* Preview Assets.xcassets in Resources */,
 				F9B43BCD29B9118F00740FE5 /* Assets.xcassets in Resources */,
+				F95A4E0029D137A40000AEDF /* testdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,17 +310,18 @@
 			files = (
 				F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */,
 				F98CCA8629CA225B00811FCF /* Day.swift in Sources */,
+				F95A4DFE29D1358F0000AEDF /* IOSupport.swift in Sources */,
 				F98CCA8029CA11B400811FCF /* Tag.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
 				F95A4DF529CFB8110000AEDF /* Node.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
-				F95A4DF929CFF4C30000AEDF /* Tester.swift in Sources */,
 				F98CCA8229CA161C00811FCF /* Schedule.swift in Sources */,
 				F98CCA8829CA283900811FCF /* TagDatabase.swift in Sources */,
 				F98CCA8429CA225200811FCF /* Timeblock.swift in Sources */,
 				F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */,
 				F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */,
 				F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */,
+				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

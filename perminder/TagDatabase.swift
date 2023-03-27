@@ -13,4 +13,8 @@ class TagDatabase {
     subscript (index:String) -> Tag {
         tags[index]!
     }
+    
+    func add (_ t:CodableTag) {
+        tags[t.name] = Tag(n:t.name)
+    }
 }

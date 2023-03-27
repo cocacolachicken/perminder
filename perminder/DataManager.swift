@@ -7,8 +7,22 @@
 
 import Foundation
 
-class DataManager {
-    var tags:TagDatabase = TagDatabase()
-    var reminders:[Reminder] = []
+class DataManager: ObservableObject {
+    @Published var tags:TagDatabase = TagDatabase()
+    @Published var reminders:[Reminder] = []
     
+    init (_ src: CodableDataManager) {
+        for tag in src.tags {
+            tags.add(tag)
+        }
+        
+        for reminder in src.reminders {
+            reminders.append(Reminder())
+        }
+    }
+}
+
+class CodableDataManager: Codable {
+    var tags:[CodableTag]
+    var reminders:[CodableReminder]
 }
