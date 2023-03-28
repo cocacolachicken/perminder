@@ -38,6 +38,30 @@ class Reminder: Identifiable {
         }
     }
     
+    func setName(nameSet:String) {
+        name = nameSet
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getCreated() -> Date {
+        return created
+    }
+    
+    func setDue(dueSet:Date) {
+        due = dueSet
+    }
+    
+    func getDue() -> Date? {
+        return due
+    }
+    
+    func isFinished() -> Bool {
+        return (finished != nil)
+    }
+    
     #if DEBUG
     static let example = Reminder(n:"Test case", c:Date(), d:nil, f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])])
     #endif
