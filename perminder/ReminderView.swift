@@ -16,7 +16,7 @@ struct ReminderView: View {
             Text("Created \(formatDate(date:remind.created))")
                 
             Spacer()
-        }.navigationTitle(remind.name).navigationBarTitleDisplayMode(.inline)
+        }.navigationTitle(remind.name).navigationBarTitleDisplayMode(.large)
     }
 }
 
