@@ -13,11 +13,11 @@ class DataManager: ObservableObject {
     
     init (_ src: CodableDataManager) {
         for tag in src.tags {
-            tags.add(tag)
+            tags.add(t:tag)
         }
         
         for reminder in src.reminders {
-            reminders.append(Reminder())
+            reminders.append(Reminder(reminder, tags))
         }
     }
 }

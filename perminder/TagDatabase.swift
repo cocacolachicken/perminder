@@ -9,12 +9,14 @@ import Foundation
 
 class TagDatabase {
     var tags:[String:Tag] = [:]
+    var tagsAsAnArray:[Tag] = []
     
     subscript (index:String) -> Tag {
         tags[index]!
     }
     
-    func add (_ t:CodableTag) {
-        tags[t.name] = Tag(n:t.name)
+    func add (t:CodableTag) {
+        tags[t.name] = Tag(n:t.name, c:t.color)
+        tagsAsAnArray.append(tags[t.name]!)
     }
 }

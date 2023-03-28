@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Reminder {
-    private var name:String
-    private var created:Date
-    private var due:Date?
-    private var finished:Date?
-    private var tags:[Tag] = []
+class Reminder: Identifiable {
+    var name:String
+    var created:Date
+    var due:Date?
+    var finished:Date?
+    var tags:[Tag] = []
     
     
     init (n:String) {
@@ -20,7 +20,15 @@ class Reminder {
         created = Date()
     }
     
-    init (src:CodableReminder, tagDatabase:TagDatabase) {
+    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag]) {
+        name = n
+        created = c
+        due = d
+        finished = f
+        tags = tg
+    }
+    
+    init (_ src:CodableReminder, _ tagDatabase:TagDatabase) {
         name = src.name
         created = src.created
         due = src.due
@@ -29,6 +37,10 @@ class Reminder {
             tags.append(tagDatabase[tag])
         }
     }
+    
+    #if DEBUG
+    static let example = Reminder(n:"Test case", c:Date(), d:nil, f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])])
+    #endif
 }
 
 class CodableReminder: Codable {

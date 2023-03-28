@@ -1,0 +1,42 @@
+{
+    "tags":[
+        {
+            "name": "Bio",
+            "color": [0, 255, 0]
+        },
+        
+        {
+            "name": "Project",
+            "color": [255, 0, 255]
+        },
+        
+        {
+            "name": "Econ",
+            "color": [255, 255, 0]
+        },
+        
+        {
+            "name": "Homework",
+            "color": [0, 0, 0]
+        }
+        
+    ],
+   "reminders":[
+      {
+         "name":"Project due",
+         "tags":[
+            "Bio",
+            "Project"
+         ],
+         "created":"2023-03-27T23:55:07Z"
+      },
+      {
+         "name":"Look at the stock market (IDK I don't take econ)",
+         "tags":[
+            "Econ",
+            "Homework"
+         ],
+         "created":"2022-07-22T19:32:00Z"
+      }
+   ]
+}

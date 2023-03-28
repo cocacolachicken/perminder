@@ -11,14 +11,12 @@ struct ContentView: View {
     @EnvironmentObject var dat:DataManager
     
     var body: some View {
-        NavigationView {
-            
-        }.navigationTitle("I hate you! i love you!")
+        MainView()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @EnvironmentObject static var data:DataManager
+    @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
     static var previews: some View {
         ContentView().environmentObject(data)
