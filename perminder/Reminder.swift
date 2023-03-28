@@ -28,6 +28,7 @@ class Reminder: Identifiable {
         tags = tg
     }
     
+    // Used for decoding from JSON
     init (_ src:CodableReminder, _ tagDatabase:TagDatabase) {
         name = src.name
         created = src.created
@@ -62,8 +63,12 @@ class Reminder: Identifiable {
         return (finished != nil)
     }
     
+    public func getTags() -> [Tag] {
+        tags
+    }
+    
     #if DEBUG
-    static let example = Reminder(n:"Test case", c:Date(), d:nil, f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])])
+    static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])])
     #endif
 }
 

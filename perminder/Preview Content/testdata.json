@@ -2,12 +2,12 @@
     "tags":[
         {
             "name": "Bio",
-            "color": [0, 255, 0]
+            "color": [0, 180, 0]
         },
         
         {
             "name": "Project",
-            "color": [255, 0, 255]
+            "color": [180, 0, 180]
         },
         
         {

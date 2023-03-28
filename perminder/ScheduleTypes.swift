@@ -7,6 +7,7 @@
 
 import Foundation
 
+// One single schedule that repeats daily
 class Daily: Schedule {
     var days:[Day] = [Day()]
     
@@ -24,6 +25,7 @@ class Daily: Schedule {
     }
 }
 
+// Schedule that contrasts a schedule on the weekends with a schedule on the weekdays
 class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     
@@ -49,6 +51,7 @@ class BusinessDay: Schedule {
     }
 }
 
+// Schedule that runs a different day for every day of the week
 class MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
     

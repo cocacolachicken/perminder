@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Timeblock {
+struct Timeblock { // Represents a time (timeassigned) where a notification is wanted
     var timeAssigned:String
     var groups:[Tag]
 }

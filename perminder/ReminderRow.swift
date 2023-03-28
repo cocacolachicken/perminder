@@ -14,16 +14,16 @@ struct ReminderRow: View {
         HStack {
             VStack {
                 HStack{
-                    Text(remind.name)
+                    Text(remind.getName())
                         .font(.title2)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
                     Spacer()
                 }
                 HStack {
-                    ForEach(remind.tags) {tag in
-                        Text("#" + tag.name)
-                            .foregroundColor(Color(red:Double(tag.color.r)/255.0, green:Double(tag.color.g)/255.0, blue:Double(tag.color.b)/255.0))
+                    ForEach(remind.getTags()) {tag in
+                        Text("#" + tag.getName())
+                            .foregroundColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))
                     }
                     
                     Spacer()

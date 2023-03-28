@@ -8,7 +8,7 @@
 import Foundation
 
 extension Bundle {
-    func decode <T:Decodable> (file:String) -> T {
+    func decode <T:Decodable> (file:String) -> T { // Attempts to decode and map a JSON file onto <T>
         guard let url = self.url(forResource:file, withExtension: nil) else {
             fatalError("Could not find \(file)")
         }
@@ -28,7 +28,7 @@ extension Bundle {
         return loadedData
     }
     
-    func encode <T:Encodable> (encode:T) -> String {
+    func encode <T:Encodable> (encode:T) -> String { // Encodes an object into JSON
         let encoder = JSONEncoder()
         
         encoder.dateEncodingStrategy = .iso8601

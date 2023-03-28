@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TagDatabase {
+class TagDatabase { // Used to store and track all tags
     var tags:[String:Tag] = [:]
     var tagsAsAnArray:[Tag] = []
     
@@ -16,7 +16,7 @@ class TagDatabase {
     }
     
     func add (t:CodableTag) {
-        tags[t.name] = Tag(n:t.name, s:t.subject, c:t.color)
+        tags[t.name] = Tag(n:t.name, c:t.color)
         tagsAsAnArray.append(tags[t.name]!)
     }
 }

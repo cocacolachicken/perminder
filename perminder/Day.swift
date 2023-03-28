@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Day {
+class Day { // Represents a day composed of many timeblocks
     var blocks: [String:Timeblock] = [:] // Time:Timeblock
     
     subscript (index:String) -> Timeblock? {
