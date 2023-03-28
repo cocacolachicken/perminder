@@ -27,8 +27,16 @@ class Tag:Identifiable {
         color
     }
     
+    func setColor(colorSet:RGB) {
+        color = colorSet
+    }
+    
     func getName () -> String {
         name
+    }
+    
+    func setName(nameIn:String) {
+        name = nameIn
     }
     
     func getReminders() -> [Reminder] {
