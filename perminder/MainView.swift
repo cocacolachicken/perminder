@@ -9,20 +9,23 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var dat:DataManager
+    @State var search: String = ""
     
     var body: some View {
         NavigationView {
             List {
+                TextField("Enter in reminder...", text:$search)
+                
+                
                 Section ("Main"){
                 
                     ForEach(dat.reminders) { remind in
                         NavigationLink {
-                            ReminderView(remind:remind)
+                            ReminderView(remind:remind).padding()
                         } label: { ReminderRow(remind:remind)
                             
                         }
                     }
-                    
                 }
             }.navigationTitle("Home").listStyle(.grouped)
         }

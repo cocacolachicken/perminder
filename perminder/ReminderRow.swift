@@ -33,7 +33,7 @@ struct ReminderRow: View {
     }
 }
 
-struct ReminderRow_Preview: PreviewProvider {
+struct ReminderRow_Previews: PreviewProvider {
     static var previews: some View {
         ReminderRow(remind: Reminder.example)
     }

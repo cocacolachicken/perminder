@@ -16,6 +16,10 @@ class Tag:Identifiable {
         name = n
         color = RGB(red:c[0], green:c[1], blue:c[2])
     }
+    
+    #if DEBUG
+    static let example = Tag(n:"Example", c:[255, 0, 0])
+    #endif
 }
 
 class CodableTag: Codable {

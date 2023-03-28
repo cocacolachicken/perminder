@@ -12,7 +12,7 @@
         
         {
             "name": "Econ",
-            "color": [255, 255, 0]
+            "color": [180, 180, 0]
         },
         
         {
@@ -27,6 +27,14 @@
          "tags":[
             "Bio",
             "Project"
+         ],
+         "created":"2023-03-27T23:55:07Z"
+      },
+      {
+         "name":"Amoeba sisters",
+         "tags":[
+            "Bio",
+            "Homework"
          ],
          "created":"2023-03-27T23:55:07Z"
       },

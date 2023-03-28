@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var dat:DataManager
+    @StateObject var dat:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
     var body: some View {
-        MainView()
+        TabView {
+            MainView().tabItem {
+                Label("Reminders", systemImage:"house.fill")
+            }
+            SettingsView().tabItem {
+                Label("Reminders", systemImage:"gear")
+            }
+        }
     }
 }
 
