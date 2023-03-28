@@ -9,12 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var dat:DataManager
-    @State var search: String = ""
     
     var body: some View {
         NavigationView {
             List {
-                TextField("Enter in reminder...", text:$search)
                 
                 
                 Section ("Main"){
