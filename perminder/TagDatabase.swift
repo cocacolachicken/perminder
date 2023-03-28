@@ -16,7 +16,7 @@ class TagDatabase {
     }
     
     func add (t:CodableTag) {
-        tags[t.name] = Tag(n:t.name, c:t.color)
+        tags[t.name] = Tag(n:t.name, s:t.subject, c:t.color)
         tagsAsAnArray.append(tags[t.name]!)
     }
 }

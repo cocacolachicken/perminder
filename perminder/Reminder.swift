@@ -8,11 +8,11 @@
 import Foundation
 
 class Reminder: Identifiable {
-    var name:String
-    var created:Date
-    var due:Date?
-    var finished:Date?
-    var tags:[Tag] = []
+    private var name:String
+    private var created:Date
+    private var due:Date?
+    private var finished:Date?
+    private var tags:[Tag] = []
     
     
     init (n:String) {
@@ -38,27 +38,27 @@ class Reminder: Identifiable {
         }
     }
     
-    func setName(nameSet:String) {
+    public func setName(nameSet:String) {
         name = nameSet
     }
     
-    func getName() -> String {
+    public func getName() -> String {
         return name
     }
     
-    func getCreated() -> Date {
+    public func getCreated() -> Date {
         return created
     }
     
-    func setDue(dueSet:Date) {
+    public func setDue(dueSet:Date) {
         due = dueSet
     }
     
-    func getDue() -> Date? {
+    public func getDue() -> Date? {
         return due
     }
     
-    func isFinished() -> Bool {
+    public func isFinished() -> Bool {
         return (finished != nil)
     }
     
