@@ -8,21 +8,24 @@
 import Foundation
 
 class Tag:Identifiable {
-    var name:String
-    var reminders:[Reminder] = []
-    var color:RGB // Hex
+    private var name:String
+    private var subject:String
+    private var reminders:[Reminder] = []
+    private var color:RGB // Hex
     
-    init (n:String, c:[Int]) {
+    init (n:String, s:String, c:[Int]) {
         name = n
+        subject = s
         color = RGB(red:c[0], green:c[1], blue:c[2])
     }
     
-    #if DEBUG
-    static let example = Tag(n:"Example", c:[255, 0, 0])
+#if DEBUG
+    static let example = Tag(n:"Example", s:"Example", c:[255, 0, 0])
     #endif
 }
 
 class CodableTag: Codable {
     var name:String
+    var subject:String
     var color:[Int]
 }

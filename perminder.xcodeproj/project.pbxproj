@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
 		F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF229CFB8020000AEDF /* LinkedList.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		F95A4DF229CFB8020000AEDF /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				F9B3A75229D25819001D4616 /* RGB.swift */,
 				F98CCA7D29CA0FB500811FCF /* Reminder.swift */,
 				F98CCA7F29CA11B400811FCF /* Tag.swift */,
+				892411CE29D2787D002CD560 /* Notification.swift */,
 				F95A4DF029CFB4EF0000AEDF /* Options.swift */,
 				F98CCA8329CA225200811FCF /* Timeblock.swift */,
 				F98CCA8529CA225B00811FCF /* Day.swift */,
@@ -348,6 +351,7 @@
 				F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */,
 				F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */,
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
+				892411CF29D2787D002CD560 /* Notification.swift in Sources */,
 				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
