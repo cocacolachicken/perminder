@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import UserNotifications
 
-class Notification:Identifiable {
+class Notification {
     //There are no setters for title/body/date as it is assumed that they are set in Init and the notification is sent.
     private var title: String
     private var body: String
     private var date: Date
     private var isRead: Bool
+    
+    let center = UNUserNotificationCenter.current()
     
     init(titleIn:String, bodyIn:String, dateIn:Date, isReadIn:Bool=false) {
         title = titleIn
@@ -43,6 +46,21 @@ class Notification:Identifiable {
     
     public func isUnread() -> Bool {
         return !isRead
+    }
+    
+    public func requestPermission() {
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            
+            if let error = error {
+                
+            }
+            
+            // Enable or disable features based on the authorization.
+        }
+    }
+    
+    public func fireNotification() {
+        
     }
 }
 

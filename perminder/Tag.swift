@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Tag:Identifiable {
+class Tag {
     private var name:String
     private var reminders:[Reminder] = []
     private var color:RGB // Hex

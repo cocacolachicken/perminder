@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891D5C2C29D371BE00F1E740 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2A29D371BE00F1E740 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		891D5C2D29D371BE00F1E740 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */; };
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		891D5C2A29D371BE00F1E740 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891D5C2C29D371BE00F1E740 /* UserNotifications.framework in Frameworks */,
+				891D5C2D29D371BE00F1E740 /* UserNotificationsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		891D5C2929D371BE00F1E740 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				891D5C2A29D371BE00F1E740 /* UserNotifications.framework */,
+				891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F95A4DFA29CFF61C0000AEDF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +151,7 @@
 				F9B43BD829B9119000740FE5 /* perminderTests */,
 				F9B43BE229B9119000740FE5 /* perminderUITests */,
 				F9B43BC629B9118A00740FE5 /* Products */,
+				891D5C2929D371BE00F1E740 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
