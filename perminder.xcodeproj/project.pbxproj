@@ -17,7 +17,7 @@
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
 		F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFB29D134270000AEDF /* InputManager.swift */; };
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
-		F95A4E0029D137A40000AEDF /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
+		F96399B329D366A8002C3C19 /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
 		F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBA29D27E2A00038384 /* SettingsView.swift */; };
 		F98C3FBD29D27FFB00038384 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBC29D27FFB00038384 /* TagsView.swift */; };
 		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
@@ -26,6 +26,8 @@
 		F98CCA8429CA225200811FCF /* Timeblock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA8329CA225200811FCF /* Timeblock.swift */; };
 		F98CCA8629CA225B00811FCF /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA8529CA225B00811FCF /* Day.swift */; };
 		F98CCA8829CA283900811FCF /* TagDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA8729CA283900811FCF /* TagDatabase.swift */; };
+		F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E036729D349A500A0609A /* AddReminderBar.swift */; };
+		F98E036A29D3515600A0609A /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E036929D3515600A0609A /* Checkbox.swift */; };
 		F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3A75029D24947001D4616 /* ReminderRow.swift */; };
 		F9B3A75329D25819001D4616 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3A75229D25819001D4616 /* RGB.swift */; };
 		F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3A75429D25D5F001D4616 /* ReminderView.swift */; };
@@ -77,6 +79,8 @@
 		F98CCA8329CA225200811FCF /* Timeblock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeblock.swift; sourceTree = "<group>"; };
 		F98CCA8529CA225B00811FCF /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		F98CCA8729CA283900811FCF /* TagDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDatabase.swift; sourceTree = "<group>"; };
+		F98E036729D349A500A0609A /* AddReminderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderBar.swift; sourceTree = "<group>"; };
+		F98E036929D3515600A0609A /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		F9B3A75029D24947001D4616 /* ReminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRow.swift; sourceTree = "<group>"; };
 		F9B3A75229D25819001D4616 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
 		F9B3A75429D25D5F001D4616 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -136,7 +140,9 @@
 				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
 				F98C3FBC29D27FFB00038384 /* TagsView.swift */,
 				F9B3A75629D25E0B001D4616 /* MainView.swift */,
+				F98E036729D349A500A0609A /* AddReminderBar.swift */,
 				F9B3A75029D24947001D4616 /* ReminderRow.swift */,
+				F98E036929D3515600A0609A /* Checkbox.swift */,
 				F98C3FBA29D27E2A00038384 /* SettingsView.swift */,
 				F9B3A75429D25D5F001D4616 /* ReminderView.swift */,
 				F9B3A75A29D2634C001D4616 /* TestUI.swift */,
@@ -323,7 +329,7 @@
 			files = (
 				F9B43BD029B9118F00740FE5 /* Preview Assets.xcassets in Resources */,
 				F9B43BCD29B9118F00740FE5 /* Assets.xcassets in Resources */,
-				F95A4E0029D137A40000AEDF /* testdata.json in Resources */,
+				F96399B329D366A8002C3C19 /* testdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +363,7 @@
 				F9B3A75729D25E0B001D4616 /* MainView.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
 				F95A4DF529CFB8110000AEDF /* Node.swift in Sources */,
+				F98E036A29D3515600A0609A /* Checkbox.swift in Sources */,
 				F98C3FBD29D27FFB00038384 /* TagsView.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
 				F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */,
@@ -367,6 +374,7 @@
 				F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */,
 				F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */,
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
+				F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */,
 				892411CF29D2787D002CD560 /* Notification.swift in Sources */,
 				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,
@@ -457,6 +465,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -511,6 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -532,6 +543,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=*]" = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -560,6 +572,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=*]" = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

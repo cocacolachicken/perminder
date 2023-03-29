@@ -12,6 +12,8 @@ struct ReminderRow: View {
     
     var body: some View {
         HStack {
+            
+            
             VStack {
                 HStack{
                     Text(remind.getName())
@@ -29,6 +31,8 @@ struct ReminderRow: View {
                     Spacer()
                 }
             }
+            
+            
         }
     }
 }
