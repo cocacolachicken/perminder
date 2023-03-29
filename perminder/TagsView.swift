@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TagsView: View {
+    @EnvironmentObject var dat:DataManager
+    
     var tag:Tag
     
     init(tag:Tag) {
@@ -20,7 +22,7 @@ struct TagsView: View {
             List {
                 Section ("Reminders in \(tag.getName())") {
                     ForEach(tag.getReminders()) { remind in
-                        ReminderRow(remind:remind)
+                        ReminderRow(remindID:remind.id, toggle: dat.completeness[remind.id]!).environmentObject(dat)
                     }
                 }
             }
@@ -29,9 +31,12 @@ struct TagsView: View {
 }
 
 struct TagsView_Previews: PreviewProvider {
+    @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
+    
+    
     static var previews: some View {
         NavigationStack {
-            TagsView(tag:Tag.example)
+            TagsView(tag:Tag.example).environmentObject(data)
             
         }
     }

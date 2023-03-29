@@ -49,8 +49,8 @@ class Tag:Identifiable {
     
     #if DEBUG
     static let example = Tag(n:"Example", c:[255, 0, 0], r:[
-        Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"Example", c:[255, 0, 0])]),
-        Reminder(n:"Test2", c:Date(), d:nil, f:nil, tg:[Tag(n:"Example", c:[255, 0, 0]), Tag(n:"Ex", c:[180, 180, 0])])
+        Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"Example", c:[255, 0, 0])], i:0),
+        Reminder(n:"Test2", c:Date(), d:nil, f:nil, tg:[Tag(n:"Example", c:[255, 0, 0]), Tag(n:"Ex", c:[180, 180, 0])], i:1)
     ])
     #endif
 }

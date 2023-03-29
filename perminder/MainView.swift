@@ -19,8 +19,8 @@ struct MainView: View {
                 
                     ForEach(dat.reminders) { remind in
                         NavigationLink {
-                            ReminderView(remind:remind).padding()
-                        } label: { ReminderRow(remind:remind)
+                            ReminderView(id:remind.id).environmentObject(dat).padding()
+                        } label: { ReminderRow( remindID:remind.id, toggle: dat.completeness[remind.id]!).environmentObject(dat)
                             
                         }
                     }

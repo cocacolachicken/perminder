@@ -21,6 +21,7 @@
         }
         
     ],
+    "currentTagID": 3,
    "reminders":[
       {
          "name":"Project due",
@@ -28,15 +29,17 @@
             "Bio",
             "Project"
          ],
-         "created":"2023-03-27T23:55:07Z"
+         "created":"2023-03-27T23:55:07Z",
+         "id":0
       },
       {
-         "name":"Amoeba sisters",
+         "name":"Amoeba sisters video (i'm so sick of the girls)",
          "tags":[
             "Bio",
             "Homework"
          ],
-         "created":"2023-03-27T23:55:07Z"
+         "created":"2023-03-27T23:55:07Z",
+         "id":1
       },
       {
          "name":"Look at the stock market (IDK I don't take econ)",
@@ -44,7 +47,8 @@
             "Econ",
             "Homework"
          ],
-         "created":"2022-07-22T19:32:00Z"
+         "created":"2022-07-22T19:32:00Z",
+         "id":2
       }
    ]
 }

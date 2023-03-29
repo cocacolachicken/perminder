@@ -8,18 +8,41 @@
 import SwiftUI
 
 struct ReminderRow: View {
-    var remind:Reminder
+    @EnvironmentObject var dat:DataManager
+    var remindID:Int
+    @State var toggle:Bool
+    
     
     var body: some View {
+        let remind:Reminder = dat.reminderByID[remindID]!
+        
+        
         HStack {
             
+            VStack {
+            
+                Checkbox(b: $toggle, size:20, funct: {
+                    if toggle {
+                        self.dat.markFinished(id:remindID)
+                        dat.completeness[remindID]! = true;
+                    } else {
+                        self.dat.markIncomplete(id:remindID)
+                        dat.completeness[remindID]! = false;
+                    }
+                    
+                    
+                }).padding(.top)
+                
+                Spacer()
+                
+            }
             
             VStack {
                 HStack{
                     Text(remind.getName())
                         .font(.title2)
                         .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.leading).lineLimit(1)
                     Spacer()
                 }
                 HStack {
@@ -38,7 +61,9 @@ struct ReminderRow: View {
 }
 
 struct ReminderRow_Previews: PreviewProvider {
+    @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
+    
     static var previews: some View {
-        ReminderRow(remind: Reminder.example)
+        ReminderRow(remindID:0, toggle:false).environmentObject(data)
     }
 }
