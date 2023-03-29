@@ -8,7 +8,7 @@
 import Foundation
 import UserNotifications
 
-class Notification {
+class Notification:Identifiable {
     //There are no setters for title/body/date as it is assumed that they are set in Init and the notification is sent.
     private var title: String
     private var body: String

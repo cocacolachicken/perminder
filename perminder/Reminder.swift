@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Reminder: Identifiable {
+class Reminder:Identifiable {
     private var name:String
     private var created:Date
     private var due:Date?
