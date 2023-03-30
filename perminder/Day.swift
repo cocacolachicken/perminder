@@ -24,6 +24,6 @@ class Day { // Represents a day composed of many timeblocks
 }
 
 class CodableDay: Codable {
-    var blocks: [String:CodableTimeblock]
-    var times: [String] = []
+    var blocks: [[String]]
+    var times: [String]
 }

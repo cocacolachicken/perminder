@@ -10,7 +10,7 @@ import Foundation
 // One single schedule that repeats daily
 class Daily: Schedule {
     var days:[Day] = [Day()]
-    var type:String = "Daily"
+    var type:String = "daily"
     
     subscript (index:String) -> Day {
         get {
@@ -31,7 +31,7 @@ class Daily: Schedule {
 // Schedule that contrasts a schedule on the weekends with a schedule on the weekdays
 class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
-    var type:String = "BusinessDay"
+    var type:String = "businessday"
     
     subscript (index:String) -> Day {
         get {
@@ -55,7 +55,7 @@ class BusinessDay: Schedule {
 // Schedule that runs a different day for every day of the week
 class MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
-    var type:String = "Weekday"
+    var type:String = "weekday"
     
     subscript (index:String) -> Day {
         get {

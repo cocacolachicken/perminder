@@ -19,6 +19,5 @@ struct Timeblock { // Represents a time (timeassigned) where a notification is w
 }
 
 struct CodableTimeblock: Codable {
-    var timeAssigned:String
     var groups:[CodableTag]
 }
