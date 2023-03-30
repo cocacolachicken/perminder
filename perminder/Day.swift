@@ -9,6 +9,7 @@ import Foundation
 
 class Day { // Represents a day composed of many timeblocks
     var blocks: [String:Timeblock] = [:] // Time:Timeblock
+    var times: [String] = []
     
     subscript (index:String) -> Timeblock? {
         get {
@@ -19,4 +20,8 @@ class Day { // Represents a day composed of many timeblocks
             blocks[index] = newValue
         }
     }
+}
+
+class CodableDay: Codable {
+    var blocks: [String:[String]]
 }

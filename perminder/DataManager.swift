@@ -45,4 +45,5 @@ class CodableDataManager: Codable {
     var tags:[CodableTag]
     var currentTagID:Int
     var reminders:[CodableReminder]
+    var options:CodableOptions
 }

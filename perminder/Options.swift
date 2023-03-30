@@ -10,3 +10,7 @@ import Foundation
 class Options {
     var sc:Schedule?
 }
+
+class CodableOptions:Codable {
+    var sc:CodableSchedule?
+}
