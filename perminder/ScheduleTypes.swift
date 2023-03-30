@@ -12,15 +12,19 @@ class Daily: Schedule {
     var days:[Day] = [Day()]
     var type:String = "Daily"
     
-    subscript (index:Date) -> Day {
+    subscript (index:String) -> Day {
         get {
             
             return (days[0])
         }
     }
     
-    func modify (index:Int, t:Timeblock) {
-        days[0][t.timeAssigned] = t
+    func modify (day:Int, index:Int, t:Timeblock) {
+        days[0].times[index] = t
+    }
+    
+    func append (day: Int, t:String) {
+        days[0].times.append(Timeblock(tA:t))
     }
 }
 
@@ -29,25 +33,22 @@ class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     var type:String = "BusinessDay"
     
-    subscript (index:Date) -> Timeblock? {
+    subscript (index:String) -> Day {
         get {
-            let d = DateFormatter()
-            d.dateFormat = "EEEE"
-            
-            let day = d.string(from:index)
-            
-            d.dateFormat = "HHmm"
-            
-            switch day {
-                case "Sunday", "Saturday": return days[0][d.string(from:index)]
+            switch index {
+                case "Sunday", "Saturday": return days[0]
                 
-                default: return days[1][d.string(from:index)]
+                default: return days[1]
             }
         }
     }
     
-    func modify (index:Int, t:Timeblock) {
-        days[index][t.timeAssigned] = t
+    func modify (day:Int, index:Int, t:Timeblock) {
+        days[day].times[index] = t
+    }
+    
+    func append (day: Int, t:String) {
+        days[day].times.append(Timeblock(tA:t))
     }
 }
 
@@ -56,30 +57,27 @@ class MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
     var type:String = "Weekday"
     
-    subscript (index:Date) -> Timeblock? {
+    subscript (index:String) -> Day {
         get {
-            let d = DateFormatter()
-            d.dateFormat = "EEEE"
-            
-            let day = d.string(from:index)
-            
-            d.dateFormat = "HHmm"
-            
-            switch day {
-                case "Sunday": return days[0][d.string(from:index)]
-                case "Monday": return days[1][d.string(from:index)]
-                case "Tuesday": return days[2][d.string(from:index)]
-                case "Wednesday": return days[3][d.string(from:index)]
-                case "Thursday": return days[4][d.string(from:index)]
-                case "Friday": return days[5][d.string(from:index)]
-                case "Saturday": return days[6][d.string(from:index)]
+            switch index {
+                case "Sunday": return days[0]
+                case "Monday": return days[1]
+                case "Tuesday": return days[2]
+                case "Wednesday": return days[3]
+                case "Thursday": return days[4]
+                case "Friday": return days[5]
+                case "Saturday": return days[6]
                     
-                default: return days[6][d.string(from:index)] // Pacifies the compiler
+                default: return days[6] // Pacifies compiler
             }
         }
     }
     
-    func modify (index:Int, t:Timeblock) {
-        days[index][t.timeAssigned] = t
+    func modify (day: Int, index:Int, t:Timeblock) {
+        days[day].times[index] = t
+    }
+    
+    func append (day: Int, t:String) {
+        days[day].times.append(Timeblock(tA:t))
     }
 }

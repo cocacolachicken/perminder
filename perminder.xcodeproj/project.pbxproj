@@ -12,8 +12,6 @@
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
-		F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF229CFB8020000AEDF /* LinkedList.swift */; };
-		F95A4DF529CFB8110000AEDF /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF429CFB8110000AEDF /* Node.swift */; };
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
 		F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFB29D134270000AEDF /* InputManager.swift */; };
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
@@ -66,8 +64,6 @@
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		F95A4DF229CFB8020000AEDF /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		F95A4DF429CFB8110000AEDF /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
 		F95A4DFB29D134270000AEDF /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		F95A4DFD29D1358F0000AEDF /* Supporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
@@ -194,8 +190,6 @@
 				F98CCA8729CA283900811FCF /* TagDatabase.swift */,
 				F98CCA8129CA161C00811FCF /* Schedule.swift */,
 				F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */,
-				F95A4DF229CFB8020000AEDF /* LinkedList.swift */,
-				F95A4DF429CFB8110000AEDF /* Node.swift */,
 			);
 			path = perminder;
 			sourceTree = "<group>";
@@ -366,7 +360,6 @@
 				F9B3A75B29D2634C001D4616 /* TestUI.swift in Sources */,
 				F9B3A75729D25E0B001D4616 /* MainView.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
-				F95A4DF529CFB8110000AEDF /* Node.swift in Sources */,
 				F98E036A29D3515600A0609A /* Checkbox.swift in Sources */,
 				F98C3FBD29D27FFB00038384 /* TagsView.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
@@ -376,7 +369,6 @@
 				F98CCA8429CA225200811FCF /* Timeblock.swift in Sources */,
 				F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */,
 				F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */,
-				F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */,
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
 				F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */,
 				892411CF29D2787D002CD560 /* Notification.swift in Sources */,
