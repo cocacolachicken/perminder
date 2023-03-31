@@ -9,23 +9,28 @@ import Foundation
 
 class Reminder:Identifiable {
     private var name:String
+    private static var nextID:Int = 0
     private var created:Date
     private var due:Date?
     private var finished:Date?
     private var tags:[Tag] = []
+    var id:Int
     
     
     init (n:String) {
         name = n
         created = Date()
+        id = Reminder.nextID
+        Reminder.incrementID()
     }
     
-    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag]) {
+    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag], i:Int) {
         name = n
         created = c
         due = d
         finished = f
         tags = tg
+        id = i
     }
     
     // Used for decoding from JSON
@@ -34,6 +39,7 @@ class Reminder:Identifiable {
         created = src.created
         due = src.due
         finished = src.finished
+        id = src.id
         for tag in src.tags {
             tags.append(tagDatabase[tag])
         }
@@ -55,6 +61,18 @@ class Reminder:Identifiable {
         due = dueSet
     }
     
+    public func markFinished () {
+        finished = Date()
+    }
+    
+    public func markIncomplete () {
+        finished = nil
+    }
+    
+    public func getFinished () -> Date? {
+        finished
+    }
+    
     public func getDue() -> Date? {
         return due
     }
@@ -67,13 +85,22 @@ class Reminder:Identifiable {
         tags
     }
     
+    public static func incrementID() {
+        nextID += 1
+    }
+    
+    public static func setID (id:Int) {
+        nextID = id
+    }
+    
     #if DEBUG
-    static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])])
+    static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])], i:0)
     #endif
 }
 
 class CodableReminder: Codable {
     var name:String
+    var id:Int
     var created:Date
     var due:Date?
     var finished:Date?

@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ReminderView: View {
-    var remind:Reminder
+    @EnvironmentObject var dat:DataManager
+    var id:Int
     
     var body: some View {
+        let remind:Reminder = dat.reminderByID[id]!
         
         VStack {
             HStack {
                 Text(remind.getName()).font(.title).fontWeight(.semibold)
+                Spacer()
+            }
+            
+            HStack {
+                
+                if dat.completeness[id]! {
+                    Text("Finished \(formatDate(date:remind.getFinished()!))")
+                        
+                } else {
+                    Text("Not finished")
+                }
                 Spacer()
             }
             
@@ -53,9 +66,11 @@ struct ReminderView: View {
 }
 
 struct ReminderView_Previews: PreviewProvider {
+    @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
+    
     static var previews: some View {
         NavigationStack {
-            ReminderView(remind:Reminder.example)
+            ReminderView(id:0).environmentObject(data)
         }.padding()
     }
 }

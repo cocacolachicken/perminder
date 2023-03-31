@@ -12,12 +12,11 @@
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
-		F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF229CFB8020000AEDF /* LinkedList.swift */; };
-		F95A4DF529CFB8110000AEDF /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF429CFB8110000AEDF /* Node.swift */; };
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
 		F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFB29D134270000AEDF /* InputManager.swift */; };
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
 		F96399B329D366A8002C3C19 /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
+		F96399B729D3D1D4002C3C19 /* sav.json in Resources */ = {isa = PBXBuildFile; fileRef = F96399B629D3D1D4002C3C19 /* sav.json */; };
 		F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBA29D27E2A00038384 /* SettingsView.swift */; };
 		F98C3FBD29D27FFB00038384 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBC29D27FFB00038384 /* TagsView.swift */; };
 		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
@@ -65,12 +64,11 @@
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		F95A4DF229CFB8020000AEDF /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		F95A4DF429CFB8110000AEDF /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
 		F95A4DFB29D134270000AEDF /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		F95A4DFD29D1358F0000AEDF /* Supporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
 		F95A4DFF29D137A40000AEDF /* testdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testdata.json; sourceTree = "<group>"; };
+		F96399B629D3D1D4002C3C19 /* sav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sav.json; sourceTree = "<group>"; };
 		F98C3FBA29D27E2A00038384 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F98C3FBC29D27FFB00038384 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		F98CCA7D29CA0FB500811FCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -178,9 +176,10 @@
 				F9B43BC829B9118A00740FE5 /* perminderApp.swift */,
 				F95A4DFB29D134270000AEDF /* InputManager.swift */,
 				F95A4DFD29D1358F0000AEDF /* Supporting.swift */,
+				F96399B629D3D1D4002C3C19 /* sav.json */,
+				F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */,
 				F9B43BCC29B9118F00740FE5 /* Assets.xcassets */,
 				F9B43BCE29B9118F00740FE5 /* Preview Content */,
-				F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */,
 				F9B3A75229D25819001D4616 /* RGB.swift */,
 				F98CCA7D29CA0FB500811FCF /* Reminder.swift */,
 				F98CCA7F29CA11B400811FCF /* Tag.swift */,
@@ -191,8 +190,6 @@
 				F98CCA8729CA283900811FCF /* TagDatabase.swift */,
 				F98CCA8129CA161C00811FCF /* Schedule.swift */,
 				F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */,
-				F95A4DF229CFB8020000AEDF /* LinkedList.swift */,
-				F95A4DF429CFB8110000AEDF /* Node.swift */,
 			);
 			path = perminder;
 			sourceTree = "<group>";
@@ -329,6 +326,7 @@
 			files = (
 				F9B43BD029B9118F00740FE5 /* Preview Assets.xcassets in Resources */,
 				F9B43BCD29B9118F00740FE5 /* Assets.xcassets in Resources */,
+				F96399B729D3D1D4002C3C19 /* sav.json in Resources */,
 				F96399B329D366A8002C3C19 /* testdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +360,6 @@
 				F9B3A75B29D2634C001D4616 /* TestUI.swift in Sources */,
 				F9B3A75729D25E0B001D4616 /* MainView.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
-				F95A4DF529CFB8110000AEDF /* Node.swift in Sources */,
 				F98E036A29D3515600A0609A /* Checkbox.swift in Sources */,
 				F98C3FBD29D27FFB00038384 /* TagsView.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
@@ -372,7 +369,6 @@
 				F98CCA8429CA225200811FCF /* Timeblock.swift in Sources */,
 				F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */,
 				F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */,
-				F95A4DF329CFB8020000AEDF /* LinkedList.swift in Sources */,
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
 				F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */,
 				892411CF29D2787D002CD560 /* Notification.swift in Sources */,

@@ -8,15 +8,31 @@
 import Foundation
 
 class Day { // Represents a day composed of many timeblocks
-    var blocks: [String:Timeblock] = [:] // Time:Timeblock
+    var times: [Timeblock] = []
     
-    subscript (index:String) -> Timeblock? {
-        get {
-            blocks[index]
-        }
-        
-        set {
-            blocks[index] = newValue
+    func getTimes () -> [Timeblock] {
+        times
+    }
+    
+    func deleteTime (index:Int) {
+        times.remove(at:index)
+    }
+    
+    func addTimeBlock (time:String) {
+        times.append(Timeblock(tA:time))
+    }
+    
+    init (d:CodableDay, tagDB:TagDatabase) {
+        for day in d.blocks {
+            times.append(Timeblock(tA: day.time, tags: day.tags, tagDB:tagDB))
         }
     }
+    
+    init () {
+        times = []
+    }
+}
+
+class CodableDay: Codable {
+    var blocks: [CodableTimeblock]
 }
