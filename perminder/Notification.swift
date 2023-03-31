@@ -10,17 +10,22 @@ import UserNotifications
 
 class Notification:Identifiable {
     //There are no setters for title/body/date as it is assumed that they are set in Init and the notification is sent.
+    private var reminderIdentifier: String //give name of reminder so that notification center can keep track of which ones are queued
     private var title: String
     private var body: String
-    private var date: Date
+    private var day: String //unused as of now - 
+    private var time: String //4-number string to indicate military time
     private var isRead: Bool
+    private var center: UNUserNotificationCenter
     
-    
-    init(titleIn:String, bodyIn:String, dateIn:Date, isReadIn:Bool=false) {
+    init(Identifier:String, titleIn:String, bodyIn:String, dayIn:String, timeIn:String, centerIn:UNUserNotificationCenter) {
+        reminderIdentifier = Identifier
         title = titleIn
         body = bodyIn
-        date = dateIn
-        isRead = isReadIn
+        day = dayIn
+        time = timeIn
+        isRead = false
+        center = centerIn
     }
     
     public func getTitle() -> String {
@@ -31,8 +36,12 @@ class Notification:Identifiable {
         return body
     }
     
-    public func getDate() -> Date {
-        return date
+    public func getDay() -> String {
+        return day
+    }
+    
+    public func getTime() -> String {
+        return time
     }
     
     public func markAsRead() {
@@ -71,12 +80,11 @@ class Notification:Identifiable {
      */
     public func checkPermission() -> Bool {
         var isAllow = false
-        let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { Settings in
             switch Settings.authorizationStatus {
             case .authorized: isAllow = true; self.fireNotification()
             case .denied: isAllow = false
-            case .notDetermined: center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            case .notDetermined: self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                     if granted {
                         isAllow = true
                         self.fireNotification()
@@ -94,13 +102,23 @@ class Notification:Identifiable {
      */
     public func fireNotification() {
         let identifier = "test-notification"
-        let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = .default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false) //magic values 1 second and false repeat as placeholders
+        let hourString = time.dropLast(2)
+        let hour = Int(hourString) ?? 0
+        
+        let minuteString = time.dropFirst(2)
+        let minute = Int(minuteString) ?? 0
+        
+        var date = DateComponents()
+        date.hour = hour
+        date.minute = minute
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        
+        // UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false) //magic values 1 second and false repeat as placeholders
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         center.removePendingNotificationRequests(withIdentifiers: [identifier])
@@ -109,8 +127,10 @@ class Notification:Identifiable {
 }
 
 class CodableNotification:Codable {
+    var reminderIdentifier: String //give name of reminder so that notification center can keep track of which ones are queued
     var title: String
     var body: String
-    var date: Date
+    var day: String
+    var time: String
     var isRead: Bool
 }
