@@ -7,7 +7,15 @@
 
 import Foundation
 
-class Reminder:Identifiable {
+class Reminder:Identifiable, Hashable {
+    static func == (lhs: Reminder, rhs: Reminder) -> Bool {
+        ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
+    func hash (into hasher: inout Hasher) {
+        hasher.combine( ObjectIdentifier(self).hashValue)
+    }
+    
     private var name:String
     private static var nextID:Int = 0
     private var created:Date
@@ -53,6 +61,10 @@ class Reminder:Identifiable {
         return name
     }
     
+    public func changeName (str:String) {
+        name = str
+    }
+    
     public func getCreated() -> Date {
         return created
     }
@@ -93,16 +105,43 @@ class Reminder:Identifiable {
         nextID = id
     }
     
+    public static func getNextID () -> Int {
+        nextID
+    }
+    
     #if DEBUG
     static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])], i:0)
     #endif
 }
 
 class CodableReminder: Codable {
+    init(name: String, id: Int, created: Date, due: Date? = nil, finished: Date? = nil, tags: [String] = []) {
+        self.name = name
+        self.id = id
+        self.created = created
+        self.due = due
+        self.finished = finished
+        self.tags = tags
+    }
+    
     var name:String
     var id:Int
     var created:Date
     var due:Date?
     var finished:Date?
-    var tags:[String]
+    var tags:[String] = []
+    
+    init (r:Reminder) {
+        name = r.getName()
+        id = r.id
+        created = r.getCreated()
+        due = r.getDue()
+        finished = r.getFinished()
+        
+        for tag in r.getTags() {
+            tags.append(tag.getName())
+        }
+    }
+    
+    
 }

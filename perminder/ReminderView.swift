@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ReminderView: View {
     @EnvironmentObject var dat:DataManager
+    @State var title:String
     var id:Int
     
     var body: some View {
@@ -16,7 +18,14 @@ struct ReminderView: View {
         
         VStack {
             HStack {
-                Text(remind.getName()).font(.title).fontWeight(.semibold)
+                TextField(
+                    "",
+                    text:$title
+                ).onChange(of:title){ newVal in
+                    remind.changeName(str:newVal)
+                    self.dat.objectWillChange.send()
+                }.fontWeight(.semibold).font(.title)
+                
                 Spacer()
             }
             
@@ -59,6 +68,11 @@ struct ReminderView: View {
                 }
                 Spacer()
             }
+            
+            HStack {
+                Text(String(remind.id))
+                Spacer()
+            }
                 
             Spacer()
         }.navigationTitle(remind.getName()).navigationBarTitleDisplayMode(.inline)
@@ -70,7 +84,7 @@ struct ReminderView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
-            ReminderView(id:0).environmentObject(data)
+            ReminderView(title:data.reminderByID[0]!.getName(), id:0).environmentObject(data)
         }.padding()
     }
 }

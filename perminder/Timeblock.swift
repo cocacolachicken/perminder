@@ -9,16 +9,16 @@ import Foundation
 
 struct Timeblock { // Represents a time (timeassigned) where a notification is wanted
     var timeAssigned:String
-    var groups:[Tag] = []
+    var groups:[String] = []
     
     init (tA:String) {
         timeAssigned = tA
     }
     
-    init (tA:String, tags:[String], tagDB:TagDatabase) {
+    init (tA:String, tags:[String]) {
         timeAssigned = tA
         for tag in tags {
-            groups.append(tagDB[tag])
+            groups.append(tag)
         }
     }
     
@@ -26,6 +26,18 @@ struct Timeblock { // Represents a time (timeassigned) where a notification is w
 }
 
 struct CodableTimeblock: Codable {
-    var tags:[String]
+    init(tags: [String] = [], time: String) {
+        self.tags = tags
+        self.time = time
+    }
+    
+    var tags:[String] = []
     var time:String
+    
+    init (tbl:Timeblock) {
+        time = tbl.timeAssigned
+        for group in tbl.groups {
+            tags.append(group)
+        }
+    }
 }

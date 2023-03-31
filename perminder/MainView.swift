@@ -10,23 +10,33 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var dat:DataManager
     
+    
     var body: some View {
         NavigationView {
             List {
                 
+                AddReminderBar().environmentObject(dat)
                 
                 Section ("Main"){
                 
                     ForEach(dat.reminders) { remind in
                         NavigationLink {
-                            ReminderView(id:remind.id).environmentObject(dat).padding()
+                            ReminderView(title:remind.getName(), id:remind.id).environmentObject(dat).padding()
                         } label: { ReminderRow( remindID:remind.id, toggle: dat.completeness[remind.id]!).environmentObject(dat)
                             
                         }
-                    }
+                    }.onDelete (perform: removeReminder)
                 }
+                
+                
+            }.toolbar {
+                EditButton()
             }.navigationTitle("Home").listStyle(.grouped)
         }
+    }
+    
+    func removeReminder (at offsets: IndexSet) {
+        dat.reminders.remove(atOffsets: offsets)
     }
 }
 

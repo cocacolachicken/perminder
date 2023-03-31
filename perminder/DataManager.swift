@@ -32,10 +32,10 @@ class DataManager: ObservableObject {
         }
         
         Reminder.setID(id:src.currentTagID)
+        opt = Options(src: src.options)
     }
     
     func initializeOptions () {
-        opt = Options(src: src.options, tagDB: tags)
     }
     
     
@@ -47,11 +47,42 @@ class DataManager: ObservableObject {
     func markIncomplete (id: Int) {
         reminderByID[id]!.markIncomplete()
     }
+    
+    func getCodableVersion () -> CodableDataManager {
+        return CodableDataManager(tags: tags.tagsAsAnArray, reminders:reminders, options:opt)
+    }
+    
+    func addReminder (n:String) {
+        reminders.append(Reminder(n:n))
+        reminderByID[reminders[reminders.count-1].id] = reminders[reminders.count-1]
+        completeness[reminders[reminders.count-1].id] = false
+    }
 }
 
 class CodableDataManager: Codable {
-    var tags:[CodableTag]
+    init(tags: [CodableTag] = [], currentTagID: Int, reminders: [CodableReminder] = [], options: CodableOptions) {
+        self.tags = tags
+        self.currentTagID = currentTagID
+        self.reminders = reminders
+        self.options = options
+    }
+    
+    var tags:[CodableTag] = []
     var currentTagID:Int
-    var reminders:[CodableReminder]
+    var reminders:[CodableReminder] = []
     var options:CodableOptions
+    
+    init (tags uTags:[Tag], reminders uReminders:[Reminder], options uOptions:Options) {
+        currentTagID = Reminder.getNextID()
+        for tag in uTags {
+            tags.append(CodableTag(t:tag))
+        }
+        
+        for reminder in uReminders {
+            reminders.append(CodableReminder(r:reminder))
+        }
+        
+        options = CodableOptions (opt:uOptions)
+        
+    }
 }

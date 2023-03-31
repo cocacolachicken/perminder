@@ -22,9 +22,9 @@ class Day { // Represents a day composed of many timeblocks
         times.append(Timeblock(tA:time))
     }
     
-    init (d:CodableDay, tagDB:TagDatabase) {
+    init (d:CodableDay) {
         for day in d.blocks {
-            times.append(Timeblock(tA: day.time, tags: day.tags, tagDB:tagDB))
+            times.append(Timeblock(tA: day.time, tags: day.tags))
         }
     }
     
@@ -34,5 +34,15 @@ class Day { // Represents a day composed of many timeblocks
 }
 
 class CodableDay: Codable {
-    var blocks: [CodableTimeblock]
+    init(blocks: [CodableTimeblock] = []) {
+        self.blocks = blocks
+    }
+    
+    var blocks: [CodableTimeblock] = []
+    
+    init (d:Day) {
+        for timeblock in d.getTimes () {
+            blocks.append(CodableTimeblock(tbl:timeblock))
+        }
+    }
 }

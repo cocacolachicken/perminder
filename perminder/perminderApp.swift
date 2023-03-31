@@ -15,8 +15,6 @@ struct perminderApp: App {
         WindowGroup {
             ContentView().environmentObject(dat)
         }
-        
-        
     }
 }
 

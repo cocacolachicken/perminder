@@ -21,6 +21,31 @@ protocol Schedule {
 }
 
 class CodableSchedule:Codable {
+    init(days: [CodableDay], type: String) {
+        self.days = days
+        self.type = type
+    }
+    
     var days:[CodableDay]
     var type:String
+    
+    init (ds:[CodableDay], t:String) {
+        self.days = ds
+        self.type = t
+    }
+    
+    static func getCodableSchedule (sch:Schedule?) -> CodableSchedule? {
+        if sch == nil {
+            return nil
+        } else {
+            var ds = [CodableDay]()
+            let t = sch!.type
+            for day in sch!.days {
+                ds.append(CodableDay(d:day))
+            }
+            
+            
+            return CodableSchedule(ds: ds, t: t)
+        }
+    }
 }

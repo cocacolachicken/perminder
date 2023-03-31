@@ -56,6 +56,16 @@ class Tag:Identifiable {
 }
 
 class CodableTag: Codable {
+    init(name: String, color: [Int]) {
+        self.name = name
+        self.color = color
+    }
+    
     var name:String
     var color:[Int]
+    
+    init (t:Tag) {
+        name = t.getName()
+        color = t.getColor().toArray()
+    }
 }

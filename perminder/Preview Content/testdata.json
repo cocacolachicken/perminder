@@ -49,6 +49,13 @@
          ],
          "created":"2022-07-22T19:32:00Z",
          "id":2
+      },
+      {
+         "name":"Run to the supermarket and get some bananas",
+         "tags":[
+         ],
+         "created":"2022-07-22T19:32:00Z",
+         "id":3
       }
    ],
    "options": {
@@ -60,7 +67,7 @@
                            "tags":[
                                "Homework", "Econ"
                            ],
-                           "time": ""
+                           "time": "0000"
                        }
                    ]
                }

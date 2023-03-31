@@ -30,6 +30,8 @@ struct ReminderRow: View {
                         dat.completeness[remindID]! = false;
                     }
                     
+                    dat.objectWillChange.send()
+                    
                     
                 }).padding(.top)
                 
@@ -51,6 +53,10 @@ struct ReminderRow: View {
                             .foregroundColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))
                     }
                     
+                    if remind.getTags().count == 0 {
+                        Text("")
+                    }
+                    
                     Spacer()
                 }
             }
@@ -64,6 +70,10 @@ struct ReminderRow_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
     static var previews: some View {
-        ReminderRow(remindID:0, toggle:false).environmentObject(data)
+        List {
+            ReminderRow(remindID:0, toggle:false).environmentObject(data)
+            
+                ReminderRow(remindID:3, toggle:false).environmentObject(data)
+        }
     }
 }

@@ -9,7 +9,18 @@ import SwiftUI
 
 struct TestUI: View {
     var body: some View {
-        Text(Bundle.main.encode(encode:Date()))
+        
+        VStack {
+            
+            let dat:CodableDataManager = Bundle.main.decode(file:"testdata.json")
+            
+            let dataaaaaa = DataManager(dat)
+            
+            let str:String = Bundle.main.encode(encode:dataaaaaa.getCodableVersion())
+        
+        Text (str)
+            
+        }
     }
 }
 

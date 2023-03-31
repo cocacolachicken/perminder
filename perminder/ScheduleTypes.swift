@@ -27,8 +27,8 @@ class Daily: Schedule {
         days[0].times.append(Timeblock(tA:t))
     }
     
-    init (sc:CodableSchedule, tagDB:TagDatabase) {
-        
+    init (sc:CodableSchedule) {
+        days[0] = Day(d:sc.days[0])
     }
 }
 
@@ -55,7 +55,7 @@ class BusinessDay: Schedule {
         days[day].times.append(Timeblock(tA:t))
     }
     
-    init (sc:CodableSchedule, tagDB:TagDatabase) {
+    init (sc:CodableSchedule) {
         
     }
 }
@@ -89,7 +89,7 @@ class MTWTF: Schedule {
         days[day].times.append(Timeblock(tA:t))
     }
     
-    init (sc:CodableSchedule, tagDB:TagDatabase) {
+    init (sc:CodableSchedule) {
         
     }
 }
