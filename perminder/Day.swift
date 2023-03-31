@@ -21,9 +21,18 @@ class Day { // Represents a day composed of many timeblocks
     func addTimeBlock (time:String) {
         times.append(Timeblock(tA:time))
     }
+    
+    init (d:CodableDay, tagDB:TagDatabase) {
+        for day in d.blocks {
+            times.append(Timeblock(tA: day.time, tags: day.tags, tagDB:tagDB))
+        }
+    }
+    
+    init () {
+        times = []
+    }
 }
 
 class CodableDay: Codable {
-    var blocks: [[String]]
-    var times: [String]
+    var blocks: [CodableTimeblock]
 }

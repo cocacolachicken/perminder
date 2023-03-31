@@ -53,13 +53,15 @@
    ],
    "options": {
        "sc": {
-           "days":[
+           "days": [
                {
                    "blocks": [
-                       ["Tag"]
-                   ],
-                   "times": [
-                       "0000"
+                       {
+                           "tags":[
+                               "Homework", "Econ"
+                           ],
+                           "time": ""
+                       }
                    ]
                }
            ],

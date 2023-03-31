@@ -89,6 +89,10 @@ class Reminder:Identifiable {
         nextID += 1
     }
     
+    public static func setID (id:Int) {
+        nextID = id
+    }
+    
     #if DEBUG
     static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])], i:0)
     #endif

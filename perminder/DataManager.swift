@@ -13,8 +13,10 @@ class DataManager: ObservableObject {
     @Published var reminderByID:[Int:Reminder] = [:]
     @Published var completeness:[Int:Bool] = [:] //Note: This is here because only updates in structs will update the view
     @Published var opt:Options = Options()
+    var src:CodableDataManager
     
     init (_ src: CodableDataManager) { // Gets DataManager from CodableDataManager
+        self.src = src
         for tag in src.tags {
             tags.add(t:tag)
         }
@@ -28,6 +30,12 @@ class DataManager: ObservableObject {
             reminderByID[reminder.id] = reminders[reminders.count-1]
             completeness[reminder.id] = reminder.finished != nil
         }
+        
+        Reminder.setID(id:src.currentTagID)
+    }
+    
+    func initializeOptions () {
+        opt = Options(src: src.options, tagDB: tags)
     }
     
     

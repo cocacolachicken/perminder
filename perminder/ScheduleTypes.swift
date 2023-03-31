@@ -26,6 +26,10 @@ class Daily: Schedule {
     func append (day: Int, t:String) {
         days[0].times.append(Timeblock(tA:t))
     }
+    
+    init (sc:CodableSchedule, tagDB:TagDatabase) {
+        
+    }
 }
 
 // Schedule that contrasts a schedule on the weekends with a schedule on the weekdays
@@ -49,6 +53,10 @@ class BusinessDay: Schedule {
     
     func append (day: Int, t:String) {
         days[day].times.append(Timeblock(tA:t))
+    }
+    
+    init (sc:CodableSchedule, tagDB:TagDatabase) {
+        
     }
 }
 
@@ -79,5 +87,9 @@ class MTWTF: Schedule {
     
     func append (day: Int, t:String) {
         days[day].times.append(Timeblock(tA:t))
+    }
+    
+    init (sc:CodableSchedule, tagDB:TagDatabase) {
+        
     }
 }

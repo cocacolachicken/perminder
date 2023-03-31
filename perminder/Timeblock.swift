@@ -15,9 +15,17 @@ struct Timeblock { // Represents a time (timeassigned) where a notification is w
         timeAssigned = tA
     }
     
+    init (tA:String, tags:[String], tagDB:TagDatabase) {
+        timeAssigned = tA
+        for tag in tags {
+            groups.append(tagDB[tag])
+        }
+    }
+    
     
 }
 
 struct CodableTimeblock: Codable {
-    var groups:[CodableTag]
+    var tags:[String]
+    var time:String
 }
