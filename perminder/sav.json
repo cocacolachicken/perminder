@@ -2,5 +2,15 @@
 {
     "tags":[],
     "currentTagID":0,
-    "reminders":[]
+    "reminders":[],
+    "options": {
+        "sc": {
+            "days": [
+                {
+                    "blocks": [ ]
+                }
+            ],
+            "type": "daily"
+        }
+    }
 }
