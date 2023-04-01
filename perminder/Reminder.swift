@@ -65,7 +65,7 @@ struct Reminder:Identifiable, Hashable {
         finished = src.finished
         rid = src.id
         for tag in src.tags {
-            tags.append(tagDatabase[tag])
+            tags.append(tagDatabase[tag]!)
         }
     }
     

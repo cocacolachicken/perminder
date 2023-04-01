@@ -14,7 +14,7 @@ struct ReminderView: View {
     @State var due:Date?
     @State var remind:Reminder
     @State var tags:[Tag]
-    @State var tagPicked:Int = 0
+    @State var tagPicked:String = ""
     var ind:Int
     
     init (r:Reminder, i:Int) {
@@ -77,30 +77,28 @@ struct ReminderView: View {
                 
                 
                 
-                
-                
-            }
-            
-            HStack {
-                Button (action: {
-                    
-                }) {
-                    Image(systemName:"plus")
-                }
-                
-                Form {
-                    Section {
-                        Picker(selection:$tagPicked, label:Text("Val")) {
-                            
-                            let tagSet = Set(dat.tags.tagsAsAnArray)
-                            let tagsLeft = tagSet.subtracting(Set(tags))
-                            
+                HStack {
+                    Button (action: {
+                        let tag = dat.tags[tagPicked]
+                        
+                        if !tags.contains(tag ?? Tag(n:"", c:[256, 256, 256])) {
+                            tags.append(tag ?? {
+                                return dat.tags.createNew(n:tagPicked, c:[0, 0, 0])
+                            }())
                             
                         }
-                        
+                    }) {
+                        Image(systemName:"plus")
                     }
                     
+                    TextField (
+                        "enter a tag's name",
+                        text:$tagPicked
+                    )
+                    
+                    
                 }
+                
                 
                 
             }
