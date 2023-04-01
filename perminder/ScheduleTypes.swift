@@ -32,7 +32,7 @@ class Daily: Schedule {
     }
 }
 
-// Schedule that contrasts a schedule on the weekends with a schedule on the weekdays
+// Schedule that contrasts a day on the weekends with a different day on the weekdays
 class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     var type:String = "businessday"

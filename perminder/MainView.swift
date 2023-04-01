@@ -20,8 +20,8 @@ struct MainView: View {
                 
                     ForEach(Array(dat.reminders.enumerated()), id: \.1.id) { (index, reminder) in
                         NavigationLink {
-                            ReminderView(title:reminder.getName(), finished:reminder.getFinished(), remind:reminder, ind: index).environmentObject(dat).padding()
-                        } label: { ReminderRow(i: index, t: reminder.isFinished(), r:reminder).environmentObject(dat)
+                            ReminderView(r:reminder, i: index).environmentObject(dat)
+                        } label: { ReminderRow(i: index, t: reminder.isFinished(), tgs: reminder.tags, r:reminder).environmentObject(dat)
                         }
                     }.onDelete (perform:removeReminder)
                 }
@@ -38,7 +38,9 @@ struct MainView: View {
                 
                 
             
-            }.navigationTitle("Home").listStyle(.grouped)
+            }.navigationTitle("Home").listStyle(.grouped).toolbar {
+                EditButton()
+            }
         }
     }
     

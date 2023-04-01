@@ -11,12 +11,14 @@ struct ReminderRow: View {
     @EnvironmentObject var dat:DataManager
     var index:Int = 0
     var remind:Reminder = Reminder(n:"")
+    var tags:[Tag] = []
     @State var toggle:Bool = false
     
-    init (i:Int, t:Bool, r:Reminder) {
+    init (i:Int, t:Bool, tgs:[Tag], r:Reminder) {
         self.index = i
         self.toggle = t
         self.remind = r
+        self.tags = tgs
         print(index)
     }
     
@@ -50,7 +52,7 @@ struct ReminderRow: View {
                     Spacer()
                 }
                 HStack {
-                    ForEach(remind.getTags()) {tag in
+                    ForEach(tags, id:\.self) {tag in
                         Text("#" + tag.getName())
                             .foregroundColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))
                     }
@@ -73,9 +75,9 @@ struct ReminderRow_Previews: PreviewProvider {
     
     static var previews: some View {
         List {
-            ReminderRow(i:0, t:false, r:data.reminders[0]).environmentObject(data)
+            ReminderRow(i:0, t:false, tgs:data.reminders[0].getTags(), r:data.reminders[0]).environmentObject(data)
             
-            ReminderRow(i:1, t:false, r:data.reminders[1]).environmentObject(data)
+            ReminderRow(i:1, t:false, tgs:data.reminders[1].getTags(),  r:data.reminders[1]).environmentObject(data)
         }
     }
 }

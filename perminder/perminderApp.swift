@@ -9,11 +9,20 @@ import SwiftUI
 
 @main
 struct perminderApp: App {
-    @StateObject var dat:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
+    // var codedData:CodableDataManager?
+    var decodedData:DataManager
+    @StateObject var dat:DataManager = DataManager()
+    
+    init () {
+        // codedData = readFromJSONFile(fileName:"sav.json")
+        // decodedData = codedData != nil ? DataManager(codedData!) : DataManager()
+        decodedData = DataManager(Bundle.main.decode(file:"testdata.json"))
+    }
 
     var body: some Scene {
+        
         WindowGroup {
-            ContentView().environmentObject(dat)
+            ContentView().environmentObject(decodedData)
         }
     }
 }

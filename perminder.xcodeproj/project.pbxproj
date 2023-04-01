@@ -11,7 +11,7 @@
 		891D5C2D29D371BE00F1E740 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */; };
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F9496E9029D78D1400A6EBAA /* ListRemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */; };
-		F9496E9229D7C5D100A6EBAA /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E9129D7C5D100A6EBAA /* TagsView.swift */; };
+		F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E9329D7CCCF00A6EBAA /* TagRow.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
@@ -66,7 +66,7 @@
 		891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemindersView.swift; sourceTree = "<group>"; };
-		F9496E9129D7C5D100A6EBAA /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		F9496E9329D7CCCF00A6EBAA /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			children = (
 				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
 				F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */,
-				F9496E9129D7C5D100A6EBAA /* TagsView.swift */,
+				F9496E9329D7CCCF00A6EBAA /* TagRow.swift */,
 				F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */,
 				F9B3A75629D25E0B001D4616 /* MainView.swift */,
 				F98E036729D349A500A0609A /* AddReminderBar.swift */,
@@ -383,8 +383,8 @@
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
 				F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */,
 				892411CF29D2787D002CD560 /* Notification.swift in Sources */,
-				F9496E9229D7C5D100A6EBAA /* TagsView.swift in Sources */,
 				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
+				F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
 			);

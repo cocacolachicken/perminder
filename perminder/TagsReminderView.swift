@@ -21,7 +21,7 @@ struct TagsReminderView: View {
         VStack {
             List {
                 Section ("Reminders in \(tag.getName())") {
-                    ForEach(tag.getReminders(), id: \.self) { remind in
+                    ForEach(["", ""], id: \.self) { remind in
                     }
                 }
             }
@@ -29,7 +29,7 @@ struct TagsReminderView: View {
     }
 }
 
-struct TagsView_Previews: PreviewProvider {
+struct TagsReminderView_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
     

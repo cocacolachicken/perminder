@@ -22,15 +22,16 @@ class DataManager: ObservableObject {
         
         for reminder in src.reminders {
             reminders.append(Reminder(reminder, tags))
-            for tag in reminders[reminders.count-1].getTags() {
-                tag.addReminder(r:reminders[reminders.count-1])
-            }
             
             reminderByID[reminder.id] = reminders[reminders.count-1]
         }
         
         Reminder.setID(id:src.currentTagID)
         opt = Options(src: src.options)
+    }
+    
+    init () {
+        src = CodableDataManager()
     }
     
     func initializeOptions () {
@@ -81,5 +82,10 @@ class CodableDataManager: Codable {
         
         options = CodableOptions (opt:uOptions)
         
+    }
+    
+    init () {
+        currentTagID = 0
+        options = CodableOptions(sc:nil)
     }
 }

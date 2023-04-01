@@ -7,11 +7,16 @@
 
 import Foundation
 
+
+///Represents a reminder in the form of a struct
 struct Reminder:Identifiable, Hashable {
+    
+    ///Method to comply with Identifiable and Hashable; Assumes true if the ids are equal
     static func == (lhs: Reminder, rhs: Reminder) -> Bool {
         lhs.rid == rhs.rid
     }
     
+    ///Method to comply with Hashable; combines name and internal ID
     func hash (into hasher: inout Hasher) {
         hasher.combine(name)
         hasher.combine(rid)
@@ -22,19 +27,24 @@ struct Reminder:Identifiable, Hashable {
     private var created:Date
     private var due:Date?
     private var finished:Date?
-    private var tags:[Tag] = []
+    var tags:[Tag] = [] // Public because it will mesh better with the UI
     var rid:Int
+    
+    ///To comply with Identifiable; internal ID is maked as "rid"
     var id:UUID =  UUID()
     
-    
+    ///Initializes a new reminder;
+    ///
+    /// - Parameters
+    ///     - n: The name of the Reminder being created
     init (n:String) {
         name = n
-        created = Date()
-        rid = Reminder.nextID
+        created = Date() // Sets date created to current date
+        rid = Reminder.nextID // Sets ID to next ID
         Reminder.incrementID()
     }
     
-    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag], i:Int) {
+    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag], i:Int) { // For use in test cases
         name = n
         created = c
         due = d
@@ -43,7 +53,11 @@ struct Reminder:Identifiable, Hashable {
         rid = i
     }
     
-    // Used for decoding from JSON
+    /// Changes a CodableReminder into a Reminder
+    ///
+    /// - Parameters
+    ///     - src: The reminder to be turned
+    ///     - tagDatabase: The TagDatabase storing all information about tags
     init (_ src:CodableReminder, _ tagDatabase:TagDatabase) {
         name = src.name
         created = src.created
@@ -116,7 +130,10 @@ struct Reminder:Identifiable, Hashable {
     #endif
 }
 
+///Codable representation of a reminder; same attributes
 class CodableReminder: Codable {
+    
+    ///Memberwise initializer to comply with Codable
     init(name: String, id: Int, created: Date, due: Date? = nil, finished: Date? = nil, tags: [String] = []) {
         self.name = name
         self.id = id
@@ -133,6 +150,7 @@ class CodableReminder: Codable {
     var finished:Date?
     var tags:[String] = []
     
+    ///Converts from Reminder to CodableReminder
     init (r:Reminder) {
         name = r.getName()
         id = r.rid
