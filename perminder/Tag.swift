@@ -7,20 +7,23 @@
 
 import Foundation
 
-class Tag:Identifiable {
+class Tag:Identifiable, Hashable {
+    static func == (lhs: Tag, rhs: Tag) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    func hash (into hasher:inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(color)
+    }
+    
     private var name:String
-    private var reminders:[Reminder] = []
-    private var color:RGB // Hex
+    private var color:RGB
+    var id = UUID()
     
     init (n:String, c:[Int]) {
         name = n
         color = RGB(red:c[0], green:c[1], blue:c[2])
-    }
-    
-    init (n:String, c:[Int], r:[Reminder]) {
-        name = n
-        color = RGB(red:c[0], green:c[1], blue:c[2])
-        reminders = r
     }
     
     func getColor () -> RGB {
@@ -39,31 +42,23 @@ class Tag:Identifiable {
         name = nameIn
     }
     
-    func getReminders() -> [Reminder] {
-        reminders
-    }
-    
-    func addReminder (r:Reminder) {
-        reminders.append(r)
-    }
-    
     #if DEBUG
-    static let example = Tag(n:"Example", c:[255, 0, 0], r:[
-        Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"Example", c:[255, 0, 0])], i:0),
-        Reminder(n:"Test2", c:Date(), d:nil, f:nil, tg:[Tag(n:"Example", c:[255, 0, 0]), Tag(n:"Ex", c:[180, 180, 0])], i:1)
-    ])
+    static let example = Tag(n:"Example", c:[255, 0, 0])
     #endif
 }
 
+///Codable representation of a tag; same attributes
 class CodableTag: Codable {
+    ///Memberwise initializer to comply with Codable
     init(name: String, color: [Int]) {
         self.name = name
         self.color = color
     }
     
     var name:String
-    var color:[Int]
+    var color:[Int] // Elements expected to be of count 3
     
+    ///Converts from Tag to CodableTag
     init (t:Tag) {
         name = t.getName()
         color = t.getColor().toArray()

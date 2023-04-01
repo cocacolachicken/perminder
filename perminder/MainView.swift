@@ -14,24 +14,33 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List {
-                
                 AddReminderBar().environmentObject(dat)
                 
                 Section ("Main"){
                 
-                    ForEach(dat.reminders) { remind in
+                    ForEach(Array(dat.reminders.enumerated()), id: \.1.id) { (index, reminder) in
                         NavigationLink {
-                            ReminderView(title:remind.getName(), id:remind.id).environmentObject(dat).padding()
-                        } label: { ReminderRow( remindID:remind.id, toggle: dat.completeness[remind.id]!).environmentObject(dat)
-                            
+                            ReminderView(r:reminder, i: index).environmentObject(dat)
+                        } label: { ReminderRow(i: index, t: reminder.isFinished(), tgs: reminder.tags, r:reminder).environmentObject(dat)
                         }
-                    }.onDelete (perform: removeReminder)
+                    }.onDelete (perform:removeReminder)
                 }
+                /*
+                Section ("debug"){
+                
+                    Text(Bundle.main.encode(encode: dat.getCodableVersion()))
+                    HStack {
+                        ForEach (dat.reminders.indices, id: \.self) {ind in
+                            Text(String(ind))
+                        }
+                    }
+                }*/
                 
                 
-            }.toolbar {
+            
+            }.navigationTitle("Home").listStyle(.grouped).toolbar {
                 EditButton()
-            }.navigationTitle("Home").listStyle(.grouped)
+            }
         }
     }
     

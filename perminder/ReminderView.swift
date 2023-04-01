@@ -6,76 +6,114 @@
 //
 
 import SwiftUI
-import Combine
 
 struct ReminderView: View {
     @EnvironmentObject var dat:DataManager
     @State var title:String
-    var id:Int
+    @State var finished:Date?
+    @State var due:Date?
+    @State var remind:Reminder
+    @State var tags:[Tag]
+    @State var tagPicked:Int = 0
+    var ind:Int
+    
+    init (r:Reminder, i:Int) {
+        _remind = .init(initialValue:r)
+        ind = i
+        
+        _title = .init(initialValue:r.getName())
+        _finished = .init(initialValue:r.getFinished())
+        _due = .init(initialValue: r.getDue())
+        _tags = .init(initialValue: r.getTags())
+    }
     
     var body: some View {
-        let remind:Reminder = dat.reminderByID[id]!
-        
-        VStack {
-            HStack {
-                TextField(
-                    "",
-                    text:$title
-                ).onChange(of:title){ newVal in
-                    remind.changeName(str:newVal)
-                    self.dat.objectWillChange.send()
-                }.fontWeight(.semibold).font(.title)
-                
-                Spacer()
-            }
-            
-            HStack {
-                
-                if dat.completeness[id]! {
-                    Text("Finished \(formatDate(date:remind.getFinished()!))")
-                        
-                } else {
-                    Text("Not finished")
+        List {
+            VStack {
+                HStack {
+                    TextField(
+                        "enter a title",
+                        text:$title
+                    ).onChange(of:title){ newVal in
+                        dat.reminders[ind].changeName(str:title)
+                    }.fontWeight(.semibold).font(.title)
+                    
+                    Spacer()
                 }
-                Spacer()
-            }
-            
-            HStack {
-                let condition = remind.getDue() != nil ? true : false
-                if condition {
-                    Text("Due \(formatDate(date:remind.getCreated()))")
+                
+                HStack {
+                    
+                    if finished != nil {
+                        Text("Finished \(formatDate(date:finished!))")
                         
-                } else {
-                    Text("No due date")
+                    } else {
+                        Text("Not finished")
+                    }
+                    Spacer()
                 }
-                Spacer()
+                
+                HStack {
+                    if due != nil {
+                        Text("Due \(formatDate(date:remind.getCreated()))")
+                        
+                    } else {
+                        Text("No due date")
+                    }
+                    Spacer()
+                }
+                
+                HStack {
+                    Text("Created \(formatDate(date:remind.getCreated()))")
+                    Spacer()
+                }
+                
+            }.listRowSeparator(.hidden)
+            
+            Section ("TAGS") {
+                ForEach (Array(tags.enumerated()), id:\.1) { index, tag in
+                    TagRow(t:tag)
+                }.onDelete(perform: remove)
+                
+                
+                
+                
+                
+                
             }
             
             HStack {
-                Text("Created \(formatDate(date:remind.getCreated()))")
-                Spacer()
-            }
-            
-            HStack {
-                ForEach (remind.getTags()) { tag in
-                    NavigationLink {
-                        TagsView(tag:tag)
-                    } label: {
-                    Text("#" + tag.getName())
-                        .foregroundColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))
+                Button (action: {
+                    
+                }) {
+                    Image(systemName:"plus")
+                }
+                
+                Form {
+                    Section {
+                        Picker(selection:$tagPicked, label:Text("Val")) {
+                            
+                            let tagSet = Set(dat.tags.tagsAsAnArray)
+                            let tagsLeft = tagSet.subtracting(Set(tags))
+                            
+                            
+                        }
                         
                     }
+                    
                 }
-                Spacer()
+                
+                
             }
             
-            HStack {
-                Text(String(remind.id))
-                Spacer()
-            }
-                
-            Spacer()
-        }.navigationTitle(remind.getName()).navigationBarTitleDisplayMode(.inline)
+        }.scrollContentBackground(.hidden).padding(0)
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(.grouped)
+    }
+    
+    func remove (at offsets: IndexSet) {
+        dat.reminders[ind].tags.remove(atOffsets: offsets)
+        tags.remove(atOffsets: offsets)
     }
 }
 
@@ -84,7 +122,7 @@ struct ReminderView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
-            ReminderView(title:data.reminderByID[0]!.getName(), id:0).environmentObject(data)
-        }.padding()
+            ReminderView(r:data.reminders[0], i:0).environmentObject(data)
+        }
     }
 }

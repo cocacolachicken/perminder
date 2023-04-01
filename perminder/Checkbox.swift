@@ -13,15 +13,13 @@ struct Checkbox: View {
     var funct: () -> Void
     
     var body: some View {
-        Image(systemName: b ? "checkmark.circle.fill" : "circle").resizable().frame(width: CGFloat(size), height: CGFloat(size)).onTapGesture {
+        Image(systemName: b ? "checkmark.circle.fill" : "circle")
+            .resizable()
+            .frame(width: CGFloat(size), height: CGFloat(size)).onTapGesture {
             self.b.toggle()
             self.funct()
         }
         
-    }
-    
-    func toggle () {
-        b = !b
     }
 }
 
