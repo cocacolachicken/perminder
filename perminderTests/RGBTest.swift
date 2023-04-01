@@ -11,10 +11,13 @@ import XCTest
 class RGBTest: XCTestCase {
 
     var RGBTest:RGB!
+    let testRed = 255
+    let testGreen = 145
+    let testBlue = 35
     
     override func setUp() {
         super.setUp()
-        RGBTest = RGB(red: 255, green: 145, blue: 35)
+        RGBTest = RGB(red: testRed, green: testGreen, blue: testBlue)
     }
 
     override func tearDown() {
@@ -22,14 +25,15 @@ class RGBTest: XCTestCase {
         super.tearDown()
     }
     
-    func testRGBToArray() {
-        XCTAssertEqual(RGBTest.toArray(), [100, 150, 200])
-    }
-        
     func testRGBInitialization() {
-        XCTAssertEqual(RGBTest.r, 255)
-        XCTAssertEqual(RGBTest.g, 0)
-        XCTAssertEqual(RGBTest.b, 128)
+        XCTAssertEqual(RGBTest.r, testRed)
+        XCTAssertEqual(RGBTest.g, testGreen)
+        XCTAssertEqual(RGBTest.b, testBlue)
     }
+    
+    func testRGBToArray() {
+        XCTAssertEqual(RGBTest.toArray(), [testRed, testGreen, testBlue])
+    }
+    
 }
 

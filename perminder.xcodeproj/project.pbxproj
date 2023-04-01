@@ -10,6 +10,7 @@
 		891D5C2C29D371BE00F1E740 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2A29D371BE00F1E740 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		891D5C2D29D371BE00F1E740 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */; };
 		891D5C3129D8DBDE00F1E740 /* RGBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D5C3029D8DBDE00F1E740 /* RGBTest.swift */; };
+		891D5C3329D8DE4500F1E740 /* ScheduleTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D5C3229D8DE4500F1E740 /* ScheduleTypesTest.swift */; };
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
@@ -64,6 +65,7 @@
 		891D5C2A29D371BE00F1E740 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		891D5C3029D8DBDE00F1E740 /* RGBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBTest.swift; sourceTree = "<group>"; };
+		891D5C3229D8DE4500F1E740 /* ScheduleTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypesTest.swift; sourceTree = "<group>"; };
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				F9B43BD929B9119000740FE5 /* perminderTests.swift */,
 				891D5C3029D8DBDE00F1E740 /* RGBTest.swift */,
+				891D5C3229D8DE4500F1E740 /* ScheduleTypesTest.swift */,
 			);
 			path = perminderTests;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891D5C3329D8DE4500F1E740 /* ScheduleTypesTest.swift in Sources */,
 				F9B43BDA29B9119000740FE5 /* perminderTests.swift in Sources */,
 				891D5C3129D8DBDE00F1E740 /* RGBTest.swift in Sources */,
 			);
