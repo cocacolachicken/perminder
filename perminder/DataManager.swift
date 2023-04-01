@@ -11,7 +11,6 @@ class DataManager: ObservableObject {
     @Published var tags:TagDatabase = TagDatabase()
     @Published var reminders:[Reminder] = []
     @Published var reminderByID:[Int:Reminder] = [:]
-    @Published var completeness:[Int:Bool] = [:] //Note: This is here because only updates in structs will update the view
     @Published var opt:Options = Options()
     var src:CodableDataManager
     
@@ -28,7 +27,6 @@ class DataManager: ObservableObject {
             }
             
             reminderByID[reminder.id] = reminders[reminders.count-1]
-            completeness[reminder.id] = reminder.finished != nil
         }
         
         Reminder.setID(id:src.currentTagID)
@@ -40,12 +38,12 @@ class DataManager: ObservableObject {
     
     
     
-    func markFinished (id: Int) {
-        reminderByID[id]!.markFinished()
+    func markFinished (index: Int) {
+        reminders[index].markFinished()
     }
     
-    func markIncomplete (id: Int) {
-        reminderByID[id]!.markIncomplete()
+    func markIncomplete (index: Int) {
+        reminders[index].markIncomplete()
     }
     
     func getCodableVersion () -> CodableDataManager {
@@ -54,8 +52,7 @@ class DataManager: ObservableObject {
     
     func addReminder (n:String) {
         reminders.append(Reminder(n:n))
-        reminderByID[reminders[reminders.count-1].id] = reminders[reminders.count-1]
-        completeness[reminders[reminders.count-1].id] = false
+        reminderByID[reminders[reminders.count-1].rid] = reminders[reminders.count-1]
     }
 }
 

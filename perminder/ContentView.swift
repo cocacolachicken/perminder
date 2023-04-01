@@ -16,7 +16,7 @@ struct ContentView: View {
                 Label("Reminders", systemImage:"house.fill")
             }.environmentObject(dat)
             SettingsView().tabItem {
-                Label("Reminders", systemImage:"gear")
+                Label("Settings", systemImage:"gear")
             }.environmentObject(dat)
         }
     }

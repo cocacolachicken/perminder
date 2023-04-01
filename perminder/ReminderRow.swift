@@ -9,12 +9,19 @@ import SwiftUI
 
 struct ReminderRow: View {
     @EnvironmentObject var dat:DataManager
-    var remindID:Int
-    @State var toggle:Bool
+    var index:Int = 0
+    var remind:Reminder = Reminder(n:"")
+    @State var toggle:Bool = false
+    
+    init (i:Int, t:Bool, r:Reminder) {
+        self.index = i
+        self.toggle = t
+        self.remind = r
+        print(index)
+    }
     
     
     var body: some View {
-        let remind:Reminder = dat.reminderByID[remindID]!
         
         
         HStack {
@@ -23,15 +30,10 @@ struct ReminderRow: View {
             
                 Checkbox(b: $toggle, size:20, funct: {
                     if toggle {
-                        self.dat.markFinished(id:remindID)
-                        dat.completeness[remindID]! = true;
+                        dat.reminders[index].markFinished()
                     } else {
-                        self.dat.markIncomplete(id:remindID)
-                        dat.completeness[remindID]! = false;
+                        dat.reminders[index].markIncomplete()
                     }
-                    
-                    dat.objectWillChange.send()
-                    
                     
                 }).padding(.top)
                 
@@ -71,9 +73,9 @@ struct ReminderRow_Previews: PreviewProvider {
     
     static var previews: some View {
         List {
-            ReminderRow(remindID:0, toggle:false).environmentObject(data)
+            ReminderRow(i:0, t:false, r:data.reminders[0]).environmentObject(data)
             
-                ReminderRow(remindID:3, toggle:false).environmentObject(data)
+            ReminderRow(i:1, t:false, r:data.reminders[1]).environmentObject(data)
         }
     }
 }

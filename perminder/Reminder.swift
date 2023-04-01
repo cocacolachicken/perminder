@@ -7,13 +7,14 @@
 
 import Foundation
 
-class Reminder:Identifiable, Hashable {
+struct Reminder:Identifiable, Hashable {
     static func == (lhs: Reminder, rhs: Reminder) -> Bool {
-        ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+        lhs.rid == rhs.rid
     }
     
     func hash (into hasher: inout Hasher) {
-        hasher.combine( ObjectIdentifier(self).hashValue)
+        hasher.combine(name)
+        hasher.combine(rid)
     }
     
     private var name:String
@@ -22,13 +23,14 @@ class Reminder:Identifiable, Hashable {
     private var due:Date?
     private var finished:Date?
     private var tags:[Tag] = []
-    var id:Int
+    var rid:Int
+    var id:UUID =  UUID()
     
     
     init (n:String) {
         name = n
         created = Date()
-        id = Reminder.nextID
+        rid = Reminder.nextID
         Reminder.incrementID()
     }
     
@@ -38,7 +40,7 @@ class Reminder:Identifiable, Hashable {
         due = d
         finished = f
         tags = tg
-        id = i
+        rid = i
     }
     
     // Used for decoding from JSON
@@ -47,13 +49,13 @@ class Reminder:Identifiable, Hashable {
         created = src.created
         due = src.due
         finished = src.finished
-        id = src.id
+        rid = src.id
         for tag in src.tags {
             tags.append(tagDatabase[tag])
         }
     }
     
-    public func setName(nameSet:String) {
+    public mutating func setName(nameSet:String) {
         name = nameSet
     }
     
@@ -61,7 +63,7 @@ class Reminder:Identifiable, Hashable {
         return name
     }
     
-    public func changeName (str:String) {
+    public mutating func changeName (str:String) {
         name = str
     }
     
@@ -69,15 +71,15 @@ class Reminder:Identifiable, Hashable {
         return created
     }
     
-    public func setDue(dueSet:Date) {
+    public mutating func setDue(dueSet:Date) {
         due = dueSet
     }
     
-    public func markFinished () {
+    public mutating func markFinished () {
         finished = Date()
     }
     
-    public func markIncomplete () {
+    public mutating func markIncomplete () {
         finished = nil
     }
     
@@ -133,7 +135,7 @@ class CodableReminder: Codable {
     
     init (r:Reminder) {
         name = r.getName()
-        id = r.id
+        id = r.rid
         created = r.getCreated()
         due = r.getDue()
         finished = r.getFinished()
