@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		891D5C2C29D371BE00F1E740 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2A29D371BE00F1E740 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		891D5C2D29D371BE00F1E740 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */; };
+		891D5C3129D8DBDE00F1E740 /* RGBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D5C3029D8DBDE00F1E740 /* RGBTest.swift */; };
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
 		F9496E9029D78D1400A6EBAA /* ListRemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */; };
 		F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E9329D7CCCF00A6EBAA /* TagRow.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		891D5C2A29D371BE00F1E740 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		891D5C2B29D371BE00F1E740 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		891D5C3029D8DBDE00F1E740 /* RGBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBTest.swift; sourceTree = "<group>"; };
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemindersView.swift; sourceTree = "<group>"; };
 		F9496E9329D7CCCF00A6EBAA /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B43BD929B9119000740FE5 /* perminderTests.swift */,
+				891D5C3029D8DBDE00F1E740 /* RGBTest.swift */,
 			);
 			path = perminderTests;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B43BDA29B9119000740FE5 /* perminderTests.swift in Sources */,
+				891D5C3129D8DBDE00F1E740 /* RGBTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
