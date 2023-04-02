@@ -22,6 +22,7 @@ struct ContentView: View {
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
@@ -29,3 +30,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView().environmentObject(data)
     }
 }
+#endif

@@ -10,7 +10,6 @@ import Foundation
 class DataManager: ObservableObject {
     @Published var tags:TagDatabase = TagDatabase()
     @Published var reminders:[Reminder] = []
-    @Published var reminderByID:[Int:Reminder] = [:]
     @Published var opt:Options = Options()
     var src:CodableDataManager
     
@@ -22,8 +21,6 @@ class DataManager: ObservableObject {
         
         for reminder in src.reminders {
             reminders.append(Reminder(reminder, tags))
-            
-            reminderByID[reminder.id] = reminders[reminders.count-1]
         }
         
         Reminder.setID(id:src.currentTagID)
@@ -53,7 +50,6 @@ class DataManager: ObservableObject {
     
     func addReminder (n:String) {
         reminders.append(Reminder(n:n))
-        reminderByID[reminders[reminders.count-1].rid] = reminders[reminders.count-1]
     }
     
     func findAllReminders(tagIn:Tag) -> [Int]{

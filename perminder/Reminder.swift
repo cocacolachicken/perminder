@@ -27,6 +27,18 @@ struct Reminder:Identifiable, Hashable {
     private var created:Date
     private var due:Date?
     private var finished:Date?
+    public var isFinished:Bool {
+        get {
+            finished != nil
+        }
+        set {
+            if newValue == false {
+                finished = nil
+            } else {
+                finished = Date()
+            }
+        }
+    }
     var tags:[Tag] = [] // Public because it will mesh better with the UI
     var rid:Int
     
@@ -103,10 +115,6 @@ struct Reminder:Identifiable, Hashable {
     
     public func getDue() -> Date? {
         return due
-    }
-    
-    public func isFinished() -> Bool {
-        return (finished != nil)
     }
     
     public func getTags() -> [Tag] {

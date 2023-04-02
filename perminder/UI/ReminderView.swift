@@ -19,6 +19,7 @@ struct ReminderView: View {
     
     init (r:Reminder, i:Int) {
         _remind = .init(initialValue:r)
+        
         ind = i
         
         _title = .init(initialValue:r.getName())
@@ -71,7 +72,12 @@ struct ReminderView: View {
             
             Section ("TAGS") {
                 ForEach (Array(tags.enumerated()), id:\.1) { index, tag in
-                    TagRow(t:tag)
+                    NavigationLink {
+                        TagsReminderView(tag:tag, reminders:dat.getRemindersByTag(t:tag.getName())).environmentObject(dat)
+                        
+                    } label: {
+                        TagRow(t:tag)
+                    }
                 }.onDelete(perform: remove)
                 
                 
@@ -87,12 +93,14 @@ struct ReminderView: View {
                             }())
                             
                         }
+                        
+                        dat.reminders[ind].tags.append(dat.tags[tagPicked]!)
                     }) {
                         Image(systemName:"plus")
                     }
                     
                     TextField (
-                        "enter a tag's name",
+                        "enter a tag name (case sensitive)",
                         text:$tagPicked
                     )
                     
@@ -115,6 +123,7 @@ struct ReminderView: View {
     }
 }
 
+#if DEBUG
 struct ReminderView_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
@@ -124,3 +133,4 @@ struct ReminderView_Previews: PreviewProvider {
         }
     }
 }
+#endif

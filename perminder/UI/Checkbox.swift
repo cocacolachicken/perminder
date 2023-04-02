@@ -23,6 +23,7 @@ struct Checkbox: View {
     }
 }
 
+#if DEBUG
 struct Checkbox_Previews: PreviewProvider {
     struct CheckboxPreviewHolder: View {
         @State var checked = false
@@ -36,3 +37,4 @@ struct Checkbox_Previews: PreviewProvider {
         CheckboxPreviewHolder ()
     }
 }
+#endif

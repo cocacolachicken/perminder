@@ -30,6 +30,10 @@ class Daily: Schedule {
     init (sc:CodableSchedule) {
         days[0] = Day(d:sc.days[0])
     }
+    
+    init () {
+        
+    }
 }
 
 // Schedule that contrasts a day on the weekends with a different day on the weekdays
@@ -56,6 +60,12 @@ class BusinessDay: Schedule {
     }
     
     init (sc:CodableSchedule) {
+        for x in 0...1 {
+            days[x] = Day(d:sc.days[x])
+        }
+    }
+    
+    init () {
         
     }
 }
@@ -90,6 +100,12 @@ class MTWTF: Schedule {
     }
     
     init (sc:CodableSchedule) {
+        for x in 0...6 {
+            days[x] = Day(d:sc.days[x])
+        }
+    }
+    
+    init () {
         
     }
 }

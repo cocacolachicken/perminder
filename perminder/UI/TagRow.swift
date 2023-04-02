@@ -22,8 +22,10 @@ struct TagRow: View {
     }
 }
 
+#if DEBUG
 struct TagRow_Previews: PreviewProvider {
     static var previews: some View {
         TagRow(t: Tag(n:"tag", c:[255, 0, 255]))
     }
 }
+#endif

@@ -9,7 +9,7 @@ import Foundation
 
 /// Represents a color in RGB format, with numbers for each base color ranging from 0-255
 
-class RGB: Hashable, Equatable {
+struct RGB: Hashable, Equatable {
     static func == (lhs: RGB, rhs: RGB) -> Bool {
         return lhs.toArray() == rhs.toArray()
     }

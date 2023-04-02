@@ -46,8 +46,8 @@
             filePath = "perminder/ReminderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "ReminderView_Previews"
             landmarkType = "14">
          </BreakpointContent>
@@ -69,7 +69,7 @@
             <Locations>
                <Location
                   uuid = "62BB390E-7F6B-445C-B4A8-15B8B2F4C8E7 - 9da59383e2eaa678"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "perminder.perminderApp.body.getter : some"
@@ -84,7 +84,7 @@
                </Location>
                <Location
                   uuid = "62BB390E-7F6B-445C-B4A8-15B8B2F4C8E7 - 5ebeb72d8c3af4a1"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; perminder.ContentView in perminder.perminderApp.body.getter : some"
@@ -98,6 +98,22 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D5CF292-CFA4-4352-8886-255CEB074BB8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminderTests/perminderTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testPerformanceExample()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -24,8 +24,10 @@ struct TestUI: View {
     }
 }
 
+#if DEBUG
 struct TestUI_Previews: PreviewProvider {
     static var previews: some View {
         TestUI()
     }
 }
+#endif
