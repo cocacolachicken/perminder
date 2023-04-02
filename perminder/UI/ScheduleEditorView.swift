@@ -8,29 +8,100 @@
 import SwiftUI
 
 struct ScheduleEditorView: View {
-    @Binding var sc:Schedule?
+    @Binding var sch:Schedule?
+    @State var dayPicked:Int = 0
+    @State var lol:String = ""
     
     var body: some View {
-        if sc != nil {
-            if sc!.type != "daily" {
+        if sch != nil {
+                if sch!.type != "daily" {
+                    Picker ("Day", selection:$dayPicked) {
+                        ForEach (sch!.days.indices, id:\.self) { ind in
+                            Text(labels.getLabel(sch:sch!, ind:ind)).tag(ind)
+                        }
+                    }.pickerStyle(.segmented)
+                }
+            
+        TextField (
+            "lol",
+            text:$lol
+        )
                 
-            }
+                
+                
         } else {
             Text("")
         }
     }
+    
+    enum labels {
+        enum businessday: Int {
+            case Weekday = 0, Weekend
+            
+            var asString:String {
+                switch self {
+                case .Weekday:
+                    return "Weekday"
+                case .Weekend:
+                    return "Weekend"
+                }
+            }
+        }
+        
+        enum weekday:Int {
+            case Su = 0, Mo, Tu, We, Th, Fr, Sa
+            
+            var asString:String {
+                switch self {
+                case .Su:
+                    return "Su"
+                case .Mo:
+                    return "Mo"
+                case .Tu:
+                    return "Tu"
+                case .We:
+                    return "We"
+                case .Th:
+                    return "Th"
+                case .Fr:
+                    return "Fr"
+                case .Sa:
+                    return "Sa"
+                }
+            }
+        }
+        
+        static func getLabel (sch:Schedule, ind:Int) -> String {
+            switch sch.type {
+            case "businessday":
+                return businessday(rawValue:ind)!.asString
+                
+            case "weekday":
+                return weekday(rawValue:ind)!.asString
+            default:
+                return ""
+                
+            }
+        }
+    }
 }
 
+#if DEBUG
 struct ScheduleModifierView_Previews: PreviewProvider {
     struct SDV_Wrapper: View {
-        @State var sc:Schedule? = Daily()
+        @State var sc:Schedule? = BusinessDay()
         
         var body: some View {
-            ScheduleEditorView(sc:$sc)
+            ScheduleEditorView(sch:$sc)
         }
     }
     
     static var previews: some View {
-        SDV_Wrapper()
+        HStack {
+            List {
+                SDV_Wrapper()
+            }
+        }
     }
 }
+#endif

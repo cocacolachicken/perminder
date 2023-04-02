@@ -71,7 +71,7 @@ struct ReminderView: View {
             }.listRowSeparator(.hidden)
             
             Section ("TAGS") {
-                ForEach (Array(tags.enumerated()), id:\.1) { index, tag in
+                ForEach (self.tags, id:\.self) { tag in
                     NavigationLink {
                         TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag)).environmentObject(dat)
                         

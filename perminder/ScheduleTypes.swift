@@ -11,6 +11,7 @@ import Foundation
 class Daily: Schedule {
     var days:[Day] = [Day()]
     var type:String = "daily"
+    var bounds:ClosedRange<Int> = 0...0
     
     subscript (index:String) -> Day {
         get {
@@ -40,6 +41,7 @@ class Daily: Schedule {
 class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     var type:String = "businessday"
+    var bounds:ClosedRange<Int> = 0...1
     
     subscript (index:String) -> Day {
         get {
@@ -74,6 +76,7 @@ class BusinessDay: Schedule {
 class MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
     var type:String = "weekday"
+    var bounds:ClosedRange<Int> = 0...6
     
     subscript (index:String) -> Day {
         get {

@@ -10,7 +10,7 @@ import SwiftUI
 struct ScheduleView: View {
     @Binding var sch:Schedule?
     @State var type:String
-    @State var m:String = ""
+    @State var m:String = "none"
     
     init (sch:Binding<Schedule?>, type:String) {
         _sch = sch
@@ -46,19 +46,13 @@ struct ScheduleView: View {
             
             Section {
                 switch type {
-                    case "daily":
-                        VStack {
-                        }
-                    case "businessday":
-                        VStack {
-                        }
-                    case "mtwtfss":
-                        VStack {
-                        }
-                    default:
-                        VStack {
-                            Text("Please choose a schedule type.")
-                        }
+                    
+                case "none":
+                    VStack {
+                        Text("Please choose a schedule type.")
+                    }
+                default:
+                    ScheduleEditorView(sch:$sch)
                 }
             }
         }.navigationTitle("Set Schedule")
