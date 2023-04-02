@@ -7,10 +7,41 @@
 
 import Foundation
 
+// Represents no schedule
+class NoSchedule: Schedule {
+    var days:[Day] = [Day()]
+    var type:String = "none"
+    var bounds:ClosedRange<Int> = 0...0
+    
+    subscript (index:String) -> Day {
+        get {
+            return (days[0])
+        }
+    }
+    
+    func modify (day:Int, index:Int, t:Timeblock) {
+        // do nothing
+    }
+    
+    func append (day: Int, t:String) {
+        // do nothing
+    }
+    
+    init (sc:CodableSchedule) {
+        // do nothing
+    }
+    
+    init () {
+        // do nothing
+    }
+}
+
+
 // One single schedule that repeats daily
 class Daily: Schedule {
     var days:[Day] = [Day()]
     var type:String = "daily"
+    var bounds:ClosedRange<Int> = 0...0
     
     subscript (index:String) -> Day {
         get {
@@ -30,12 +61,17 @@ class Daily: Schedule {
     init (sc:CodableSchedule) {
         days[0] = Day(d:sc.days[0])
     }
+    
+    init () {
+        
+    }
 }
 
 // Schedule that contrasts a day on the weekends with a different day on the weekdays
 class BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     var type:String = "businessday"
+    var bounds:ClosedRange<Int> = 0...1
     
     subscript (index:String) -> Day {
         get {
@@ -56,6 +92,12 @@ class BusinessDay: Schedule {
     }
     
     init (sc:CodableSchedule) {
+        for x in 0...1 {
+            days[x] = Day(d:sc.days[x])
+        }
+    }
+    
+    init () {
         
     }
 }
@@ -64,6 +106,7 @@ class BusinessDay: Schedule {
 class MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
     var type:String = "weekday"
+    var bounds:ClosedRange<Int> = 0...6
     
     subscript (index:String) -> Day {
         get {
@@ -90,6 +133,12 @@ class MTWTF: Schedule {
     }
     
     init (sc:CodableSchedule) {
+        for x in 0...6 {
+            days[x] = Day(d:sc.days[x])
+        }
+    }
+    
+    init () {
         
     }
 }

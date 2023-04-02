@@ -1,20 +1,22 @@
 //
-//  ListRemindersView.swift
+//  ColorPicker.swift
 //  perminder
 //
-//  Created by Tyler Gu on 2023-03-31.
+//  Created by Tyler Gu on 2023-04-01.
 //
 
 import SwiftUI
 
-struct ListRemindersView: View {
+struct ColorPicker: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ListRemindersView_Previews: PreviewProvider {
+#if DEBUG
+struct ColorPicker_Previews: PreviewProvider {
     static var previews: some View {
-        ListRemindersView()
+        ColorPicker()
     }
 }
+#endif

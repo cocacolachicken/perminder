@@ -14,11 +14,12 @@ struct ReminderView: View {
     @State var due:Date?
     @State var remind:Reminder
     @State var tags:[Tag]
-    @State var tagPicked:Int = 0
+    @State var tagPicked:String = ""
     var ind:Int
     
     init (r:Reminder, i:Int) {
         _remind = .init(initialValue:r)
+        
         ind = i
         
         _title = .init(initialValue:r.getName())
@@ -70,37 +71,42 @@ struct ReminderView: View {
             }.listRowSeparator(.hidden)
             
             Section ("TAGS") {
-                ForEach (Array(tags.enumerated()), id:\.1) { index, tag in
-                    TagRow(t:tag)
+                ForEach (self.tags, id:\.self) { tag in
+                    NavigationLink {
+                        TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag)).environmentObject(dat)
+                        
+                    } label: {
+                        TagRow(t:tag)
+                    }
                 }.onDelete(perform: remove)
                 
                 
                 
                 
-                
-                
-            }
-            
-            HStack {
-                Button (action: {
-                    
-                }) {
-                    Image(systemName:"plus")
-                }
-                
-                Form {
-                    Section {
-                        Picker(selection:$tagPicked, label:Text("Val")) {
-                            
-                            let tagSet = Set(dat.tags.tagsAsAnArray)
-                            let tagsLeft = tagSet.subtracting(Set(tags))
-                            
+                HStack {
+                    Button (action: {
+                        let tag = dat.tags[tagPicked]
+                        
+                        if !tags.contains(tag ?? Tag(n:"", c:[256, 256, 256])) {
+                            tags.append(tag ?? {
+                                return dat.tags.createNew(n:tagPicked, c:[0, 0, 0])
+                            }())
                             
                         }
                         
+                        dat.reminders[ind].tags.append(dat.tags[tagPicked]!)
+                    }) {
+                        Image(systemName:"plus")
                     }
                     
+                    TextField (
+                        "enter a tag name (case sensitive)",
+                        text:$tagPicked
+                    )
+                    
+                    
                 }
+                
                 
                 
             }
@@ -117,6 +123,7 @@ struct ReminderView: View {
     }
 }
 
+#if DEBUG
 struct ReminderView_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
@@ -126,3 +133,4 @@ struct ReminderView_Previews: PreviewProvider {
         }
     }
 }
+#endif

@@ -21,7 +21,8 @@ struct MainView: View {
                     ForEach(Array(dat.reminders.enumerated()), id: \.1.id) { (index, reminder) in
                         NavigationLink {
                             ReminderView(r:reminder, i: index).environmentObject(dat)
-                        } label: { ReminderRow(i: index, t: reminder.isFinished(), tgs: reminder.tags, r:reminder).environmentObject(dat)
+                        } label: {
+                            ReminderRow(i: index, r:reminder, t:$dat.reminders[index].isFinished).environmentObject(dat)
                         }
                     }.onDelete (perform:removeReminder)
                 }
@@ -41,7 +42,7 @@ struct MainView: View {
             }.navigationTitle("Home").listStyle(.grouped).toolbar {
                 EditButton()
             }
-        }
+        }.navigationViewStyle(.stack)
     }
     
     func removeReminder (at offsets: IndexSet) {
@@ -49,6 +50,7 @@ struct MainView: View {
     }
 }
 
+#if DEBUG
 struct MainView_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
@@ -56,3 +58,4 @@ struct MainView_Previews: PreviewProvider {
         MainView().environmentObject(data)
     }
 }
+#endif

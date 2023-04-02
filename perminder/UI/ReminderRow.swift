@@ -12,14 +12,13 @@ struct ReminderRow: View {
     var index:Int = 0
     var remind:Reminder = Reminder(n:"")
     var tags:[Tag] = []
-    @State var toggle:Bool = false
+    @Binding var toggle:Bool
     
-    init (i:Int, t:Bool, tgs:[Tag], r:Reminder) {
+    init (i:Int, r:Reminder, t:Binding<Bool>) {
         self.index = i
-        self.toggle = t
         self.remind = r
-        self.tags = tgs
-        print(index)
+        self.tags = r.getTags()
+        _toggle = t
     }
     
     
@@ -70,14 +69,16 @@ struct ReminderRow: View {
     }
 }
 
+#if DEBUG
 struct ReminderRow_Previews: PreviewProvider {
     @StateObject static var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
     
     static var previews: some View {
         List {
-            ReminderRow(i:0, t:false, tgs:data.reminders[0].getTags(), r:data.reminders[0]).environmentObject(data)
+            ReminderRow(i:0, r:data.reminders[0], t:$data.reminders[0].isFinished).environmentObject(data)
             
-            ReminderRow(i:1, t:false, tgs:data.reminders[1].getTags(),  r:data.reminders[1]).environmentObject(data)
+            ReminderRow(i:1,  r:data.reminders[1], t:$data.reminders[1].isFinished).environmentObject(data)
         }
     }
 }
+#endif

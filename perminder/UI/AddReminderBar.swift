@@ -30,6 +30,7 @@ struct AddReminderBar: View {
     }
 }
 
+#if DEBUG
 struct AddReminderBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
@@ -39,3 +40,4 @@ struct AddReminderBar_Previews: PreviewProvider {
         }
     }
 }
+#endif

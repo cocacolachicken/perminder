@@ -12,7 +12,6 @@
 		891D5C3129D8DBDE00F1E740 /* RGBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D5C3029D8DBDE00F1E740 /* RGBTest.swift */; };
 		891D5C3329D8DE4500F1E740 /* ScheduleTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D5C3229D8DE4500F1E740 /* ScheduleTypesTest.swift */; };
 		892411CF29D2787D002CD560 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892411CE29D2787D002CD560 /* Notification.swift */; };
-		F9496E9029D78D1400A6EBAA /* ListRemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */; };
 		F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E9329D7CCCF00A6EBAA /* TagRow.swift */; };
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
@@ -21,6 +20,7 @@
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
 		F96399B329D366A8002C3C19 /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
 		F96399B729D3D1D4002C3C19 /* sav.json in Resources */ = {isa = PBXBuildFile; fileRef = F96399B629D3D1D4002C3C19 /* sav.json */; };
+		F96AF4CE29D941DA007673F1 /* DayEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AF4CD29D941DA007673F1 /* DayEditorView.swift */; };
 		F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBA29D27E2A00038384 /* SettingsView.swift */; };
 		F98C3FBD29D27FFB00038384 /* TagsReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */; };
 		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
@@ -44,6 +44,9 @@
 		F9B43BDA29B9119000740FE5 /* perminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BD929B9119000740FE5 /* perminderTests.swift */; };
 		F9B43BE429B9119000740FE5 /* perminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BE329B9119000740FE5 /* perminderUITests.swift */; };
 		F9B43BE629B9119000740FE5 /* perminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BE529B9119000740FE5 /* perminderUITestsLaunchTests.swift */; };
+		F9C7B62E29D9107600FA4EC1 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */; };
+		F9C7B63029D9126B00FA4EC1 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */; };
+		F9C7B63A29D927C700FA4EC1 /* ScheduleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +72,6 @@
 		891D5C3029D8DBDE00F1E740 /* RGBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBTest.swift; sourceTree = "<group>"; };
 		891D5C3229D8DE4500F1E740 /* ScheduleTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypesTest.swift; sourceTree = "<group>"; };
 		892411CE29D2787D002CD560 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemindersView.swift; sourceTree = "<group>"; };
 		F9496E9329D7CCCF00A6EBAA /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		F95A4DFD29D1358F0000AEDF /* Supporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
 		F95A4DFF29D137A40000AEDF /* testdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testdata.json; sourceTree = "<group>"; };
 		F96399B629D3D1D4002C3C19 /* sav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sav.json; sourceTree = "<group>"; };
+		F96AF4CD29D941DA007673F1 /* DayEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEditorView.swift; sourceTree = "<group>"; };
 		F98C3FBA29D27E2A00038384 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsReminderView.swift; sourceTree = "<group>"; };
 		F98CCA7D29CA0FB500811FCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -104,6 +107,9 @@
 		F9B43BDF29B9119000740FE5 /* perminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = perminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B43BE329B9119000740FE5 /* perminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perminderUITests.swift; sourceTree = "<group>"; };
 		F9B43BE529B9119000740FE5 /* perminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,24 +148,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F95A4DFA29CFF61C0000AEDF /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
-				F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */,
-				F9496E9329D7CCCF00A6EBAA /* TagRow.swift */,
-				F9496E8F29D78D1400A6EBAA /* ListRemindersView.swift */,
-				F9B3A75629D25E0B001D4616 /* MainView.swift */,
-				F98E036729D349A500A0609A /* AddReminderBar.swift */,
-				F9B3A75029D24947001D4616 /* ReminderRow.swift */,
-				F98E036929D3515600A0609A /* Checkbox.swift */,
-				F98C3FBA29D27E2A00038384 /* SettingsView.swift */,
-				F9B3A75429D25D5F001D4616 /* ReminderView.swift */,
-				F9B3A75A29D2634C001D4616 /* TestUI.swift */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		F9B43BBC29B9118A00740FE5 = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +172,7 @@
 		F9B43BC729B9118A00740FE5 /* perminder */ = {
 			isa = PBXGroup;
 			children = (
-				F95A4DFA29CFF61C0000AEDF /* UI */,
+				F9C7B62C29D909EE00FA4EC1 /* UI */,
 				F9B43BC829B9118A00740FE5 /* perminderApp.swift */,
 				F95A4DFB29D134270000AEDF /* InputManager.swift */,
 				F95A4DFD29D1358F0000AEDF /* Supporting.swift */,
@@ -233,6 +221,27 @@
 				F9B43BE529B9119000740FE5 /* perminderUITestsLaunchTests.swift */,
 			);
 			path = perminderUITests;
+			sourceTree = "<group>";
+		};
+		F9C7B62C29D909EE00FA4EC1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F9B43BCA29B9118A00740FE5 /* ContentView.swift */,
+				F9B3A75629D25E0B001D4616 /* MainView.swift */,
+				F98E036729D349A500A0609A /* AddReminderBar.swift */,
+				F9B3A75029D24947001D4616 /* ReminderRow.swift */,
+				F98E036929D3515600A0609A /* Checkbox.swift */,
+				F9B3A75429D25D5F001D4616 /* ReminderView.swift */,
+				F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */,
+				F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */,
+				F9496E9329D7CCCF00A6EBAA /* TagRow.swift */,
+				F98C3FBA29D27E2A00038384 /* SettingsView.swift */,
+				F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */,
+				F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */,
+				F96AF4CD29D941DA007673F1 /* DayEditorView.swift */,
+				F9B3A75A29D2634C001D4616 /* TestUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,17 +377,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C7B63029D9126B00FA4EC1 /* ScheduleView.swift in Sources */,
 				F9B3A75329D25819001D4616 /* RGB.swift in Sources */,
+				F9C7B62E29D9107600FA4EC1 /* ColorPicker.swift in Sources */,
 				F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */,
 				F98CCA8629CA225B00811FCF /* Day.swift in Sources */,
 				F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */,
+				F96AF4CE29D941DA007673F1 /* DayEditorView.swift in Sources */,
 				F98CCA8029CA11B400811FCF /* Tag.swift in Sources */,
 				F9B3A75B29D2634C001D4616 /* TestUI.swift in Sources */,
 				F9B3A75729D25E0B001D4616 /* MainView.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
 				F98E036A29D3515600A0609A /* Checkbox.swift in Sources */,
 				F98C3FBD29D27FFB00038384 /* TagsReminderView.swift in Sources */,
-				F9496E9029D78D1400A6EBAA /* ListRemindersView.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
 				F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */,
 				F98CCA8229CA161C00811FCF /* Schedule.swift in Sources */,
@@ -393,6 +404,7 @@
 				F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
+				F9C7B63A29D927C700FA4EC1 /* ScheduleEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

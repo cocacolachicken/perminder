@@ -10,11 +10,11 @@ import Foundation
 /// Wrapper for Schedule, but leaves room for extension
 class Options {
     /// sc may be nil if the user disabled notifications or hasn't set a schedule
-    var sc:Schedule?
+    var sc:Schedule
     
-    ///Initializes with a nil schedule
+    ///Initializes with NoSchedule()
     init () {
-        sc = nil
+        sc = NoSchedule()
     }
     
     ///Initializes with a schedule based off of CodableOptions
@@ -26,29 +26,31 @@ class Options {
 /// Wrapper for CodableSchedule; like other Codable classes
 class CodableOptions:Codable {
     ///
-    init(sc: CodableSchedule? = nil) {
+    init(sc: CodableSchedule) {
         self.sc = sc
     }
     
-    var sc:CodableSchedule?
+    var sc:CodableSchedule
     
     init (opt:Options) {
         self.sc = CodableSchedule.getCodableSchedule(sch: opt.sc)
     }
+    
+    init () {
+        sc = CodableSchedule()
+    }
 }
 
-func codableScheduleToSchedule (sch:CodableSchedule?) -> Schedule? {
-    if sch != nil {
-        if (sch!.type == "daily") {
-            return Daily(sc:sch!)
-        } else if (sch!.type == "businessday") {
-            return BusinessDay(sc:sch!)
-        } else if (sch!.type == "weekday") {
-            return MTWTF(sc:sch!)
-        } else {
-            return nil
-        }
+func codableScheduleToSchedule (sch:CodableSchedule) -> Schedule {
+
+    if (sch.type == "daily") {
+        return Daily(sc:sch)
+    } else if (sch.type == "businessday") {
+        return BusinessDay(sc:sch)
+    } else if (sch.type == "weekday") {
+        return MTWTF(sc:sch)
     } else {
-        return nil
+        return NoSchedule()
     }
+    
 }
