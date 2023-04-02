@@ -8,29 +8,26 @@
 import SwiftUI
 
 struct ScheduleEditorView: View {
-    @Binding var sch:Schedule?
-    @State var dayPicked:Int = 0
-    @State var lol:String = ""
+    @Binding var sch:Schedule
+    @Binding var dayPicked:Int
     
     var body: some View {
-        if sch != nil {
-                if sch!.type != "daily" {
+        
+        VStack {
+            if sch.type != "none" {
+                if sch.type != "daily"{
                     Picker ("Day", selection:$dayPicked) {
-                        ForEach (sch!.days.indices, id:\.self) { ind in
-                            Text(labels.getLabel(sch:sch!, ind:ind)).tag(ind)
+                        ForEach (sch.days.indices, id:\.self) { ind in
+                            Text(labels.getLabel(sch:sch, ind:ind)).tag(ind)
                         }
                     }.pickerStyle(.segmented)
                 }
+                
+                DayEditorView(sch:$sch, ind:dayPicked)
+            } else {
+                Text("")
+            }
             
-        TextField (
-            "lol",
-            text:$lol
-        )
-                
-                
-                
-        } else {
-            Text("")
         }
     }
     
@@ -89,10 +86,11 @@ struct ScheduleEditorView: View {
 #if DEBUG
 struct ScheduleModifierView_Previews: PreviewProvider {
     struct SDV_Wrapper: View {
-        @State var sc:Schedule? = BusinessDay()
+        @State var sc:Schedule = BusinessDay()
+        @State var dayPicked:Int = 0
         
         var body: some View {
-            ScheduleEditorView(sch:$sc)
+            ScheduleEditorView(sch:$sc, dayPicked:$dayPicked)
         }
     }
     

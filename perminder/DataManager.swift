@@ -94,6 +94,6 @@ class CodableDataManager: Codable {
     
     init () {
         currentTagID = 0
-        options = CodableOptions(sc:nil)
+        options = CodableOptions()
     }
 }

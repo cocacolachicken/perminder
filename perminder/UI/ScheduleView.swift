@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    @Binding var sch:Schedule?
+    @Binding var sch:Schedule
     @State var type:String
     @State var m:String = "none"
+    @State var dayPicked:Int = 0
     
-    init (sch:Binding<Schedule?>, type:String) {
+    init (sch:Binding<Schedule>, type:String) {
         _sch = sch
         _type = .init(initialValue:type)
     }
@@ -26,9 +27,11 @@ struct ScheduleView: View {
                 Text("Weekday/Weekend").tag("businessday")
                 Text("Days of the Week").tag("weekday")
             }.onChange (of: type) { _ in
+                dayPicked = 0
+                
                 switch type {
                 case "none":
-                    sch = nil
+                    sch = NoSchedule()
                     return
                 case "daily":
                     sch = Daily()
@@ -52,7 +55,7 @@ struct ScheduleView: View {
                         Text("Please choose a schedule type.")
                     }
                 default:
-                    ScheduleEditorView(sch:$sch)
+                    ScheduleEditorView(sch:$sch, dayPicked:$dayPicked)
                 }
             }
         }.navigationTitle("Set Schedule")
@@ -66,7 +69,7 @@ struct ScheduleView_Previews: PreviewProvider {
         
         var body: some View {
             ScheduleView(sch:$data.opt.sc,
-                               type: data.opt.sc != nil ? data.opt.sc!.type : "daily")
+                               type: data.opt.sc.type)
         }
     }
     

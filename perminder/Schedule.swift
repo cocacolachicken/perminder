@@ -29,26 +29,25 @@ class CodableSchedule:Codable {
         self.type = type
     }
     
-    var days:[CodableDay]
-    var type:String
+    var days:[CodableDay] = []
+    var type:String = "none"
     
-    init (ds:[CodableDay], t:String) {
-        self.days = ds
-        self.type = t
+    init () {
+        
     }
     
-    static func getCodableSchedule (sch:Schedule?) -> CodableSchedule? {
-        if sch == nil {
-            return nil
-        } else {
-            var ds = [CodableDay]()
-            let t = sch!.type
-            for day in sch!.days {
-                ds.append(CodableDay(d:day))
-            }
-            
-            
-            return CodableSchedule(ds: ds, t: t)
+    static func getCodableSchedule (sch:Schedule) -> CodableSchedule {
+        
+        var ds = [CodableDay]()
+        let t = sch.type
+        for day in sch.days {
+            ds.append(CodableDay(d:day))
         }
+            
+            
+        return CodableSchedule(days: ds, type: t)
+        
     }
+    
+    
 }

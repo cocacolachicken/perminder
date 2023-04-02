@@ -7,6 +7,36 @@
 
 import Foundation
 
+// Represents no schedule
+class NoSchedule: Schedule {
+    var days:[Day] = [Day()]
+    var type:String = "none"
+    var bounds:ClosedRange<Int> = 0...0
+    
+    subscript (index:String) -> Day {
+        get {
+            return (days[0])
+        }
+    }
+    
+    func modify (day:Int, index:Int, t:Timeblock) {
+        // do nothing
+    }
+    
+    func append (day: Int, t:String) {
+        // do nothing
+    }
+    
+    init (sc:CodableSchedule) {
+        // do nothing
+    }
+    
+    init () {
+        // do nothing
+    }
+}
+
+
 // One single schedule that repeats daily
 class Daily: Schedule {
     var days:[Day] = [Day()]
