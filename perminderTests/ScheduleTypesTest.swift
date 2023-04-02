@@ -8,11 +8,7 @@
 @testable import perminder
 import XCTest
 
-final class ScheduleTypesTest: XCTestCase {
-    
-    var TDaily:Daily
-    var TBusiness:BusinessDay
-    var TMTWTF:MTWTF
+class ScheduleTypesTest: XCTestCase {
     
     override func setUp() {
         <#code#>
