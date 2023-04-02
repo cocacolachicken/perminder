@@ -7,19 +7,20 @@
 
 import Foundation
 
-class Day: Identifiable { // Represents a day composed of many timeblocks
+struct Day: Identifiable { // Represents a day composed of many timeblocks
     var times: [Timeblock] = []
     var id:UUID = UUID()
+    var index:Int
     
     func getTimes () -> [Timeblock] {
         times
     }
     
-    func deleteTime (index:Int) {
+    mutating func deleteTime (index:Int) {
         times.remove(at:index)
     }
     
-    func addTimeBlock (time:String) {
+    mutating func addTimeBlock (time:String) {
         if !times.contains(where: {t in t.timeAssigned == time}) {
             
             times.append(Timeblock(tA:time))
@@ -29,14 +30,16 @@ class Day: Identifiable { // Represents a day composed of many timeblocks
         }
     }
     
-    init (d:CodableDay) {
+    init (d:CodableDay, i:Int) {
         for day in d.blocks {
-            times.append(Timeblock(tA: day.time, tags: day.tags))
+            times.append(Timeblock(tA: day.time))
         }
+        index = i
     }
     
-    init () {
+    init (i:Int) {
         times = []
+        index = i
     }
 }
 

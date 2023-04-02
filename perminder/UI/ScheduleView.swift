@@ -41,28 +41,30 @@ struct ScheduleView: View {
             }
             
             switch currentType {
-                case "daily":
-                    NavigationLink {
-                        DayEditorView(daySelected:0).environmentObject(dat)
-                    } label: {
-                        Text("FOR THE !!!!")
-                    }
                 case "businessday":
-                    ForEach (Array(dat.opt.sc.days.enumerated()), id:\.1.id) { index, day in
-                        NavigationLink {
-                            DayEditorView(daySelected:index).environmentObject(dat)
-                        } label: {
-                            Text()
+                    Picker ("Day", selection:$dayPicked) {
+                        ForEach (0...1, id:\.self) { ind in
+                            Text(Labels.BSSDay(rawValue: ind)!.label).tag(ind)
                         }
-                    }
+                    }.pickerStyle(.segmented)
                 case "weekday":
-                    ForEach (Array(dat.opt.sc.days.enumerated()), id:\.1.id) { index, day in
-                        NavigationLink {
-                            DayEditorView(daySelected:index).environmentObject(dat)
-                        } label: {
-                            
+                    Picker ("Day", selection:$dayPicked) {
+                        ForEach (0...6, id:\.self) { ind in
+                            Text(Labels.MTWTF(rawValue: ind)!.label).tag(ind)
                         }
-                    }
+                    }.pickerStyle(.segmented)
+                default:
+                    EmptyView()
+                    
+            }
+            
+            switch currentType {
+                case "daily":
+                DayEditorView(daySelected:$dayPicked).environmentObject(dat)
+                case "businessday":
+                DayEditorView(daySelected:$dayPicked).environmentObject(dat)
+                case "weekday":
+                DayEditorView(daySelected:$dayPicked).environmentObject(dat)
                 default:
                     EmptyView()
             }
@@ -89,19 +91,19 @@ struct ScheduleView: View {
             var label:String {
                 switch self {
                 case .Su:
-                    return "Sunday"
+                    return "Su"
                 case .Mo:
-                    return "Monday"
+                    return "Mo"
                 case .Tu:
-                    return "Tuesday"
+                    return "Tu"
                 case .We:
-                    return "Wednesday"
+                    return "We"
                 case .Th:
-                    return "Thursday"
+                    return "Th"
                 case .Fr:
-                    return "Friday"
+                    return "Fr"
                 case .Sa:
-                    return "Saturday"
+                    return "Sa"
                 }
             }
         }
