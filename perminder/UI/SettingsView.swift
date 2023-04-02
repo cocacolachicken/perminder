@@ -15,8 +15,7 @@ struct SettingsView: View {
             List {
                 Section ("Scheduling") {
                     NavigationLink {
-                        ScheduleView(sch:$dat.opt.sc,
-                                     type: dat.opt.sc.type)
+                        ScheduleView(currentType:dat.opt.sc.type).environmentObject(dat)
                     } label: {
                         Text("Set Schedule")
                     }

@@ -1,80 +1,126 @@
 //
-//  ScheduleEditorView.swift
+//  ScheduleView.swift
 //  perminder
 //
-//  Created by Tyler Gu on 2023-04-01.
+//  Created by Tyler Gu on 2023-04-02.
 //
 
 import SwiftUI
 
 struct ScheduleView: View {
-    @Binding var sch:Schedule
-    @State var type:String
-    @State var m:String = "none"
+    @EnvironmentObject var dat:DataManager
+    @State var currentType:String = "none"
     @State var dayPicked:Int = 0
     
-    init (sch:Binding<Schedule>, type:String) {
-        _sch = sch
-        _type = .init(initialValue:type)
-    }
-    
     var body: some View {
-
         List {
-            Picker ("Type", selection:$type) {
+            Picker ("Type of Schedule", selection:$currentType) {
                 Text("None").tag("none")
                 Text("Daily").tag("daily")
-                Text("Weekday/Weekend").tag("businessday")
-                Text("Days of the Week").tag("weekday")
-            }.onChange (of: type) { _ in
+                Text("Business Day").tag("businessday")
+                Text("S/M/T/W/T/F/S").tag("weekday")
+            }.onChange(of:currentType) { newVal in
                 dayPicked = 0
                 
-                switch type {
-                case "none":
-                    sch = NoSchedule()
-                    return
+                switch newVal {
                 case "daily":
-                    sch = Daily()
-                    return
+                    dat.opt.sc = Daily()
+                    break;
                 case "businessday":
-                    sch = BusinessDay()
-                    return
+                    dat.opt.sc = BusinessDay()
+                    break;
                 case "weekday":
-                    sch = MTWTF()
-                    return
+                    dat.opt.sc = MTWTF()
+                    break;
                 default:
-                    return
+                    dat.opt.sc = NoSchedule()
+                    break;
                 }
+                
+                dat.objectWillChange.send()
             }
             
-            Section {
-                switch type {
-                    
-                case "none":
-                    VStack {
-                        Text("Please choose a schedule type.")
+            switch currentType {
+                case "daily":
+                    NavigationLink {
+                        DayEditorView(daySelected:0).environmentObject(dat)
+                    } label: {
+                        Text("FOR THE !!!!")
+                    }
+                case "businessday":
+                    ForEach (Array(dat.opt.sc.days.enumerated()), id:\.1.id) { index, day in
+                        NavigationLink {
+                            DayEditorView(daySelected:index).environmentObject(dat)
+                        } label: {
+                            Text()
+                        }
+                    }
+                case "weekday":
+                    ForEach (Array(dat.opt.sc.days.enumerated()), id:\.1.id) { index, day in
+                        NavigationLink {
+                            DayEditorView(daySelected:index).environmentObject(dat)
+                        } label: {
+                            
+                        }
                     }
                 default:
-                    ScheduleEditorView(sch:$sch, dayPicked:$dayPicked)
+                    EmptyView()
+            }
+        }
+    }
+    
+    enum Labels {
+        enum BSSDay: Int {
+            case Weekend = 0, Weekday
+            
+            var label:String {
+                switch self {
+                case .Weekday:
+                    return "Weekday"
+                case .Weekend:
+                    return "Weekend"
                 }
             }
-        }.navigationTitle("Set Schedule")
+        }
+        
+        enum MTWTF: Int {
+            case Su = 0, Mo, Tu, We, Th, Fr, Sa
+            
+            var label:String {
+                switch self {
+                case .Su:
+                    return "Sunday"
+                case .Mo:
+                    return "Monday"
+                case .Tu:
+                    return "Tuesday"
+                case .We:
+                    return "Wednesday"
+                case .Th:
+                    return "Thursday"
+                case .Fr:
+                    return "Friday"
+                case .Sa:
+                    return "Saturday"
+                }
+            }
+        }
     }
 }
 
-#if DEBUG
 struct ScheduleView_Previews: PreviewProvider {
-    struct SVPreviewWrapper: View {
+    struct SV_Wrapper: View {
         @StateObject var data:DataManager = DataManager(Bundle.main.decode(file:"testdata.json"))
         
         var body: some View {
-            ScheduleView(sch:$data.opt.sc,
-                               type: data.opt.sc.type)
+            NavigationView {
+                ScheduleView(currentType:data.opt.sc.type).environmentObject(data)
+                
+            }
         }
     }
     
     static var previews: some View {
-        SVPreviewWrapper()
+        SV_Wrapper()
     }
 }
-#endif

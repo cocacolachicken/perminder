@@ -7,9 +7,15 @@
 
 import Foundation
 
-struct Timeblock { // Represents a time (timeassigned) where a notification is wanted
+struct Timeblock: Identifiable, Hashable { // Represents a time (timeassigned) where a notification is wanted
+    
     var timeAssigned:String
     var groups:[String] = []
+    var id = UUID()
+    
+    func hash (in hasher:inout Hasher) {
+        hasher.combine(id)
+    }
     
     init (tA:String) {
         timeAssigned = tA

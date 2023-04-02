@@ -8,7 +8,7 @@
 import Foundation
 
 // Represents no schedule
-class NoSchedule: Schedule {
+struct NoSchedule: Schedule {
     var days:[Day] = [Day()]
     var type:String = "none"
     var bounds:ClosedRange<Int> = 0...0
@@ -38,7 +38,7 @@ class NoSchedule: Schedule {
 
 
 // One single schedule that repeats daily
-class Daily: Schedule {
+struct Daily: Schedule {
     var days:[Day] = [Day()]
     var type:String = "daily"
     var bounds:ClosedRange<Int> = 0...0
@@ -68,7 +68,7 @@ class Daily: Schedule {
 }
 
 // Schedule that contrasts a day on the weekends with a different day on the weekdays
-class BusinessDay: Schedule {
+struct BusinessDay: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:2)
     var type:String = "businessday"
     var bounds:ClosedRange<Int> = 0...1
@@ -103,7 +103,7 @@ class BusinessDay: Schedule {
 }
 
 // Schedule that runs a different day for every day of the week
-class MTWTF: Schedule {
+struct MTWTF: Schedule {
     var days:[Day] = [Day](repeating:Day(), count:7)
     var type:String = "weekday"
     var bounds:ClosedRange<Int> = 0...6

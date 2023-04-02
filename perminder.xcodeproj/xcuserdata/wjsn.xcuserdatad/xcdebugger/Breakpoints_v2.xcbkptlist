@@ -116,5 +116,881 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAE02EDF-679E-4E91-8B2F-289D17E74923"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "Labels"
+            landmarkType = "13">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF88CAD4-16CF-48E7-8773-483B5DBE9393"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ScheduleView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "CF88CAD4-16CF-48E7-8773-483B5DBE9393 - 61332b1528b9f0b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.dat.getter : perminder.DataManager"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "CF88CAD4-16CF-48E7-8773-483B5DBE9393 - e86d805b0c90f246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.$dat.getter : SwiftUI.EnvironmentObject&lt;perminder.DataManager&gt;.Wrapper"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "CF88CAD4-16CF-48E7-8773-483B5DBE9393 - ea54d923a1a08485"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.init() -&gt; perminder.ScheduleView"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ScheduleView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - a747f88a0d68eea5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of perminder.ScheduleView.currentType : Swift.String"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - c8e91242711c268b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.currentType.getter : Swift.String"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "234">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - 3dfe6644fa75d69f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.currentType.setter : Swift.String"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - 8ee70081682df28e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.currentType.modify : Swift.String"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "233">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - 316080bcad74ec9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.currentType.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - c2100a5b361b63d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.$currentType.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  uuid = "9C4576AB-00BE-47CE-A242-BF957F69DB6F - ea54d923a1a084aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.init() -&gt; perminder.ScheduleView"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "113">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ScheduleView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 88bef10b5ab47dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of perminder.ScheduleView.dayPicked : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 86c6e2000fc81b82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.dayPicked.getter : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "151">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 856ec095d1092f96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.dayPicked.setter : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 7e6e2e0150a73c87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.dayPicked.modify : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 7b58c368ca60b096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.dayPicked.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - 1db826d29871e04e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.$dayPicked.getter : SwiftUI.Binding&lt;Swift.Int&gt;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "202">
+               </Location>
+               <Location
+                  uuid = "8B7DED44-0D74-4D65-998E-DFE67108C5F0 - ea54d923a1a0854b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.init() -&gt; perminder.ScheduleView"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "206">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69E877CC-DEB9-44DB-BFD1-753A6F7D5C34"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "69E877CC-DEB9-44DB-BFD1-753A6F7D5C34 - 18a7ee27266cbb66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Text&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;perminder.DayEditorView, perminder.DayEditorView&gt;, SwiftUI._ConditionalContent&lt;perminder.DayEditorView, SwiftUI.HStack&lt;SwiftUI.EmptyView&gt;&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in perminder.ScheduleView.body.getter : some"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "4008">
+               </Location>
+               <Location
+                  uuid = "69E877CC-DEB9-44DB-BFD1-753A6F7D5C34 - 18a7ee27266cbb24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Text&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;perminder.DayEditorView, perminder.DayEditorView&gt;, SwiftUI._ConditionalContent&lt;perminder.DayEditorView, SwiftUI.HStack&lt;SwiftUI.EmptyView&gt;&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in perminder.ScheduleView.body.getter : some"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "4008">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDCB01F1-6F28-4746-B03B-CB934B8EC7EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EDCB01F1-6F28-4746-B03B-CB934B8EC7EF - e9ed4a8d148cc3b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Text&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;perminder.DayEditorView, perminder.DayEditorView&gt;, SwiftUI._ConditionalContent&lt;perminder.DayEditorView, SwiftUI.HStack&lt;SwiftUI.EmptyView&gt;&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in perminder.ScheduleView.body.getter : some"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "133">
+               </Location>
+               <Location
+                  uuid = "EDCB01F1-6F28-4746-B03B-CB934B8EC7EF - e6fc183035610099"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Text&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.environmentObject&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Combine.ObservableObject&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.environmentObject&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Combine.ObservableObject&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.environmentObject&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Combine.ObservableObject&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.EmptyView&gt;&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in perminder.ScheduleView.body.getter : some"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "133">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C486CA44-E7A8-43D7-A5E0-ED59557F3FF9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C5A2479-8B6A-4A1B-A9F0-067087841C7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B210152-7CAB-4102-946C-3725ECCF7D89"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "275E8FA1-B6C6-4779-929D-5AC584CB9AA2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EC672BB-05C5-42D7-A85C-768482E5CABE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E776E07F-EB81-4EFB-B207-DDAE960C6DAD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE52E12E-0D65-48A9-8B63-1D27169F9493"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6F5035D-2113-4782-8A79-D39D08880EFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3B5B82A-D1EB-45CE-BF9C-2169C854BA2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94FD4F49-821F-4D75-B3EA-23715D52DAE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/DayEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "DayEditorView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - edf8c05ca6751d73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of perminder.DayEditorView.day : perminder.Day"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 59f804b4d1fef549"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.day.getter : perminder.Day"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 553ec8aa83c9fabd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.day.setter : perminder.Day"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 27c9ee358e99864a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.day.modify : perminder.Day"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 1ee251c8b8ee7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.day.modify : perminder.Day with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - e8ccef4b6221955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.$day.getter : SwiftUI.Binding&lt;perminder.Day&gt;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "202">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - cde2133666b458c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.daySelected.getter : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "210">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 4221df7571d76c3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.daySelected.setter : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - bcf3899842497dcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.daySelected.modify : Swift.Int"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "223">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - ac1e8f4cbcdb373a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.daySelected.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  uuid = "5377A9EF-0720-4079-8C38-95645A01E7AE - 10170bd0fdf87902"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.DayEditorView.$daySelected.getter : SwiftUI.Binding&lt;Swift.Int&gt;"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/DayEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "393A1425-A00C-49FC-9546-C53784FF39C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/DayEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CCD3D00-41CC-46B3-B458-87D9433949D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/DayEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E55A0C70-24B4-4209-A159-6E9CFC054092"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/DayEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05387230-4CD3-4874-BE10-776385E80D73"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43393F1D-0452-4655-BE1E-B6708716F96D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "perminder/UI/ScheduleView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "ScheduleView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "43393F1D-0452-4655-BE1E-B6708716F96D - ea54d923a1a08485"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.init() -&gt; perminder.ScheduleView"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  uuid = "43393F1D-0452-4655-BE1E-B6708716F96D - 22fe9a67668a67d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "perminder.ScheduleView.init(dat: SwiftUI.EnvironmentObject&lt;perminder.DataManager&gt;, currentType: Swift.String, dayPicked: Swift.Int) -&gt; perminder.ScheduleView"
+                  moduleName = "perminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wjsn/Library/CloudStorage/OneDrive-AshburyCollege/grade%2011/perminder/perminder/UI/ScheduleView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

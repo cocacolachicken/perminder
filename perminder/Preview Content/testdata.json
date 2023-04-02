@@ -70,9 +70,19 @@
                            "time": "0000"
                        }
                    ]
+               },
+               {
+                   "blocks": [
+                       {
+                           "tags":[
+                               "Homework", "Econ"
+                           ],
+                           "time": "1111"
+                       }
+                   ]
                }
            ],
-           "type": "daily"
+           "type": "businessday"
        }
    }
 }

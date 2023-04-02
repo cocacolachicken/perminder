@@ -10,7 +10,7 @@ import Foundation
 /// Wrapper for Schedule, but leaves room for extension
 class Options {
     /// sc may be nil if the user disabled notifications or hasn't set a schedule
-    var sc:Schedule
+    @Published var sc:Schedule
     
     ///Initializes with NoSchedule()
     init () {

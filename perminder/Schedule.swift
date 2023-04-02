@@ -10,7 +10,7 @@ import Foundation
 ///Represents a given schedule
 ///
 protocol Schedule {
-    var days:[Day] {get set} // multiple days
+     var days:[Day] {get set} // multiple days
     var type:String {get set}
     var bounds:ClosedRange<Int> {get}
 

@@ -20,7 +20,9 @@
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
 		F96399B329D366A8002C3C19 /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
 		F96399B729D3D1D4002C3C19 /* sav.json in Resources */ = {isa = PBXBuildFile; fileRef = F96399B629D3D1D4002C3C19 /* sav.json */; };
-		F96AF4CE29D941DA007673F1 /* DayEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AF4CD29D941DA007673F1 /* DayEditorView.swift */; };
+		F968BBE229DA1B7700DA01A1 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968BBE129DA1B7700DA01A1 /* ScheduleView.swift */; };
+		F968BBE429DA240800DA01A1 /* DayEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968BBE329DA240800DA01A1 /* DayEditorView.swift */; };
+		F968BBE629DA33B500DA01A1 /* TimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968BBE529DA33B500DA01A1 /* TimeSelector.swift */; };
 		F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBA29D27E2A00038384 /* SettingsView.swift */; };
 		F98C3FBD29D27FFB00038384 /* TagsReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */; };
 		F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98CCA7D29CA0FB500811FCF /* Reminder.swift */; };
@@ -45,8 +47,6 @@
 		F9B43BE429B9119000740FE5 /* perminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BE329B9119000740FE5 /* perminderUITests.swift */; };
 		F9B43BE629B9119000740FE5 /* perminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B43BE529B9119000740FE5 /* perminderUITestsLaunchTests.swift */; };
 		F9C7B62E29D9107600FA4EC1 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */; };
-		F9C7B63029D9126B00FA4EC1 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */; };
-		F9C7B63A29D927C700FA4EC1 /* ScheduleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,9 @@
 		F95A4DFD29D1358F0000AEDF /* Supporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
 		F95A4DFF29D137A40000AEDF /* testdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testdata.json; sourceTree = "<group>"; };
 		F96399B629D3D1D4002C3C19 /* sav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sav.json; sourceTree = "<group>"; };
-		F96AF4CD29D941DA007673F1 /* DayEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEditorView.swift; sourceTree = "<group>"; };
+		F968BBE129DA1B7700DA01A1 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		F968BBE329DA240800DA01A1 /* DayEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEditorView.swift; sourceTree = "<group>"; };
+		F968BBE529DA33B500DA01A1 /* TimeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelector.swift; sourceTree = "<group>"; };
 		F98C3FBA29D27E2A00038384 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F98C3FBC29D27FFB00038384 /* TagsReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsReminderView.swift; sourceTree = "<group>"; };
 		F98CCA7D29CA0FB500811FCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -108,8 +110,6 @@
 		F9B43BE329B9119000740FE5 /* perminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perminderUITests.swift; sourceTree = "<group>"; };
 		F9B43BE529B9119000740FE5 /* perminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
-		F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,9 +236,9 @@
 				F9C7B62D29D9107600FA4EC1 /* ColorPicker.swift */,
 				F9496E9329D7CCCF00A6EBAA /* TagRow.swift */,
 				F98C3FBA29D27E2A00038384 /* SettingsView.swift */,
-				F9C7B62F29D9126B00FA4EC1 /* ScheduleView.swift */,
-				F9C7B63929D927C700FA4EC1 /* ScheduleEditorView.swift */,
-				F96AF4CD29D941DA007673F1 /* DayEditorView.swift */,
+				F968BBE129DA1B7700DA01A1 /* ScheduleView.swift */,
+				F968BBE529DA33B500DA01A1 /* TimeSelector.swift */,
+				F968BBE329DA240800DA01A1 /* DayEditorView.swift */,
 				F9B3A75A29D2634C001D4616 /* TestUI.swift */,
 			);
 			path = UI;
@@ -377,19 +377,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9C7B63029D9126B00FA4EC1 /* ScheduleView.swift in Sources */,
 				F9B3A75329D25819001D4616 /* RGB.swift in Sources */,
 				F9C7B62E29D9107600FA4EC1 /* ColorPicker.swift in Sources */,
 				F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */,
 				F98CCA8629CA225B00811FCF /* Day.swift in Sources */,
 				F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */,
-				F96AF4CE29D941DA007673F1 /* DayEditorView.swift in Sources */,
 				F98CCA8029CA11B400811FCF /* Tag.swift in Sources */,
 				F9B3A75B29D2634C001D4616 /* TestUI.swift in Sources */,
+				F968BBE429DA240800DA01A1 /* DayEditorView.swift in Sources */,
 				F9B3A75729D25E0B001D4616 /* MainView.swift in Sources */,
 				F98CCA7E29CA0FB500811FCF /* Reminder.swift in Sources */,
 				F98E036A29D3515600A0609A /* Checkbox.swift in Sources */,
 				F98C3FBD29D27FFB00038384 /* TagsReminderView.swift in Sources */,
+				F968BBE229DA1B7700DA01A1 /* ScheduleView.swift in Sources */,
 				F9B43BCB29B9118A00740FE5 /* ContentView.swift in Sources */,
 				F98C3FBB29D27E2A00038384 /* SettingsView.swift in Sources */,
 				F98CCA8229CA161C00811FCF /* Schedule.swift in Sources */,
@@ -402,9 +402,9 @@
 				892411CF29D2787D002CD560 /* Notification.swift in Sources */,
 				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
 				F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */,
+				F968BBE629DA33B500DA01A1 /* TimeSelector.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,
 				F9B43BC929B9118A00740FE5 /* perminderApp.swift in Sources */,
-				F9C7B63A29D927C700FA4EC1 /* ScheduleEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

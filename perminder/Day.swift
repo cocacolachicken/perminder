@@ -7,8 +7,9 @@
 
 import Foundation
 
-class Day { // Represents a day composed of many timeblocks
+class Day: Identifiable { // Represents a day composed of many timeblocks
     var times: [Timeblock] = []
+    var id:UUID = UUID()
     
     func getTimes () -> [Timeblock] {
         times
@@ -19,7 +20,13 @@ class Day { // Represents a day composed of many timeblocks
     }
     
     func addTimeBlock (time:String) {
-        times.append(Timeblock(tA:time))
+        if !times.contains(where: {t in t.timeAssigned == time}) {
+            
+            times.append(Timeblock(tA:time))
+            times.sort(by:{
+                Int($0.timeAssigned)! < Int($1.timeAssigned)!
+            })
+        }
     }
     
     init (d:CodableDay) {
