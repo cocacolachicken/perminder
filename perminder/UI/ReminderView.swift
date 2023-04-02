@@ -73,7 +73,7 @@ struct ReminderView: View {
             Section ("TAGS") {
                 ForEach (Array(tags.enumerated()), id:\.1) { index, tag in
                     NavigationLink {
-                        TagsReminderView(tag:tag, reminders:dat.getRemindersByTag(t:tag.getName())).environmentObject(dat)
+                        TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag)).environmentObject(dat)
                         
                     } label: {
                         TagRow(t:tag)

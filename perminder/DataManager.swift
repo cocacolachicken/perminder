@@ -53,13 +53,11 @@ class DataManager: ObservableObject {
     }
     
     func findAllReminders(tagIn:Tag) -> [Int]{
-        var indicesIndex:Int = 0
         var reminderIndex:Int = 0
-        var indices:[Int] = [reminders.count]
+        var indices:[Int] = []
         for reminder in reminders {
             for tag in reminder.tags where tag == tagIn {
-                indices[indicesIndex] = reminderIndex
-                indicesIndex += 1
+                indices.append(reminderIndex)
             }
             reminderIndex += 1
         }
