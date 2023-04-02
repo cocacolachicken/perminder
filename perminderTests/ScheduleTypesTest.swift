@@ -9,6 +9,23 @@
 import XCTest
 
 final class ScheduleTypesTest: XCTestCase {
-
+    
+    var TDaily:Daily
+    var TBusiness:BusinessDay
+    var TMTWTF:MTWTF
+    
+    override func setUp() {
+        <#code#>
+    }
+    
+    override func tearDown() {
+        <#code#>
+    }
+    
+    func testDaily() {
+        
+    }
+    
+    
 
 }
