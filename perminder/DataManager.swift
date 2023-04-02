@@ -55,6 +55,20 @@ class DataManager: ObservableObject {
         reminders.append(Reminder(n:n))
         reminderByID[reminders[reminders.count-1].rid] = reminders[reminders.count-1]
     }
+    
+    func findAllReminders(tagIn:Tag) -> [Int]{
+        var indicesIndex:Int = 0
+        var reminderIndex:Int = 0
+        var indices:[Int] = [reminders.count]
+        for reminder in reminders {
+            for tag in reminder.tags where tag == tagIn {
+                indices[indicesIndex] = reminderIndex
+                indicesIndex += 1
+            }
+            reminderIndex += 1
+        }
+        return indices
+    }
 }
 
 class CodableDataManager: Codable {
