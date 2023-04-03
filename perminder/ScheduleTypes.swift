@@ -8,8 +8,8 @@
 import Foundation
 
 // Represents no schedule
-class NoSchedule: Schedule {
-    var days:[Day] = [Day()]
+struct NoSchedule: Schedule {
+    var days:[Day] = [Day(i:0)]
     var type:String = "none"
     var bounds:ClosedRange<Int> = 0...0
     
@@ -38,8 +38,8 @@ class NoSchedule: Schedule {
 
 
 // One single schedule that repeats daily
-class Daily: Schedule {
-    var days:[Day] = [Day()]
+struct Daily: Schedule {
+    var days:[Day] = [Day(i:0)]
     var type:String = "daily"
     var bounds:ClosedRange<Int> = 0...0
     
@@ -50,16 +50,16 @@ class Daily: Schedule {
         }
     }
     
-    func modify (day:Int, index:Int, t:Timeblock) {
+    mutating func modify (day:Int, index:Int, t:Timeblock) {
         days[0].times[index] = t
     }
     
-    func append (day: Int, t:String) {
+    mutating func append (day: Int, t:String) {
         days[0].times.append(Timeblock(tA:t))
     }
     
     init (sc:CodableSchedule) {
-        days[0] = Day(d:sc.days[0])
+        days[0] = Day(d:sc.days[0], i: 0)
     }
     
     init () {
@@ -68,8 +68,8 @@ class Daily: Schedule {
 }
 
 // Schedule that contrasts a day on the weekends with a different day on the weekdays
-class BusinessDay: Schedule {
-    var days:[Day] = [Day](repeating:Day(), count:2)
+struct BusinessDay: Schedule {
+    var days:[Day] = [Day(i:0), Day(i:1)]
     var type:String = "businessday"
     var bounds:ClosedRange<Int> = 0...1
     
@@ -83,17 +83,17 @@ class BusinessDay: Schedule {
         }
     }
     
-    func modify (day:Int, index:Int, t:Timeblock) {
+    mutating func modify (day:Int, index:Int, t:Timeblock) {
         days[day].times[index] = t
     }
     
-    func append (day: Int, t:String) {
+    mutating func append (day: Int, t:String) {
         days[day].times.append(Timeblock(tA:t))
     }
     
     init (sc:CodableSchedule) {
         for x in 0...1 {
-            days[x] = Day(d:sc.days[x])
+            days[x] = Day(d:sc.days[x], i:x)
         }
     }
     
@@ -103,8 +103,8 @@ class BusinessDay: Schedule {
 }
 
 // Schedule that runs a different day for every day of the week
-class MTWTF: Schedule {
-    var days:[Day] = [Day](repeating:Day(), count:7)
+struct MTWTF: Schedule {
+    var days:[Day] = [Day(i:0), Day(i:1), Day(i:2), Day(i:3), Day(i:4), Day(i:5), Day(i:6)]
     var type:String = "weekday"
     var bounds:ClosedRange<Int> = 0...6
     
@@ -124,17 +124,17 @@ class MTWTF: Schedule {
         }
     }
     
-    func modify (day: Int, index:Int, t:Timeblock) {
+    mutating func modify (day: Int, index:Int, t:Timeblock) {
         days[day].times[index] = t
     }
     
-    func append (day: Int, t:String) {
+    mutating func append (day: Int, t:String) {
         days[day].times.append(Timeblock(tA:t))
     }
     
     init (sc:CodableSchedule) {
         for x in 0...6 {
-            days[x] = Day(d:sc.days[x])
+            days[x] = Day(d:sc.days[x], i:x)
         }
     }
     

@@ -64,15 +64,12 @@
                {
                    "blocks": [
                        {
-                           "tags":[
-                               "Homework", "Econ"
-                           ],
                            "time": "0000"
                        }
                    ]
                }
            ],
-           "type": "daily"
+           "type": "none"
        }
    }
 }

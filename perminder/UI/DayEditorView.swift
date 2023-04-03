@@ -8,29 +8,45 @@
 import SwiftUI
 
 struct DayEditorView: View {
-    @Binding var sch:Schedule
-    var ind:Int
+    @Binding var daySelected:Int
+    @EnvironmentObject var dat:DataManager
+    @State var timeSelected:String = "0000"
+    
+    init (daySelected:Binding<Int>) {
+        _daySelected = daySelected
+    }
     
     var body: some View {
-        Text(String(ind))
+        ForEach (dat.opt.sc.days[daySelected].times, id:\.self) { timeb in
+            Text("Sending at: " + formatWithoutColon(time:timeb.timeAssigned))
+        }.onDelete(perform:delete)
+        
+        TimeSelector(time:timeSelected, bind:$timeSelected)
+        
+        Button (action: {
+            dat.opt.sc.days[daySelected].addTimeBlock(time:timeSelected)
+            dat.objectWillChange.send()
+        }, label: {
+            Text ("Add time")
+        })
+    }
+    
+    func delete (at offsets: IndexSet) {
+        dat.opt.sc.days[daySelected].times.remove(atOffsets: offsets)
+    }
+    
+    func formatWithoutColon (time:String) -> String {
+        var mutate = time
+        let index = mutate.index(mutate.startIndex, offsetBy: 2)
+        mutate.insert(":", at:index)
+        
+        return mutate
     }
 }
 
-#if DEBUG
+/*
 struct DayEditorView_Previews: PreviewProvider {
-    struct DEV_Wrapper: View {
-        @State var sch:Schedule = Daily()
-        
-        var body: some View {
-            List
-            {
-                DayEditorView(sch:$sch, ind:0)
-            }
-        }
-    }
-    
     static var previews: some View {
-        DEV_Wrapper()
     }
 }
-#endif
+*/

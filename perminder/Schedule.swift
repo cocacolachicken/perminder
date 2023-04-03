@@ -16,9 +16,9 @@ protocol Schedule {
 
     subscript (index:String) -> Day {get} // A date returns a given day. Any pattern may correspond with equal or less amoutn of days (e.g. 7-day --> 2 different days for a business/non-business-day based schedule )
     
-    func modify (day:Int, index:Int, t:Timeblock) // Used to modify the days
+    mutating func modify (day:Int, index:Int, t:Timeblock) // Used to modify the days
     
-    func append (day:Int, t:String)
+    mutating func append (day:Int, t:String)
     
     
 }
