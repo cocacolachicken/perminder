@@ -1,6 +1,7 @@
 //
 //  NotificationHandler.swift
 //  perminder
+//  The class to handle notification sending and permissions
 //
 //  Created by Leqi Shen on 2023-03-27.
 //
@@ -28,36 +29,52 @@ class NotificationHandler:Identifiable {
         center = centerIn
     }
     
+    //Getters and setters
+    
+    /// gets notification title
+    /// - Returns: the title of the notification
     public func getTitle() -> String {
         return title
     }
     
+    /// gets notification body
+    /// - Returns: body of notification
     public func getBody() -> String {
         return body
     }
     
+    /// Gets the day of week (unused)
+    /// - Returns: the day of week
     public func getDay() -> String {
         return day
     }
     
+    /// Gets the time to send
+    /// - Returns: The time to send the notif
     public func getTime() -> String {
         return time
     }
     
+    
+    /// Marks the notification as read
     public func markAsRead() {
         isRead = true
     }
     
+    /// Marks the notification as unread
     public func markUnRead() {
         isRead = false
     }
     
+    /// Sees if notification is read or not
+    /// - Returns: The read status of the notification
     public func isUnread() -> Bool {
         return !isRead
     }
     
     /**
      * Just asks permission and does nothing else.
+     * Gives the infamous notification popup asking to send alerts sounds and badges
      */
     public func requestPermission() {
         let center = UNUserNotificationCenter.current()
