@@ -18,8 +18,7 @@ class SchedulingClassesTest: XCTestCase {
     var CodableBlock2:CodableTimeblock!
     let time1:String = "1010"
     let time2:String = "1515"
-    let testTag:String = "Biology"
-    let testTag2:String = "Homework"
+    let testDayIndex = 0
     let testScheduleType:String = "Weekly"
     
     //Day
@@ -33,12 +32,12 @@ class SchedulingClassesTest: XCTestCase {
     override func setUp() {
         //Timeblock
         Block = Timeblock(tA: time1)
-        Block2 = Timeblock(tA: time2, tags:[testTag, testTag2])
-        CodableBlock = CodableTimeblock(tags: [], time: time1)
-        CodableBlock2 = CodableTimeblock(tags: [testTag, testTag2], time: time1)
+        Block2 = Timeblock(tA: time2)
+        CodableBlock = CodableTimeblock(time: time1)
+        CodableBlock2 = CodableTimeblock(time: time1)
 
         //Day
-        day1 = Day()
+        day1 = Day(i: testDayIndex)
         codableDay1 = CodableDay()
         codableDay2 = CodableDay(blocks: [CodableBlock, CodableBlock2])
 
@@ -55,7 +54,6 @@ class SchedulingClassesTest: XCTestCase {
     func testTimeblockInit() {
         XCTAssertEqual(Block.timeAssigned, time1)
         XCTAssertEqual(Block2.timeAssigned, time2)
-        XCTAssertEqual(Block2.groups, [testTag, testTag2])
     }
     
     func testCodableTimeblockNoTags() throws {
@@ -68,7 +66,6 @@ class SchedulingClassesTest: XCTestCase {
         let decodedTimeblock = try decoder.decode(CodableTimeblock.self, from: encodedData)
         
         // Ensure the decoded object is equal to original values
-        XCTAssertEqual(decodedTimeblock.tags, CodableBlock.tags)
         XCTAssertEqual(decodedTimeblock.time, CodableBlock.time)
     }
     
@@ -79,7 +76,6 @@ class SchedulingClassesTest: XCTestCase {
         let decoder = JSONDecoder()
         let decodedTimeblock = try decoder.decode(CodableTimeblock.self, from: encodedData)
         
-        XCTAssertEqual(decodedTimeblock.tags, CodableBlock2.tags)
         XCTAssertEqual(decodedTimeblock.time, CodableBlock2.time)
     }
 
@@ -123,9 +119,7 @@ class SchedulingClassesTest: XCTestCase {
         let decodedDay = try decoder.decode(CodableDay.self, from: encodedData)
         
         XCTAssertEqual(decodedDay.blocks.count, codableDay2.blocks.count)
-        XCTAssertEqual(decodedDay.blocks[0].tags, CodableBlock.tags)
         XCTAssertEqual(decodedDay.blocks[0].time, CodableBlock.time)
-        XCTAssertEqual(decodedDay.blocks[1].tags, CodableBlock2.tags)
         XCTAssertEqual(decodedDay.blocks[1].time, CodableBlock2.time)
     }
     
@@ -143,9 +137,7 @@ class SchedulingClassesTest: XCTestCase {
         XCTAssertEqual(decodedSchedule.type, codableSchedule1.type)
         XCTAssertEqual(decodedSchedule.days.count, codableSchedule1.days.count)
         XCTAssertEqual(decodedSchedule.days[0].blocks.count, codableSchedule1.days[0].blocks.count)
-        XCTAssertEqual(decodedSchedule.days[0].blocks[0].tags, CodableBlock.tags)
         XCTAssertEqual(decodedSchedule.days[0].blocks[0].time, CodableBlock.time)
-        XCTAssertEqual(decodedSchedule.days[0].blocks[1].tags, CodableBlock2.tags)
         XCTAssertEqual(decodedSchedule.days[0].blocks[1].time, CodableBlock2.time)
     }
     

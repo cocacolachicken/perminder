@@ -85,11 +85,16 @@ class NotificationHandler:Identifiable {
             case .authorized: isAllow = true; self.fireNotification()
             case .denied: isAllow = false
             case .notDetermined: self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                    if granted {
-                        isAllow = true
-                        self.fireNotification()
-                    }
+                if let error = error {
+                    print("Error requesting notification permission: \(error.localizedDescription)")
+                    return
                 }
+                guard granted else {
+                    print("User has denied notification permission")
+                    return
+                }
+                isAllow = true; self.fireNotification()
+            }
             case .ephemeral: isAllow = true; self.fireNotification()
             case .provisional: isAllow = true; self.fireNotification()
             }
