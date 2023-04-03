@@ -11,16 +11,23 @@ import XCTest
 final class ReminderTest: XCTestCase {
     
     let testName:String = "Biology"
+    let testName2:String = "Chemistry"
     
     var testReminder1:Reminder!
     var testReminder2:Reminder!
-    var tag1:Tag!
+    var testReminder3:Reminder!
+
+    var tag1String:String!
+    var tag2String:String!
+    
 
     override func setUp() {
         super.setUp()
-        tag1 = Tag(n: "Homework", c: [0, 255, 100])
-        testReminder1 = Reminder(n: testName, c: Date(), d: nil, f: nil, tg: [], i: 0)
-        testReminder2 = Reminder(n: testName)
+        tag1String = "Homework"
+        tag2String = "Urgent"
+        testReminder1 = Reminder(n: testName, c: Date(), d: nil, f: nil, tg: [tag1String], i: 0)
+        testReminder2 = Reminder(n: testName, c: Date(), d: nil, f: nil, tg: [tag1String], i: 0)
+        testReminder3 = Reminder(n: testName2, c: Date(), d: nil, f: nil, tg: [tag2String], i: 1)
     }
 
     override func tearDown() {
@@ -28,9 +35,27 @@ final class ReminderTest: XCTestCase {
     }
     
     func testHash() {
-       
+        var hasher1 = Hasher()
+        var hasher2 = Hasher()
+        var hasher3 = Hasher()
+        
+        testReminder1.hash(into: &hasher1)
+        testReminder2.hash(into: &hasher2)
+        XCTAssertEqual(hasher1.finalize(), hasher2.finalize())
+        
+        hasher1 = Hasher()
+        hasher2 = Hasher()
+        testReminder1.hash(into: &hasher1)
+        testReminder3.hash(into: &hasher2)
+        XCTAssertNotEqual(hasher1.finalize(), hasher2.finalize())
+        
     }
     
-    
+    func testEqualsImplementation() {
+        
+       XCTAssertTrue(testReminder1 == testReminder2)
+       
+       XCTAssertFalse(testReminder1 == testReminder3)
+    }
     
 }
