@@ -21,6 +21,12 @@ struct TagsReminderView: View {
     var body: some View {
         VStack {
             List {
+                Section ("Pick a colour") {
+                    ColorPicker(color:tag.getColor(), funct:{ rgb in
+                        dat.tags[tag.getName()]!.setColor(colorSet: rgb)
+                    })
+                }
+                
                 Section ("Reminders in #\(tag.getName())") {
                     ForEach(reminders, id: \.self) { remind in
                         ReminderRow(i: remind, r:dat.reminders[remind], t:$dat.reminders[remind].isFinished)

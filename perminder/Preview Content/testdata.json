@@ -67,16 +67,9 @@
                            "time": "0000"
                        }
                    ]
-               },
-               {
-                   "blocks": [
-                       {
-                           "time": "1111"
-                       }
-                   ]
                }
            ],
-           "type": "businessday"
+           "type": "none"
        }
    }
 }

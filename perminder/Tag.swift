@@ -9,7 +9,7 @@ import Foundation
 
 class Tag:Identifiable, Hashable {
     static func == (lhs: Tag, rhs: Tag) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.name == rhs.name && lhs.color == rhs.color
     }
     
     func hash (into hasher:inout Hasher) {

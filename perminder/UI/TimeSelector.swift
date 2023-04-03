@@ -48,8 +48,6 @@ struct TimeSelector: View {
                     time = String(format: "%02d", hour) + String(format: "%02d", minute)
                 }).pickerStyle(.menu)
                 
-                Text(time)
-                
                 Spacer()
             }
             

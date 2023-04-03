@@ -10,7 +10,7 @@
                     "blocks": [ ]
                 }
             ],
-            "type": "daily"
+            "type": "none"
         }
     }
 }

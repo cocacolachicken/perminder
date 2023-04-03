@@ -18,7 +18,7 @@ struct DayEditorView: View {
     
     var body: some View {
         ForEach (dat.opt.sc.days[daySelected].times, id:\.self) { timeb in
-            Text(timeb.timeAssigned)
+            Text("Sending at: " + formatWithoutColon(time:timeb.timeAssigned))
         }.onDelete(perform:delete)
         
         TimeSelector(time:timeSelected, bind:$timeSelected)
@@ -33,6 +33,14 @@ struct DayEditorView: View {
     
     func delete (at offsets: IndexSet) {
         dat.opt.sc.days[daySelected].times.remove(atOffsets: offsets)
+    }
+    
+    func formatWithoutColon (time:String) -> String {
+        var mutate = time
+        let index = mutate.index(mutate.startIndex, offsetBy: 2)
+        mutate.insert(":", at:index)
+        
+        return mutate
     }
 }
 

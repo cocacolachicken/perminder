@@ -237,8 +237,8 @@
 				F9496E9329D7CCCF00A6EBAA /* TagRow.swift */,
 				F98C3FBA29D27E2A00038384 /* SettingsView.swift */,
 				F968BBE129DA1B7700DA01A1 /* ScheduleView.swift */,
-				F968BBE529DA33B500DA01A1 /* TimeSelector.swift */,
 				F968BBE329DA240800DA01A1 /* DayEditorView.swift */,
+				F968BBE529DA33B500DA01A1 /* TimeSelector.swift */,
 				F9B3A75A29D2634C001D4616 /* TestUI.swift */,
 			);
 			path = UI;

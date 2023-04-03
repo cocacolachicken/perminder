@@ -11,6 +11,7 @@ struct ScheduleView: View {
     @EnvironmentObject var dat:DataManager
     @State var currentType:String = "none"
     @State var dayPicked:Int = 0
+    @State var showHelp:Bool = false
     
     var body: some View {
         List {
@@ -36,8 +37,6 @@ struct ScheduleView: View {
                     dat.opt.sc = NoSchedule()
                     break;
                 }
-                
-                dat.objectWillChange.send()
             }
             
             switch currentType {
@@ -67,6 +66,12 @@ struct ScheduleView: View {
                 DayEditorView(daySelected:$dayPicked).environmentObject(dat)
                 default:
                     EmptyView()
+            }
+        }.toolbar {
+            Button("Help") {
+                showHelp = true;
+            }.alert(isPresented: $showHelp) {
+                Alert(title: Text("Instructions"), message: Text("Select a type of schedule by using the drop down menu. Select the day on the schedule to go to its modifying page. Select an hour and a minute to add that time to the day. Notifications will appear on the times that you set."))
             }
         }
     }

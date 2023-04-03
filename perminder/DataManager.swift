@@ -31,11 +31,6 @@ class DataManager: ObservableObject {
         src = CodableDataManager()
     }
     
-    func initializeOptions () {
-    }
-    
-    
-    
     func markFinished (index: Int) {
         reminders[index].markFinished()
     }
