@@ -47,6 +47,11 @@ class DataManager: ObservableObject {
         reminders.append(Reminder(n:n))
     }
     
+    /**
+     * finds all reminders with the same tag name
+     * @param tagIn the tag passed in to search
+     * @return an array of all the indicies of the reminders with the specified tag
+     */
     func findAllReminders(tagIn:String) -> [Int]{
         var reminderIndex:Int = 0
         var indices:[Int] = []

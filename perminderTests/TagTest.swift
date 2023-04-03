@@ -1,6 +1,7 @@
 //
 //  TagTest.swift
 //  perminderTests
+//  Testing the Tag class
 //
 //  Created by Leqi Shen on 2023-04-03.
 //
@@ -15,7 +16,10 @@ final class TagTest: XCTestCase {
     var testTag1:Tag!
     var testTag2:Tag!
     var testTag3:Tag!
-
+    
+    /**
+     * Called at the start of testing by swift
+     */
     override func setUp() {
         super.setUp()
 
@@ -25,10 +29,14 @@ final class TagTest: XCTestCase {
 
     }
 
+    /**
+     * called at the end of testing
+     */
     override func tearDown() {
         super.tearDown()
     }
     
+    //tests the hashing of name and color as per the hashable protocol
     func testTagHash() {
         //creates 2 hashers to compare
         var hasher1 = Hasher()
@@ -49,6 +57,7 @@ final class TagTest: XCTestCase {
         
     }
     
+    //tests the == implementation to compare names and color
     func testTagEqualsImplementation() {
         
         //two identical tag names/colors should return true

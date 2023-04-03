@@ -14,11 +14,17 @@ final class SupportingTest: XCTestCase {
     
     var testBund:Bundle!
     
+    /**
+     * Called at the start of testing by swift
+     */
     override func setUp() {
         super.setUp()
         testBund = Bundle()
     }
     
+    /**
+     * called at the end of testing
+     */
     override func tearDown() {
         super.tearDown()
     }
@@ -57,6 +63,9 @@ final class SupportingTest: XCTestCase {
         XCTAssertEqual(encodedRGB, String(data: defaultEncodeString!, encoding: .utf8))
     }
     
+    /**
+     * tests the date formatting method and compares it to a hand-arranged arbitrary date
+     */
     func testFormatDate() {
         var components = DateComponents()
         components.minute = 10
