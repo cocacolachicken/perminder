@@ -82,21 +82,18 @@ class NotificationHandler:Identifiable {
         var isAllow = false
         center.getNotificationSettings { Settings in
             switch Settings.authorizationStatus {
-            case .authorized: isAllow = true; self.fireNotification()
-            case .denied: isAllow = false
-            case .notDetermined: self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                if let error = error {
-                    print("Error requesting notification permission: \(error.localizedDescription)")
-                    return
+                case .authorized: isAllow = true; self.fireNotification()
+                case .denied: isAllow = false; print("iyviyviyviy")
+                case .notDetermined: self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    if let error = error {
+                        print("Error requesting notification permission: \(error.localizedDescription)")
+                        isAllow = true; self.fireNotification()
+                    } else {
+                        print("User has denied notification permission")
+                    }
                 }
-                guard granted else {
-                    print("User has denied notification permission")
-                    return
-                }
-                isAllow = true; self.fireNotification()
-            }
-            case .ephemeral: isAllow = true; self.fireNotification()
-            case .provisional: isAllow = true; self.fireNotification()
+                case .ephemeral: isAllow = true; self.fireNotification()
+                case .provisional: isAllow = true; self.fireNotification()
             }
         }
         return isAllow
