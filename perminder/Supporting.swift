@@ -143,6 +143,3 @@ func readFromJSONFile<T:Decodable> (fileName:String) -> T? {
     }
 }
 
-func writeToSaveFile () {
-    
-}
