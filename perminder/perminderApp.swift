@@ -18,7 +18,7 @@ struct perminderApp: App {
         codedData = readFromJSONFile(fileName:"sav.json")
         let decodedData = codedData != nil ? DataManager(codedData!) : DataManager()
         _dat = .init(wrappedValue: decodedData)
-        setNotifications(dat:dat)
+        setNotifications(data:dat)
     }
 
     var body: some Scene {
