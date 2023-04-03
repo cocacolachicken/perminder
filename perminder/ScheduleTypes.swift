@@ -50,10 +50,6 @@ struct Daily: Schedule {
         }
     }
     
-    mutating func modify (day:Int, index:Int, t:Timeblock) {
-        days[0].times[index] = t
-    }
-    
     mutating func append (day: Int, t:String) {
         days[0].times.append(Timeblock(tA:t))
     }
@@ -81,10 +77,6 @@ struct BusinessDay: Schedule {
                 default: return days[1]
             }
         }
-    }
-    
-    mutating func modify (day:Int, index:Int, t:Timeblock) {
-        days[day].times[index] = t
     }
     
     mutating func append (day: Int, t:String) {
@@ -122,10 +114,6 @@ struct MTWTF: Schedule {
                 default: return days[6] // Pacifies compiler
             }
         }
-    }
-    
-    mutating func modify (day: Int, index:Int, t:Timeblock) {
-        days[day].times[index] = t
     }
     
     mutating func append (day: Int, t:String) {
