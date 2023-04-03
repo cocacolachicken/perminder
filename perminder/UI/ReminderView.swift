@@ -39,7 +39,7 @@ struct ReminderView: View {
                         "enter a title",
                         text:$title
                     ).onChange(of:title){ newVal in
-                        dat.reminders[ind].changeName(str:title)
+                        dat.reminders[ind].setName(nameSet:title)
                     }.fontWeight(.semibold).font(.title)
                     
                     Spacer()

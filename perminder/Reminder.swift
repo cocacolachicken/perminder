@@ -89,10 +89,6 @@ struct Reminder:Identifiable, Hashable {
         return name
     }
     
-    public mutating func changeName (str:String) {
-        name = str
-    }
-    
     public func getCreated() -> Date {
         return created
     }
