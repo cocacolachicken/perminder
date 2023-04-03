@@ -1,6 +1,7 @@
 //
 //  ReminderTest.swift
 //  perminderTests
+//  Tests the Reminder class
 //
 //  Created by Leqi Shen on 2023-04-02.
 //
@@ -10,6 +11,7 @@ import XCTest
 
 final class ReminderTest: XCTestCase {
     
+    //arbitrary testing values
     let testName:String = "Biology"
     let testName2:String = "Chemistry"
     
@@ -20,7 +22,9 @@ final class ReminderTest: XCTestCase {
     var tag1String:String!
     var tag2String:String!
     
-
+    /**
+     * Called at the start of testing by swift
+     */
     override func setUp() {
         super.setUp()
         tag1String = "Homework"
@@ -30,10 +34,14 @@ final class ReminderTest: XCTestCase {
         testReminder3 = Reminder(n: testName2, c: Date(), d: nil, f: nil, tg: [tag2String], i: 1)
     }
 
+    /**
+     * called at the end of testing
+     */
     override func tearDown() {
         super.tearDown()
     }
     
+    //Tests the hashing of the rids
     func testHash() {
         //creates 2 hashers to compare
         var hasher1 = Hasher()
@@ -54,6 +62,7 @@ final class ReminderTest: XCTestCase {
         
     }
     
+    //Tests the implementation of == as per hashable to compare the rids
     func testEqualsImplementation() {
         
         //two identical reminder rids should return true

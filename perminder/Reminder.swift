@@ -1,6 +1,7 @@
 //
 //  Reminder.swift
 //  perminder
+//  A simple reminder, containing all the parameters of its creation time, due date, finished date, name, etc. as well as any tags that are assigned.
 //
 //  Created by Tyler Gu and Leqi Shen on 2023-03-21.
 //
@@ -56,7 +57,7 @@ struct Reminder:Identifiable, Hashable {
         Reminder.incrementID()
     }
     
-    init (n:String, c:Date, d:Date?, f:Date?, tg:[String], i:Int) { // For use in test cases
+    init (n:String, c:Date, d:Date?, f:Date?, tg:[String], i:Int) { // For use in test cases to control each element
         name = n
         created = c
         due = d
@@ -81,50 +82,104 @@ struct Reminder:Identifiable, Hashable {
         }
     }
     
+    //getters and setters
+    /**
+     * sets the name
+     * @param nameSet the new name to be set
+     */
     public mutating func setName(nameSet:String) {
         name = nameSet
     }
     
+    /**
+     * gets the name
+     * @return the name
+     */
     public func getName() -> String {
         return name
     }
     
+    /**
+     * Essentially the same as setName
+     * @param str the new name
+     */
+    public mutating func changeName (str:String) {
+        name = str
+    }
+    
+    /**
+     * gets the time created for the reminder
+     * @return the Date value for when the object is created
+     */
     public func getCreated() -> Date {
         return created
     }
     
+    /**
+     * Sets the due date with a date passed in
+     * @param dueSet the due date to be set
+     */
     public mutating func setDue(dueSet:Date?) {
         due = dueSet
     }
     
+    /**
+     * Marks the reminder as finished by adding the current date
+     */
     public mutating func markFinished () {
         finished = Date()
     }
     
+    /**
+     * Marks the reminder as imcomplete by erasing the finished date
+     */
     public mutating func markIncomplete () {
         finished = nil
     }
     
+    /**
+     * gets the finished date, if it is finished
+     * @return a Date value signifying the finished time
+     */
     public func getFinished () -> Date? {
         finished
     }
     
+    /**
+     * gets the due date, if it is set
+     * @return a Date value signifying the due date
+     */
     public func getDue() -> Date? {
         return due
     }
     
+    /**
+     * gets the tags given to the reminder
+     * @return a string array of all the tags
+     */
     public func getTags() -> [String] {
         tags
     }
     
+    /**
+     * increments the next ID by 1
+     */
     public static func incrementID() {
         nextID += 1
     }
     
+    /**
+     * sets the next ID
+     * @param id: the int to set the next ID to be given
+     */
     public static func setID (id:Int) {
         nextID = id
     }
     
+    /**
+     * gives the next ID
+     * @return next ID
+     */
     public static func getNextID () -> Int {
         nextID
     }
