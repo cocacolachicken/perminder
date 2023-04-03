@@ -21,7 +21,7 @@ struct AddReminderBar: View {
                 if search != "" {
                     dat.addReminder(n:search)
                     search = ""
-                    
+                    writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                 }
             }) {
                 Image(systemName:"square.and.pencil")

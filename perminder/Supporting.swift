@@ -115,11 +115,25 @@ func readFromJSONFile<T:Decodable> (fileName:String) -> T? {
         decoder.dateDecodingStrategy = .iso8601
         
         guard let data = try? Data (contentsOf:fileURL) else {
-            fatalError("Could not load \(fileName)")
+            print("Could not load \(fileName)")
+            
+            fileManager.createFile(
+                atPath:fileURL.path,
+                contents: String("{}").data(using: String.Encoding.utf8),
+                attributes:[FileAttributeKey.type:"json"]
+            )
+            return nil
         }
         
         guard let decodedData = try? decoder.decode(T.self, from:data) else {
-            fatalError("Could not decode \(fileName) into \(T.self)")
+            print("Could not decode \(fileName)")
+            
+            fileManager.createFile(
+                atPath:fileURL.path,
+                contents: String("{}").data(using: String.Encoding.utf8),
+                attributes:[FileAttributeKey.type:"json"]
+            )
+            return nil
         }
         
         return decodedData

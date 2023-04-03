@@ -36,6 +36,9 @@ struct ReminderRow: View {
                         dat.reminders[index].markIncomplete()
                     }
                     
+                    
+                    writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+                    
                 }).padding(.top)
                 
                 Spacer()

@@ -95,6 +95,7 @@ struct ReminderView: View {
                         }
                         
                         dat.reminders[ind].tags.append(dat.tags[tagPicked]!)
+                        writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                     }) {
                         Image(systemName:"plus")
                     }
@@ -120,6 +121,7 @@ struct ReminderView: View {
     func remove (at offsets: IndexSet) {
         dat.reminders[ind].tags.remove(atOffsets: offsets)
         tags.remove(atOffsets: offsets)
+        writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
     }
 }
 

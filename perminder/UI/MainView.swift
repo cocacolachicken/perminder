@@ -52,6 +52,7 @@ struct MainView: View {
     
     func removeReminder (at offsets: IndexSet) {
         dat.reminders.remove(atOffsets: offsets)
+        writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
     }
 }
 

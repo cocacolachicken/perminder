@@ -24,6 +24,7 @@ struct TagsReminderView: View {
                 Section ("Pick a colour") {
                     ColorPicker(color:tag.getColor(), funct:{ rgb in
                         dat.tags[tag.getName()]!.setColor(colorSet: rgb)
+                        writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                     })
                 }
                 
