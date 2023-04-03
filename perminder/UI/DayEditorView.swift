@@ -27,6 +27,7 @@ struct DayEditorView: View {
             dat.opt.sc.days[daySelected].addTimeBlock(time:timeSelected)
             dat.objectWillChange.send()
             writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+            setNotifications(data:dat)
         }, label: {
             Text ("Add time")
         })
@@ -35,6 +36,7 @@ struct DayEditorView: View {
     func delete (at offsets: IndexSet) {
         dat.opt.sc.days[daySelected].times.remove(atOffsets: offsets)
         writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+        setNotifications(data:dat)
     }
     
     func formatWithoutColon (time:String) -> String {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct SettingsView: View {
     @EnvironmentObject var dat:DataManager
@@ -18,6 +19,21 @@ struct SettingsView: View {
                         ScheduleView(currentType:dat.opt.sc.type).environmentObject(dat)
                     } label: {
                         Text("Set Schedule")
+                    }
+                }
+                
+                Section("Debugging") {
+                    Button ("Send notification") {
+                        let content = UNMutableNotificationContent()
+                        content.title = "Test notification"
+                        content.body = "testing !!!"
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats:false)
+                        
+                        let request = UNNotificationRequest(identifier: UUID().uuidString, content:content, trigger:trigger)
+                        
+                        UNUserNotificationCenter.current().add(request)
                     }
                 }
             }.navigationTitle("Settings").navigationBarTitleDisplayMode(.large)
