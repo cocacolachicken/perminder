@@ -48,8 +48,13 @@ struct ReminderView: View {
                         Text("Finished \(formatDate(date:finished!))")
                         
                     } else {
-                        Text("Not finished")
+                        Text("Add a due date...")
                     }
+                    Spacer()
+                }
+                
+                HStack {
+                    Text("Created \(formatDate(date:remind.getCreated()))")
                     Spacer()
                 }
                 
@@ -60,11 +65,6 @@ struct ReminderView: View {
                     } else {
                         Text("No due date")
                     }
-                    Spacer()
-                }
-                
-                HStack {
-                    Text("Created \(formatDate(date:remind.getCreated()))")
                     Spacer()
                 }
                 

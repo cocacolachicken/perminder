@@ -11,14 +11,13 @@ import UserNotifications
 @main
 struct perminderApp: App {
     var codedData:CodableDataManager?
-    @StateObject var dat:DataManager
-    var center:UNUserNotificationCenter = UNUserNotificationCenter.current()
+    @StateObject var dat:DataManager = DataManager()
     
     init () {
         codedData = readFromJSONFile(fileName:"sav.json")
         let decodedData = codedData != nil ? DataManager(codedData!) : DataManager()
         _dat = .init(wrappedValue: decodedData)
-        setNotifications(dat:dat)
+        setNotifications(data:dat)
     }
 
     var body: some Scene {
@@ -27,28 +26,79 @@ struct perminderApp: App {
         }
     }
     
-    func setNotifications (data:DataManager) {
-        
-        let _:NotificationHandler = NotificationHandler(Identifier: "", titleIn: "Perminder time!", bodyIn: "Please come and check on your reminders.", dayIn: "", timeIn: "0000", centerIn: center)
-        
-        
-        if (data.opt.sc.type != "none") {
-            print("loading notifications...")
-            
-            let formatter = DateFormatter()
-            
-            formatter.dateFormat = "EEEE"
-            
-            for time in data.opt.sc[formatter.string(from:Date())].times {
-                let handler:NotificationHandler = NotificationHandler(Identifier: time.timeAssigned, titleIn: "Perminder time!", bodyIn: "Please come and check on your reminders.", dayIn: "", timeIn: time.timeAssigned, centerIn: center)
-                if handler.checkPermission() {
-                    print("Success")
+    
+}
+
+
+func setNotifications (data:DataManager) {
+    var condition:Bool = true
+    
+    UNUserNotificationCenter.current().getNotificationSettings { settings in
+        switch settings.authorizationStatus {
+        case .authorized: condition = true; print("allowed"); break;
+        case .denied: condition = false; break;
+        case .notDetermined:
+            UNUserNotificationCenter.current()
+                .requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                
+                if granted {
+                    condition = true
+                    print("allowed")
                 } else {
-                    print ("Doesn't work...")
+                    print("not allowed")
+                    
                 }
+            }
+            break;
+        case .ephemeral: condition = true; print("allowed"); break;
+        case .provisional: condition = true; print("allowed"); break;
+        }
+    }
+    
+    print(data.opt.sc.type)
+    print(String(condition))
+    
+    
+    if (data.opt.sc.type != "none" && condition) {
+        print("loading notifications...")
+        
+        let formatter = DateFormatter()
+        let timeRightNow = Date()
+        
+        formatter.dateFormat = "HH"
+        let currentHour = Int(formatter.string(from:timeRightNow))!
+        
+        formatter.dateFormat = "mm"
+        let currentMinute = Int(formatter.string(from:timeRightNow))!
+        
+        formatter.dateFormat = "EEEE"
+        var index = 0
+        
+        for time in data.opt.sc[formatter.string(from:Date())].times {
+            let content = UNMutableNotificationContent()
+            content.title = "Perminder is calling to you~"
+            content.body = "Check on your perminders!"
+            content.sound = UNNotificationSound.default
+            
+            var date = DateComponents()
+            
+            
+            let houroff = time.timeAssigned.index(time.timeAssigned.startIndex, offsetBy:1)
+            date.hour = Int(time.timeAssigned[...houroff])!
+            let minuteoff = time.timeAssigned.index(time.timeAssigned.startIndex, offsetBy:2)
+            date.minute = Int(time.timeAssigned[minuteoff...])!
+            
+            let minuteOffset = date.minute! - currentMinute
+            let hourOffset = date.hour! - currentHour
+            let totalOffset = minuteOffset * 60 + hourOffset * 60 * 60
+            if totalOffset > 0 {
+            
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(totalOffset), repeats:false)
+               
+                let request = UNNotificationRequest(identifier: String(index) + time.timeAssigned, content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request)
             }
         }
     }
 }
-
-

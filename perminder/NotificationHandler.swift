@@ -115,8 +115,12 @@ class NotificationHandler:Identifiable {
         let hourString = time.dropLast(2)
         let hour = Int(hourString) ?? 0
         
+        print(hour)
+        
         let minuteString = time.dropFirst(2)
         let minute = Int(minuteString) ?? 0
+        
+        print(minute)
         
         var date = DateComponents()
         date.hour = hour
@@ -124,7 +128,7 @@ class NotificationHandler:Identifiable {
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         
         // UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false) //magic values 1 second and false repeat as placeholders
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: reminderIdentifier, content: content, trigger: trigger)
         
         center.removePendingNotificationRequests(withIdentifiers: [identifier])
         center.add(request)
