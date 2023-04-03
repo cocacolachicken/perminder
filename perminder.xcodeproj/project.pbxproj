@@ -15,6 +15,7 @@
 		89AC446B29DA81E700A34E44 /* TagDatabaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC446A29DA81E700A34E44 /* TagDatabaseTest.swift */; };
 		89AC446D29DA873700A34E44 /* SupportingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC446C29DA873700A34E44 /* SupportingTest.swift */; };
 		89AC446F29DA897900A34E44 /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC446E29DA897900A34E44 /* DataManagerTest.swift */; };
+		89AC447129DB189100A34E44 /* TagTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC447029DB189100A34E44 /* TagTest.swift */; };
 		89E0FD2329DA5FD3007EC300 /* NotifTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0FD2229DA5FD3007EC300 /* NotifTest.swift */; };
 		89E0FD2529DA7754007EC300 /* ReminderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0FD2429DA7754007EC300 /* ReminderTest.swift */; };
 		F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9496E9329D7CCCF00A6EBAA /* TagRow.swift */; };
@@ -79,6 +80,7 @@
 		89AC446A29DA81E700A34E44 /* TagDatabaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDatabaseTest.swift; sourceTree = "<group>"; };
 		89AC446C29DA873700A34E44 /* SupportingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingTest.swift; sourceTree = "<group>"; };
 		89AC446E29DA897900A34E44 /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
+		89AC447029DB189100A34E44 /* TagTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTest.swift; sourceTree = "<group>"; };
 		89E0FD2229DA5FD3007EC300 /* NotifTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifTest.swift; sourceTree = "<group>"; };
 		89E0FD2429DA7754007EC300 /* ReminderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTest.swift; sourceTree = "<group>"; };
 		F9496E9329D7CCCF00A6EBAA /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				891D5C3229D8DE4500F1E740 /* SchedulingClassesTest.swift */,
 				89E0FD2229DA5FD3007EC300 /* NotifTest.swift */,
 				89E0FD2429DA7754007EC300 /* ReminderTest.swift */,
+				89AC447029DB189100A34E44 /* TagTest.swift */,
 				89AC446A29DA81E700A34E44 /* TagDatabaseTest.swift */,
 				89AC446C29DA873700A34E44 /* SupportingTest.swift */,
 				89AC446E29DA897900A34E44 /* DataManagerTest.swift */,
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				891D5C3329D8DE4500F1E740 /* SchedulingClassesTest.swift in Sources */,
+				89AC447129DB189100A34E44 /* TagTest.swift in Sources */,
 				F9B43BDA29B9119000740FE5 /* perminderTests.swift in Sources */,
 				89E0FD2529DA7754007EC300 /* ReminderTest.swift in Sources */,
 				89E0FD2329DA5FD3007EC300 /* NotifTest.swift in Sources */,
