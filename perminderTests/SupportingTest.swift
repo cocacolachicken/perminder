@@ -58,6 +58,15 @@ final class SupportingTest: XCTestCase {
     }
     
     func testFormatDate() {
+        var components = DateComponents()
+        components.minute = 10
+        components.hour = 10
+        components.day = 1
+        components.month = 4
+        components.year = 2023
+
+        let date = Calendar.current.date(from: components)!
         
+        XCTAssertEqual(formatDate(date: date), "01 Apr 2023 10:10")
     }
 }
