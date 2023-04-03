@@ -16,10 +16,18 @@ struct RGB: Hashable, Equatable {
     
     var r, g, b:Int
     
+    /**
+     * Turns the three color ints into a single array
+     * @return a array with the RGB values
+     */
     func toArray () -> [Int] {
         [r, g, b]
     }
     
+    /**
+     * Hashes the 3 colors with a hasher
+     * @Param Hasher a hasher passed into the function to combine the 3 color values
+     */
     func hash (into hasher:inout Hasher) {
         hasher.combine(r)
         hasher.combine(g)
