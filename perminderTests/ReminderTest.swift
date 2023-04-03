@@ -19,7 +19,7 @@ final class ReminderTest: XCTestCase {
     override func setUp() {
         super.setUp()
         tag1 = Tag(n: "Homework", c: [0, 255, 100])
-        testReminder1 = Reminder(n: testName, c: Date(), d: nil, f: nil, tg: [tag1], i: 0)
+        testReminder1 = Reminder(n: testName, c: Date(), d: nil, f: nil, tg: [], i: 0)
         testReminder2 = Reminder(n: testName)
     }
 

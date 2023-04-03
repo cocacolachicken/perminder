@@ -12,7 +12,8 @@ final class DataManagerTest: XCTestCase {
     
     var testDM:DataManager!
     var testCDM:CodableDataManager!
-    let tag1:Tag = Tag(n: "Homework", c: [0, 255, 100])
+    let tag1 = Tag(n: "Homework", c: [0, 255, 100])
+    let tag1String:String = "Homework"
     var reminder1:Reminder!
     var reminder2:Reminder!
     
@@ -21,7 +22,7 @@ final class DataManagerTest: XCTestCase {
     override func setUp() {
         super.setUp()
         reminder1 = Reminder(n: "Biology poster")
-        reminder2 = Reminder(n: "English presentation", c: Date(), d: Date(), f: nil, tg: [tag1], i: 0)
+        reminder2 = Reminder(n: "English presentation", c: Date(), d: Date(), f: nil, tg: [tag1String], i: 0)
         testCDM = CodableDataManager(tags: [tag1], reminders: [reminder1, reminder2], options: option1)
         testDM = DataManager(testCDM)
     }
@@ -53,10 +54,10 @@ final class DataManagerTest: XCTestCase {
     }
     
     func testFindAll() {
-        XCTAssertEqual(testDM.findAllReminders(tagIn : tag1)[0], 1)
+        XCTAssertEqual(testDM.findAllReminders(tagIn : tag1String)[0], 1)
     }
     
     func testFindAllWhenNone() {
-        XCTAssertEqual(testDM.findAllReminders(tagIn: Tag(n: "not homework", c: [0, 0, 0])), [])
+        XCTAssertEqual(testDM.findAllReminders(tagIn: "not homework"), [])
     }
 }
