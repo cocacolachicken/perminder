@@ -2,6 +2,7 @@
 //  ScheduleTypesTest.swift
 //  perminderTests
 //  Includes testing for Timeblock, Day, Schedule, Scheduletypes, and Options as they are all related
+//  All put into one big class so I can reuse testing variables
 //
 //  Created by Leqi Shen on 2023-04-01.
 //
@@ -19,7 +20,7 @@ class SchedulingClassesTest: XCTestCase {
     let time1:String = "1010"
     let time2:String = "1515"
     let testDayIndex = 0
-    let testScheduleType:String = "Weekly"
+    let testScheduleType:String = "daily"
     
     //Day
     var day1:Day!
@@ -28,6 +29,14 @@ class SchedulingClassesTest: XCTestCase {
 
     //Schedule
     var codableSchedule1:CodableSchedule!
+    
+    //ScheduleTypes
+    var testDaily:Daily!
+    var testBD:BusinessDay!
+    var testMTWTF:MTWTF!
+    
+    //Options
+    var testOptions:CodableOptions!
     
     override func setUp() {
         //Timeblock
@@ -43,6 +52,14 @@ class SchedulingClassesTest: XCTestCase {
 
         //Schedule
         codableSchedule1 = CodableSchedule(days: [codableDay2], type: testScheduleType)
+        
+        //ScheduleTypes
+        testDaily = Daily()
+        testBD = BusinessDay()
+        testMTWTF = MTWTF()
+        
+        //Options
+        testOptions = CodableOptions()
 
         super.setUp()
     }
@@ -141,6 +158,62 @@ class SchedulingClassesTest: XCTestCase {
         XCTAssertEqual(decodedSchedule.days[0].blocks[1].time, CodableBlock2.time)
     }
     
+    func testDailyAppendSingle() {
+        testDaily.append(day: 0, t: time1)
+        XCTAssertEqual(testDaily.days[0].times[0].timeAssigned, time1)
+    }
     
+    func testDailyAppendMultiple() {
+        testDaily.append(day: 0, t: time1)
+        testDaily.append(day: 0, t: time2)
+        XCTAssertEqual(testDaily.days[0].times[0].timeAssigned, time1)
+        XCTAssertEqual(testDaily.days[0].times[1].timeAssigned, time2)
+    }
+    
+    func testBusinessDayAppendSingle() {
+        testBD.append(day: 0, t: time1)
+        testBD.append(day: 1, t: time1)
+        XCTAssertEqual(testBD.days[0].times[0].timeAssigned, time1)
+        XCTAssertEqual(testBD.days[1].times[0].timeAssigned, time1)
+    }
+    
+    func testBusinessDayAppendMultiple() {
+        testBD.append(day: 0, t: time1)
+        testBD.append(day: 0, t: time2)
+
+        testBD.append(day: 1, t: time1)
+        testBD.append(day: 1, t: time2)
+
+        XCTAssertEqual(testBD.days[0].times[0].timeAssigned, time1)
+        XCTAssertEqual(testBD.days[0].times[1].timeAssigned, time2)
+
+        XCTAssertEqual(testBD.days[1].times[0].timeAssigned, time1)
+        XCTAssertEqual(testBD.days[1].times[1].timeAssigned, time2)
+    }
+    
+    func testMTWTFAppendSingle() {
+        for i in 0...6 {
+            testMTWTF.append(day: i, t: time1)
+        }
+        for i in 0...6 {
+            XCTAssertEqual(testMTWTF.days[i].times[0].timeAssigned, time1)
+        }
+    }
+    
+    func testMTWTFAppendMultiple() {
+        for i in 0...6 {
+            testMTWTF.append(day: i, t: time1)
+            testMTWTF.append(day: i, t: time2)
+        }
+        for i in 0...6 {
+            XCTAssertEqual(testMTWTF.days[i].times[0].timeAssigned, time1)
+            XCTAssertEqual(testMTWTF.days[i].times[1].timeAssigned, time2)
+        }
+    }
+    
+    func testCodableScheduleToSchedule() {
+        let testSchedule:Schedule = codableScheduleToSchedule(sch: codableSchedule1)
+        XCTAssertEqual(testSchedule.days[0].times[0].timeAssigned, codableSchedule1.days[0].blocks[0].time)
+    }
     
 }

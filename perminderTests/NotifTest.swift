@@ -7,6 +7,7 @@
 
 @testable import perminder
 import XCTest
+import UserNotifications
 
 final class NotifTest: XCTestCase {
     
