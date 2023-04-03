@@ -2,6 +2,7 @@
 //  ScheduleTypesTest.swift
 //  perminderTests
 //  Includes testing for Timeblock, Day, Schedule, Scheduletypes, and Options as they are all related
+//  All put into one big class so I can reuse testing variables
 //
 //  Created by Leqi Shen on 2023-04-01.
 //
