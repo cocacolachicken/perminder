@@ -2,7 +2,7 @@
 //  Tag.swift
 //  perminder
 //
-//  Created by Tyler Gu on 2023-03-21.
+//  Created by Tyler Gu and Leqi Shen on 2023-03-21.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ class Tag:Identifiable, Hashable {
     }
     
     private var name:String
-    private var color:RGB
+    @Published private var color:RGB
     var id = UUID()
     
     init (n:String, c:[Int]) {

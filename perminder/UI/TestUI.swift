@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Quick tester for the initializers 
 struct TestUI: View {
     var body: some View {
         

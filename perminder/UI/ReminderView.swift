@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Shows one reminder on a page
 struct ReminderView: View {
     @EnvironmentObject var dat:DataManager
     @State var title:String
@@ -34,7 +35,7 @@ struct ReminderView: View {
         List {
             VStack {
                 HStack {
-                    TextField(
+                    TextField( // Title entry
                         "enter a title",
                         text:$title
                     ).onChange(of:title){ newVal in
@@ -44,26 +45,24 @@ struct ReminderView: View {
                     Spacer()
                 }
                 
-                HStack {
-                    
+                HStack { // Shows the finish date
                     if finished != nil {
                         Text("Finished \(formatDate(date:finished!))")
-                        
                     } else {
                         Text("Not finished")
                     }
                     Spacer()
                 }
                 
-                HStack {
+                HStack { // Shows  the creation date
                     Text("Created \(formatDate(date:remind.getCreated()))")
                     Spacer()
                 }
                 
-                HStack {
+                HStack { // Shows a mark due date field
                     
                     if hasDue {
-                        DatePicker (
+                        DatePicker ( // Changes the date and time chosen for a due date
                             "Due:",
                             selection: $due
                         ).datePickerStyle(.compact).onChange(of:due, perform:{ _ in
@@ -71,13 +70,13 @@ struct ReminderView: View {
                             writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                         })
                         
-                        Text("remove").onTapGesture (perform: {
+                        Text("remove").onTapGesture (perform: { // If pressed, removes the due date and sets the reminder's to nil
                             hasDue = false
                             dat.reminders[ind].setDue(dueSet:nil)
                             writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                         })
                         
-                    } else {
+                    } else { // If there's no due date, click to add
                         Text("No due date (click to add)").onTapGesture ( perform: {
                             hasDue = true
                             dat.reminders[ind].setDue(dueSet:due)
@@ -89,21 +88,17 @@ struct ReminderView: View {
                 
             }.listRowSeparator(.hidden)
             
-            Section ("TAGS") {
+            Section ("TAGS") { // Shows the tags as a list
                 ForEach (self.tags, id:\.self) { tag in
-                    NavigationLink {
+                    NavigationLink { // Link to the tag
                         TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag), c:dat.tags[tag]!.getColor()).environmentObject(dat)
-                        
                     } label: {
                         TagRow(t:tag)
                     }
                 }.onDelete(perform: remove)
                 
-                
-                
-                
-                HStack {
-                    Button (action: {
+                HStack { // Tag entry field with a button
+                    Button (action: { // Adds a tag to the reminder's tag list
                         if (!tags.contains(tagPicked)) && tagPicked != "" {
                             let tag = dat.tags[tagPicked]
                             let tagString:String? = tag != nil ? tag!.getName() : nil
@@ -122,18 +117,12 @@ struct ReminderView: View {
                         Image(systemName:"plus")
                     }
                     
-                    TextField (
+                    TextField ( // Textfield
                         "enter a tag name (case sensitive)",
                         text:$tagPicked
                     )
-                    
-                    
                 }
-                
-                
-                
             }
-            
         }.scrollContentBackground(.hidden).padding(0)
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)

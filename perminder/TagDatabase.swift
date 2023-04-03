@@ -8,9 +8,10 @@
 import Foundation
 
 class TagDatabase { // Used to store and track all tags
-    var tags:[String:Tag] = [:]
-    var tagsAsAnArray:[Tag] = []
+    var tags:[String:Tag] = [:] // Stores tags as a dictionary
+    var tagsAsAnArray:[Tag] = [] // Stores tags as an array
     
+    // Accesses a tag through the name
     subscript (index:String) -> Tag? {
         get {
             tags[index]

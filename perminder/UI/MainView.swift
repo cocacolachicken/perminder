@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Shows the reminders
 struct MainView: View {
     @EnvironmentObject var dat:DataManager
     @State var showHelp:Bool = false
@@ -49,6 +50,7 @@ struct MainView: View {
             }
         }.navigationViewStyle(.stack)
     }
+    
     
     func removeReminder (at offsets: IndexSet) {
         dat.reminders.remove(atOffsets: offsets)

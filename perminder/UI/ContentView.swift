@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// Wrapper for the bottom tab to alternate between views
 struct ContentView: View {
     @EnvironmentObject var dat:DataManager
     

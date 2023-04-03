@@ -21,7 +21,6 @@
 		F95A4DEF29CFB4DD0000AEDF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */; };
 		F95A4DF129CFB4EF0000AEDF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF029CFB4EF0000AEDF /* Options.swift */; };
 		F95A4DF729CFE97F0000AEDF /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */; };
-		F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFB29D134270000AEDF /* InputManager.swift */; };
 		F95A4DFE29D1358F0000AEDF /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A4DFD29D1358F0000AEDF /* Supporting.swift */; };
 		F96399B329D366A8002C3C19 /* testdata.json in Resources */ = {isa = PBXBuildFile; fileRef = F95A4DFF29D137A40000AEDF /* testdata.json */; };
 		F96399B729D3D1D4002C3C19 /* sav.json in Resources */ = {isa = PBXBuildFile; fileRef = F96399B629D3D1D4002C3C19 /* sav.json */; };
@@ -86,7 +85,6 @@
 		F95A4DEE29CFB4DD0000AEDF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F95A4DF029CFB4EF0000AEDF /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		F95A4DF629CFE97F0000AEDF /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
-		F95A4DFB29D134270000AEDF /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		F95A4DFD29D1358F0000AEDF /* Supporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
 		F95A4DFF29D137A40000AEDF /* testdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testdata.json; sourceTree = "<group>"; };
 		F96399B629D3D1D4002C3C19 /* sav.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sav.json; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				F9C7B62C29D909EE00FA4EC1 /* UI */,
 				F9B43BC829B9118A00740FE5 /* perminderApp.swift */,
-				F95A4DFB29D134270000AEDF /* InputManager.swift */,
 				F95A4DFD29D1358F0000AEDF /* Supporting.swift */,
 				F98E059329D66CDD001EBB1F /* jsonOut.json */,
 				F96399B629D3D1D4002C3C19 /* sav.json */,
@@ -415,7 +412,6 @@
 				F9B3A75529D25D5F001D4616 /* ReminderView.swift in Sources */,
 				F98E036829D349A500A0609A /* AddReminderBar.swift in Sources */,
 				892411CF29D2787D002CD560 /* NotificationHandler.swift in Sources */,
-				F95A4DFC29D134270000AEDF /* InputManager.swift in Sources */,
 				F9496E9429D7CCCF00A6EBAA /* TagRow.swift in Sources */,
 				F968BBE629DA33B500DA01A1 /* TimeSelector.swift in Sources */,
 				F9B3A75129D24947001D4616 /* ReminderRow.swift in Sources */,

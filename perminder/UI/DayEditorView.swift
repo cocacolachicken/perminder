@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Shows an editor for a day, where the user can add and remove days
 struct DayEditorView: View {
     @Binding var daySelected:Int
     @EnvironmentObject var dat:DataManager
@@ -17,13 +18,13 @@ struct DayEditorView: View {
     }
     
     var body: some View {
-        ForEach (dat.opt.sc.days[daySelected].times, id:\.self) { timeb in
-            Text("Sending at: " + formatWithoutColon(time:timeb.timeAssigned))
+        ForEach (dat.opt.sc.days[daySelected].times, id:\.self) { timeb in // Each row for a time
+            Text("Sending at " + formatWithoutColon(time:timeb.timeAssigned))
         }.onDelete(perform:delete)
         
-        TimeSelector(time:timeSelected, bind:$timeSelected)
+        TimeSelector(time:timeSelected, bind:$timeSelected) // Time picker for hour and minute
         
-        Button (action: {
+        Button (action: { // Adds a time
             dat.opt.sc.days[daySelected].addTimeBlock(time:timeSelected)
             dat.objectWillChange.send()
             writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
@@ -39,7 +40,7 @@ struct DayEditorView: View {
         setNotifications(data:dat)
     }
     
-    func formatWithoutColon (time:String) -> String {
+    func formatWithoutColon (time:String) -> String { // Turns date of "HHmm" into "HH:mm"
         var mutate = time
         let index = mutate.index(mutate.startIndex, offsetBy: 2)
         mutate.insert(":", at:index)

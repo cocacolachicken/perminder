@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A row showing the reminder, tags if there's any, due date if there's any, and checkbox if there's any
 struct ReminderRow: View {
     @EnvironmentObject var dat:DataManager
     var index:Int = 0
@@ -23,26 +24,18 @@ struct ReminderRow: View {
     
     
     var body: some View {
-        
-        
         HStack {
-            
             VStack {
-            
                 Checkbox(b: $toggle, size:20, funct: {
                     if toggle {
                         dat.reminders[index].markFinished()
                     } else {
                         dat.reminders[index].markIncomplete()
                     }
-                    
-                    
                     writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
-                    
                 }).padding(.top)
                 
                 Spacer()
-                
             }
             
             VStack {
@@ -56,10 +49,7 @@ struct ReminderRow: View {
                 HStack {
                     if (remind.getDue() != nil){
                         Text(formatDate(date:remind.getDue()!))
-                        
                     }
-                    
-                    
                     
                     ForEach(tags, id:\.self) {tag in
                         Text("#\(tag)")
@@ -73,8 +63,6 @@ struct ReminderRow: View {
                     Spacer()
                 }
             }
-            
-            
         }
     }
 }
