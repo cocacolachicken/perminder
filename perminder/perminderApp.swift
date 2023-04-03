@@ -11,7 +11,7 @@ import UserNotifications
 @main
 struct perminderApp: App {
     var codedData:CodableDataManager?
-    @StateObject var dat:DataManager = DataManager()
+    @StateObject var dat:DataManager = DataManager() // If you want to use the canvas previews in the UI files, please comment out lines 1e and 17-20 (inclusive)
     
     init () {
         codedData = readFromJSONFile(fileName:"sav.json")
