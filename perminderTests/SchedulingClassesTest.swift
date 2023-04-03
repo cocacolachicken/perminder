@@ -20,23 +20,30 @@ class SchedulingClassesTest: XCTestCase {
     let time2:String = "1515"
     let testTag:String = "Biology"
     let testTag2:String = "Homework"
+    let testScheduleType:String = "Weekly"
     
     //Day
     var day1:Day!
     var codableDay1:CodableDay!
     var codableDay2:CodableDay!
 
+    //Schedule
+    var codableSchedule1:CodableSchedule!
     
     override func setUp() {
+        //Timeblock
         Block = Timeblock(tA: time1)
         Block2 = Timeblock(tA: time2, tags:[testTag, testTag2])
         CodableBlock = CodableTimeblock(tags: [], time: time1)
         CodableBlock2 = CodableTimeblock(tags: [testTag, testTag2], time: time1)
 
+        //Day
         day1 = Day()
         codableDay1 = CodableDay()
         codableDay2 = CodableDay(blocks: [CodableBlock, CodableBlock2])
 
+        //Schedule
+        codableSchedule1 = CodableSchedule(days: [codableDay2], type: testScheduleType)
 
         super.setUp()
     }
@@ -121,6 +128,27 @@ class SchedulingClassesTest: XCTestCase {
         XCTAssertEqual(decodedDay.blocks[1].tags, CodableBlock2.tags)
         XCTAssertEqual(decodedDay.blocks[1].time, CodableBlock2.time)
     }
+    
+    func testCodableSchedule() throws {
+        
+        // Encodes schedule to JSON
+        let encoder = JSONEncoder()
+        let encodedData = try encoder.encode(codableSchedule1)
+        
+        // Decodes JSON to new schedule object
+        let decoder = JSONDecoder()
+        let decodedSchedule = try decoder.decode(CodableSchedule.self, from: encodedData)
+        
+        // Ensure the decoded object is equal to the original object
+        XCTAssertEqual(decodedSchedule.type, codableSchedule1.type)
+        XCTAssertEqual(decodedSchedule.days.count, codableSchedule1.days.count)
+        XCTAssertEqual(decodedSchedule.days[0].blocks.count, codableSchedule1.days[0].blocks.count)
+        XCTAssertEqual(decodedSchedule.days[0].blocks[0].tags, CodableBlock.tags)
+        XCTAssertEqual(decodedSchedule.days[0].blocks[0].time, CodableBlock.time)
+        XCTAssertEqual(decodedSchedule.days[0].blocks[1].tags, CodableBlock2.tags)
+        XCTAssertEqual(decodedSchedule.days[0].blocks[1].time, CodableBlock2.time)
+    }
+    
     
     
 }
