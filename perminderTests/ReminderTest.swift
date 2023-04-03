@@ -35,27 +35,32 @@ final class ReminderTest: XCTestCase {
     }
     
     func testHash() {
+        //creates 2 hashers to compare
         var hasher1 = Hasher()
         var hasher2 = Hasher()
-        var hasher3 = Hasher()
         
+        //uses the hash implementation in reminder to hash name and rid attributes
         testReminder1.hash(into: &hasher1)
         testReminder2.hash(into: &hasher2)
+        //compares
         XCTAssertEqual(hasher1.finalize(), hasher2.finalize())
         
         hasher1 = Hasher()
         hasher2 = Hasher()
         testReminder1.hash(into: &hasher1)
         testReminder3.hash(into: &hasher2)
+        //different reminder attributes should not be equal after hashing
         XCTAssertNotEqual(hasher1.finalize(), hasher2.finalize())
         
     }
     
     func testEqualsImplementation() {
         
-       XCTAssertTrue(testReminder1 == testReminder2)
+        //two identical reminder rids should return true
+        XCTAssertTrue(testReminder1 == testReminder2)
        
-       XCTAssertFalse(testReminder1 == testReminder3)
+        //two different rids returns false
+        XCTAssertFalse(testReminder1 == testReminder3)
     }
     
 }
