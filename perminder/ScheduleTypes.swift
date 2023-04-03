@@ -13,6 +13,7 @@ struct NoSchedule: Schedule {
     var type:String = "none"
     var bounds:ClosedRange<Int> = 0...0
     
+    // Returns the same thing regardless
     subscript (index:String) -> Day {
         get {
             return (days[0])
@@ -69,6 +70,7 @@ struct BusinessDay: Schedule {
     var type:String = "businessday"
     var bounds:ClosedRange<Int> = 0...1
     
+    // Depends on the day of the week; returns 0 if weekend an 1 if weekday
     subscript (index:String) -> Day {
         get {
             switch index {
@@ -100,6 +102,7 @@ struct MTWTF: Schedule {
     var type:String = "weekday"
     var bounds:ClosedRange<Int> = 0...6
     
+    ///Depends on the day of the week – different return for each day
     subscript (index:String) -> Day {
         get {
             switch index {

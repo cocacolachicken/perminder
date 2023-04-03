@@ -26,7 +26,7 @@ struct TimeSelector: View {
     var body: some View {
         VStack {
             HStack {
-                Picker (
+                Picker ( // Picks an hour
                     "Hour",
                     selection: $hour
                 ) {
@@ -37,7 +37,7 @@ struct TimeSelector: View {
                     time = String(format: "%02d", hour) + String(format: "%02d", minute)
                 }).pickerStyle(.menu)
                 
-                Picker (
+                Picker ( // Picks a minute
                     "Minute",
                     selection: $minute
                 ) {

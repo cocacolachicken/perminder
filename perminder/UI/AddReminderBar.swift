@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Bar that contains a text entry field and a button to send the reminder to the datamanager
 struct AddReminderBar: View {
     @State var search: String = ""
     @EnvironmentObject var dat:DataManager

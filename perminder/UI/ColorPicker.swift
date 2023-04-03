@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+// Color picker that shows 3 pickers, 1 for each of r, g, and b and shwos a preview
 struct ColorPicker: View {
     @State var color:RGB
     var funct:(RGB) -> ()
     
     var body: some View {
-        HStack (spacing:0) {
+        HStack (spacing:0) { // The square that'll be filled in with a specific clor
             Image(systemName:"square.fill").resizable().frame(width:50, height:50).padding(.trailing)
                 .foregroundColor(Color(red:Double(color.r)/255.0, green:Double(color.g)/255.0, blue:Double(color.b)/255.0))
             
-            Picker ("Red", selection:$color.r) {
+            Picker ("Red", selection:$color.r) { // Red color
                 ForEach (0...255, id:\.self) { val in
                     Text(String(val)).tag(val)
                 }
@@ -26,7 +27,7 @@ struct ColorPicker: View {
                 })
                 
             
-            Picker ("Green", selection:$color.g) {
+            Picker ("Green", selection:$color.g) { // Green color
                 ForEach (0...255, id:\.self) { val in
                     Text(String(val)).tag(val)
                 }
@@ -35,7 +36,7 @@ struct ColorPicker: View {
                     funct(color)
                 })
             
-            Picker ("Blue", selection:$color.b) {
+            Picker ("Blue", selection:$color.b) { // Blue color
                 ForEach (0...255, id:\.self) { val in
                     Text(String(val)).tag(val)
                 }

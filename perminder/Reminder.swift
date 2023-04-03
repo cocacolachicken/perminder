@@ -2,7 +2,7 @@
 //  Reminder.swift
 //  perminder
 //
-//  Created by Tyler Gu on 2023-03-21.
+//  Created by Tyler Gu and Leqi Shen on 2023-03-21.
 //
 
 import Foundation

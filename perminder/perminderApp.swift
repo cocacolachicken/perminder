@@ -8,16 +8,18 @@
 import SwiftUI
 import UserNotifications
 
+// If you want to use the canvas previews in the UI files, please comment out lines 1e and 17-20 (inclusive)
+
 @main
 struct perminderApp: App {
     var codedData:CodableDataManager?
-    @StateObject var dat:DataManager = DataManager() // If you want to use the canvas previews in the UI files, please comment out lines 1e and 17-20 (inclusive)
+    @StateObject var dat:DataManager = DataManager()
     
     init () {
         codedData = readFromJSONFile(fileName:"sav.json")
         let decodedData = codedData != nil ? DataManager(codedData!) : DataManager()
         _dat = .init(wrappedValue: decodedData)
-        setNotifications(data:dat)
+        setNotifications(data:dat) // Sets notifications upon startup
     }
 
     var body: some Scene {
@@ -33,7 +35,7 @@ struct perminderApp: App {
 func setNotifications (data:DataManager) {
     var condition:Bool = true
     
-    UNUserNotificationCenter.current().getNotificationSettings { settings in
+    UNUserNotificationCenter.current().getNotificationSettings { settings in // Gets notification authorization
         switch settings.authorizationStatus {
         case .authorized: condition = true; print("allowed"); break;
         case .denied: condition = false; break;
@@ -55,8 +57,8 @@ func setNotifications (data:DataManager) {
         }
     }
     
-    print(data.opt.sc.type)
-    print(String(condition))
+    print(data.opt.sc.type) // Prints the schedule type
+    print(String(condition)) // Prints the notification status
     
     
     if (data.opt.sc.type != "none" && condition) {
@@ -72,7 +74,6 @@ func setNotifications (data:DataManager) {
         let currentMinute = Int(formatter.string(from:timeRightNow))!
         
         formatter.dateFormat = "EEEE"
-        var index = 0
         
         for time in data.opt.sc[formatter.string(from:Date())].times {
             let content = UNMutableNotificationContent()
@@ -95,7 +96,7 @@ func setNotifications (data:DataManager) {
             
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(totalOffset), repeats:false)
                
-                let request = UNNotificationRequest(identifier: String(index) + time.timeAssigned, content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "PERMINDER" + time.timeAssigned, content: content, trigger: trigger)
                 
                 UNUserNotificationCenter.current().add(request)
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 import UserNotifications
 
+// Settings – leaves room for extension
 struct SettingsView: View {
     @EnvironmentObject var dat:DataManager
     
@@ -22,7 +23,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section("Debugging") {
+                Section("Debugging") { // To debug the notification thing – make sure you've exited the app or turned the phone simulator
                     Button ("Send notification") {
                         let content = UNMutableNotificationContent()
                         content.title = "Test notification"

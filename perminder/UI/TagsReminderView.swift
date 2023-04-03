@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+// Shows the tag with associated reminders
 struct TagsReminderView: View {
     @EnvironmentObject var dat:DataManager
     var tag:String
     var reminders:[Int]
     
+    
     init(tag:String, reminders:[Int], c:RGB) {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red:Double(c.r)/255.0, green:Double(c.g)/255.0, blue:Double(c.b)/255.0))]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red:Double(c.r)/255.0, green:Double(c.g)/255.0, blue:Double(c.b)/255.0))] // Sets the color of the title to the color
         self.tag = tag
         self.reminders = reminders
     }
@@ -21,14 +23,14 @@ struct TagsReminderView: View {
     var body: some View {
         VStack {
             List {
-                Section ("Pick a colour") {
+                Section ("Pick a colour") { // Shows a color picker
                     ColorPicker(color:dat.tags[tag]!.getColor(), funct:{ rgb in
                         dat.tags[tag] = Tag(n:tag, c:rgb.toArray())
                         writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                     })
                 }
                 
-                Section ("Reminders in #\(tag)") {
+                Section ("Reminders in #\(tag)") { // Finds reminders that have the given tag
                     ForEach(reminders, id: \.self) { remind in
                         ReminderRow(i: remind, r:dat.reminders[remind], t:$dat.reminders[remind].isFinished)
                     }

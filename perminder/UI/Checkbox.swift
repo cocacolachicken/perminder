@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+// Shows a togglable textbox
 struct Checkbox: View {
     @Binding var b:Bool
     var size:Int
+    
+    // calls this function every time the checkbox is toggled
     var funct: () -> Void
     
     var body: some View {

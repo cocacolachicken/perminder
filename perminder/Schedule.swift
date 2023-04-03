@@ -12,7 +12,7 @@ import Foundation
 protocol Schedule {
     var days:[Day] {get set} // multiple days
     var type:String {get set}
-    var bounds:ClosedRange<Int> {get}
+    var bounds:ClosedRange<Int> {get} // Range of the schedule
 
     subscript (index:String) -> Day {get} // A date returns a given day. Any pattern may correspond with equal or less amoutn of days (e.g. 7-day --> 2 different days for a business/non-business-day based schedule )
     

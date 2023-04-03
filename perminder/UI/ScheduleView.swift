@@ -14,7 +14,7 @@ struct ScheduleView: View {
     @State var showHelp:Bool = false
     
     var body: some View {
-        List {
+        List { // Picks the type of schedule
             Picker ("Type of Schedule", selection:$currentType) {
                 Text("None").tag("none")
                 Text("Daily").tag("daily")
@@ -39,7 +39,7 @@ struct ScheduleView: View {
                 }
             }
             
-            switch currentType {
+            switch currentType { // Switches between different pickers for different schedule
                 case "businessday":
                     Picker ("Day", selection:$dayPicked) {
                         ForEach (0...1, id:\.self) { ind in
@@ -57,7 +57,7 @@ struct ScheduleView: View {
                     
             }
             
-            switch currentType {
+            switch currentType { // Shows an editor for the day picked
                 case "daily":
                 DayEditorView(daySelected:$dayPicked).environmentObject(dat)
                 case "businessday":

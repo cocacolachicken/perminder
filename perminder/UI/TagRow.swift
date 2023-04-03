@@ -7,18 +7,19 @@
 
 import SwiftUI
 
+// Shows a tag row
 struct TagRow: View {
     @EnvironmentObject var dat:DataManager
     var t:String
     
     var body: some View {
         HStack {
-            Text("#\(t)")
+            Text("#\(t)") // Shows a tag
                 .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(Color(red:Double(dat.tags[t]!.getColor().r)/255.0, green:Double(dat.tags[t]!.getColor().g)/255.0, blue:Double(dat.tags[t]!.getColor().b)/255.0))
-            Spacer()
             
+            Spacer()
         }
     }
 }
