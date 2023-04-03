@@ -33,9 +33,8 @@ final class DataManagerTest: XCTestCase {
 
     
     func testMarkFinished() {
-        //this test works, just apparently the 64-bit value is very slightly different in the different lines of code
-        testDM.markFinished(index: 0); let finishedDate:Date = Date()
-        XCTAssertEqual(testDM.reminders[0].getFinished(), finishedDate)
+        testDM.markFinished(index: 0); let finishedDate:String = formatDate(date: Date())
+        XCTAssertEqual(formatDate(date: testDM.reminders[0].getFinished()!), finishedDate)
     }
     
     func testMarkUnfinished() {
