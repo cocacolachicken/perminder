@@ -38,6 +38,7 @@ final class ReminderTest: XCTestCase {
         //creates 2 hashers to compare
         var hasher1 = Hasher()
         var hasher2 = Hasher()
+        var hasher3 = Hasher()
         
         //uses the hash implementation in reminder to hash name and rid attributes
         testReminder1.hash(into: &hasher1)
