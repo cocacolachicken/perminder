@@ -1,5 +1,5 @@
 //
-//  Notification.swift
+//  NotificationHandler.swift
 //  perminder
 //
 //  Created by Leqi Shen on 2023-03-27.
@@ -8,7 +8,7 @@
 import Foundation
 import UserNotifications
 
-class Notification:Identifiable {
+class NotificationHandler:Identifiable {
     //There are no setters for title/body/date as it is assumed that they are set in Init and the notification is sent.
     private var reminderIdentifier: String //give name of reminder so that notification center can keep track of which ones are queued
     private var title: String
