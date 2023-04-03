@@ -50,11 +50,13 @@ struct ReminderRow: View {
                     if (remind.getDue() != nil){
                         Text(formatDate(date:remind.getDue()!))
                     }
-                    
+                    HStack {
                     ForEach(tags, id:\.self) {tag in
                         Text("#\(tag)")
                             .foregroundColor(Color(red: Double(dat.tags[tag]!.getColor().r)/255.0, green: Double(dat.tags[tag]!.getColor().g)/255.0, blue: Double(dat.tags[tag]!.getColor().b)/255.0))
-                    }
+                            .fixedSize()
+                            .lineLimit(1)
+                    }}.frame(maxWidth: 100, alignment: .leading).clipped()
                     
                     if remind.getTags().count == 0 {
                         Text("")
