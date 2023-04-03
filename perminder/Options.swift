@@ -8,6 +8,7 @@
 import Foundation
 
 /// Wrapper for Schedule, but leaves room for extension
+/// Most variables aren't encapsulated as well because it meshes better with the UI implementation
 class Options {
     /// sc may be nil if the user disabled notifications or hasn't set a schedule
     @Published var sc:Schedule
