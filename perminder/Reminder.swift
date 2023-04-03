@@ -39,7 +39,7 @@ struct Reminder:Identifiable, Hashable {
             }
         }
     }
-    var tags:[Tag] = [] // Public because it will mesh better with the UI
+    var tags:[String] = [] // Public because it will mesh better with the UI
     var rid:Int
     
     ///To comply with Identifiable; internal ID is maked as "rid"
@@ -56,7 +56,7 @@ struct Reminder:Identifiable, Hashable {
         Reminder.incrementID()
     }
     
-    init (n:String, c:Date, d:Date?, f:Date?, tg:[Tag], i:Int) { // For use in test cases
+    init (n:String, c:Date, d:Date?, f:Date?, tg:[String], i:Int) { // For use in test cases
         name = n
         created = c
         due = d
@@ -77,7 +77,7 @@ struct Reminder:Identifiable, Hashable {
         finished = src.finished
         rid = src.id
         for tag in src.tags {
-            tags.append(tagDatabase[tag]!)
+            tags.append(tagDatabase[tag]!.getName())
         }
     }
     
@@ -97,7 +97,7 @@ struct Reminder:Identifiable, Hashable {
         return created
     }
     
-    public mutating func setDue(dueSet:Date) {
+    public mutating func setDue(dueSet:Date?) {
         due = dueSet
     }
     
@@ -117,7 +117,7 @@ struct Reminder:Identifiable, Hashable {
         return due
     }
     
-    public func getTags() -> [Tag] {
+    public func getTags() -> [String] {
         tags
     }
     
@@ -134,7 +134,7 @@ struct Reminder:Identifiable, Hashable {
     }
     
     #if DEBUG
-    static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:[Tag(n:"test", c:[127, 255, 0]), Tag(n:"Test2", c:[127, 127, 255])], i:0)
+    static let example = Reminder(n:"Test case", c:Date(), d:Date(), f:nil, tg:["test", "test"], i:0)
     #endif
 }
 
@@ -167,7 +167,7 @@ class CodableReminder: Codable {
         finished = r.getFinished()
         
         for tag in r.getTags() {
-            tags.append(tag.getName())
+            tags.append(tag)
         }
     }
     

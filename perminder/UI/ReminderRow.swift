@@ -11,7 +11,7 @@ struct ReminderRow: View {
     @EnvironmentObject var dat:DataManager
     var index:Int = 0
     var remind:Reminder = Reminder(n:"")
-    var tags:[Tag] = []
+    var tags:[String] = []
     @Binding var toggle:Bool
     
     init (i:Int, r:Reminder, t:Binding<Bool>) {
@@ -54,9 +54,16 @@ struct ReminderRow: View {
                     Spacer()
                 }
                 HStack {
+                    if (remind.getDue() != nil){
+                        Text(formatDate(date:remind.getDue()!))
+                        
+                    }
+                    
+                    
+                    
                     ForEach(tags, id:\.self) {tag in
-                        Text("#" + tag.getName())
-                            .foregroundColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))
+                        Text("#\(tag)")
+                            .foregroundColor(Color(red: Double(dat.tags[tag]!.getColor().r)/255.0, green: Double(dat.tags[tag]!.getColor().g)/255.0, blue: Double(dat.tags[tag]!.getColor().b)/255.0))
                     }
                     
                     if remind.getTags().count == 0 {

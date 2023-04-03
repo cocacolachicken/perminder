@@ -11,9 +11,10 @@ struct ReminderView: View {
     @EnvironmentObject var dat:DataManager
     @State var title:String
     @State var finished:Date?
-    @State var due:Date?
+    @State var due:Date = Date()
+    @State var hasDue:Bool
     @State var remind:Reminder
-    @State var tags:[Tag]
+    @State var tags:[String]
     @State var tagPicked:String = ""
     var ind:Int
     
@@ -24,7 +25,8 @@ struct ReminderView: View {
         
         _title = .init(initialValue:r.getName())
         _finished = .init(initialValue:r.getFinished())
-        _due = .init(initialValue: r.getDue())
+        _due = .init(initialValue: r.getDue() ?? Date())
+        _hasDue = .init(initialValue: r.getDue() != nil)
         _tags = .init(initialValue: r.getTags())
     }
     
@@ -48,7 +50,7 @@ struct ReminderView: View {
                         Text("Finished \(formatDate(date:finished!))")
                         
                     } else {
-                        Text("Add a due date...")
+                        Text("Not finished")
                     }
                     Spacer()
                 }
@@ -59,11 +61,28 @@ struct ReminderView: View {
                 }
                 
                 HStack {
-                    if due != nil {
-                        Text("Due \(formatDate(date:remind.getCreated()))")
+                    
+                    if hasDue {
+                        DatePicker (
+                            "Due:",
+                            selection: $due
+                        ).datePickerStyle(.compact).onChange(of:due, perform:{ _ in
+                            dat.reminders[ind].setDue(dueSet:due)
+                            writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+                        })
+                        
+                        Text("remove").onTapGesture (perform: {
+                            hasDue = false
+                            dat.reminders[ind].setDue(dueSet:nil)
+                            writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+                        })
                         
                     } else {
-                        Text("No due date")
+                        Text("No due date (click to add)").onTapGesture ( perform: {
+                            hasDue = true
+                            dat.reminders[ind].setDue(dueSet:due)
+                            writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
+                        })
                     }
                     Spacer()
                 }
@@ -73,7 +92,7 @@ struct ReminderView: View {
             Section ("TAGS") {
                 ForEach (self.tags, id:\.self) { tag in
                     NavigationLink {
-                        TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag)).environmentObject(dat)
+                        TagsReminderView(tag:tag, reminders:dat.findAllReminders(tagIn:tag), c:dat.tags[tag]!.getColor()).environmentObject(dat)
                         
                     } label: {
                         TagRow(t:tag)
@@ -85,16 +104,19 @@ struct ReminderView: View {
                 
                 HStack {
                     Button (action: {
-                        let tag = dat.tags[tagPicked]
-                        
-                        if !tags.contains(tag ?? Tag(n:"", c:[256, 256, 256])) {
-                            tags.append(tag ?? {
-                                return dat.tags.createNew(n:tagPicked, c:[0, 0, 0])
-                            }())
+                        if (!tags.contains(tagPicked)) && tagPicked != "" {
+                            let tag = dat.tags[tagPicked]
+                            let tagString:String? = tag != nil ? tag!.getName() : nil
                             
+                            if (tagString != nil) {
+                                tags.append(tagPicked)
+                                dat.reminders[ind].tags.append(tagPicked)
+                            } else {
+                                tags.append(dat.tags.createNew(n: tagPicked, c: [0, 0, 0]))
+                                dat.reminders[ind].tags.append(tagPicked)
+                            }
                         }
                         
-                        dat.reminders[ind].tags.append(dat.tags[tagPicked]!)
                         writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                     }) {
                         Image(systemName:"plus")

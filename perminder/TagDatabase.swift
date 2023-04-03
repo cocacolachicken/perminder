@@ -12,7 +12,15 @@ class TagDatabase { // Used to store and track all tags
     var tagsAsAnArray:[Tag] = []
     
     subscript (index:String) -> Tag? {
-        tags[index]
+        get {
+            tags[index]
+            
+        }
+        
+        set {
+            tags[newValue!.getName()] = newValue
+            tagsAsAnArray.append(tags[newValue!.getName()]!)
+        }
     }
     
     func add (t:CodableTag) {
@@ -20,9 +28,9 @@ class TagDatabase { // Used to store and track all tags
         tagsAsAnArray.append(tags[t.name]!)
     }
     
-    func createNew (n:String, c:[Int]) -> Tag {
+    func createNew (n:String, c:[Int]) -> String {
         tags[n] = Tag (n:n, c:c)
         tagsAsAnArray.append(tags[n]!)
-        return tags[n]!
+        return n
     }
 }

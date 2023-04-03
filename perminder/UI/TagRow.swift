@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct TagRow: View {
-    var t:Tag
+    @EnvironmentObject var dat:DataManager
+    var t:String
     
     var body: some View {
         HStack {
-            Text("#\(t.getName())")
+            Text("#\(t)")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .foregroundColor(Color(red:Double(t.getColor().r)/255.0, green:Double(t.getColor().g)/255.0, blue:Double(t.getColor().b)/255.0))
+                .foregroundColor(Color(red:Double(dat.tags[t]!.getColor().r)/255.0, green:Double(dat.tags[t]!.getColor().g)/255.0, blue:Double(dat.tags[t]!.getColor().b)/255.0))
             Spacer()
             
         }
@@ -25,7 +26,9 @@ struct TagRow: View {
 #if DEBUG
 struct TagRow_Previews: PreviewProvider {
     static var previews: some View {
-        TagRow(t: Tag(n:"tag", c:[255, 0, 255]))
+        HStack {
+            Text("please look somewhere else")
+        }
     }
 }
 #endif

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TagsReminderView: View {
     @EnvironmentObject var dat:DataManager
-    var tag:Tag
+    var tag:String
     var reminders:[Int]
     
-    init(tag:Tag, reminders:[Int]) {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red:Double(tag.getColor().r)/255.0, green:Double(tag.getColor().g)/255.0, blue:Double(tag.getColor().b)/255.0))]
+    init(tag:String, reminders:[Int], c:RGB) {
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red:Double(c.r)/255.0, green:Double(c.g)/255.0, blue:Double(c.b)/255.0))]
         self.tag = tag
         self.reminders = reminders
     }
@@ -22,19 +22,19 @@ struct TagsReminderView: View {
         VStack {
             List {
                 Section ("Pick a colour") {
-                    ColorPicker(color:tag.getColor(), funct:{ rgb in
-                        dat.tags[tag.getName()]!.setColor(colorSet: rgb)
+                    ColorPicker(color:dat.tags[tag]!.getColor(), funct:{ rgb in
+                        dat.tags[tag] = Tag(n:tag, c:rgb.toArray())
                         writeToFile(fileName:"sav.json", content:Bundle.main.encode(encode: dat.getCodableVersion()))
                     })
                 }
                 
-                Section ("Reminders in #\(tag.getName())") {
+                Section ("Reminders in #\(tag)") {
                     ForEach(reminders, id: \.self) { remind in
                         ReminderRow(i: remind, r:dat.reminders[remind], t:$dat.reminders[remind].isFinished)
                     }
                 }
             }
-        }.navigationTitle("#\(tag.getName())").navigationBarTitleDisplayMode(.inline)
+        }.navigationTitle("#\(tag)").navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -45,8 +45,9 @@ struct TagsReminderView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
-            TagsReminderView(tag:Tag.example, reminders:[0, 1]).environmentObject(data)
-            
+            HStack {
+                
+            }
         }
     }
 }
